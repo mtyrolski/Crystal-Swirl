@@ -1,7 +1,8 @@
-# Windows thumbnail cache files
+﻿MarsColony/external/
+
+# Windows image file caches
 Thumbs.db
 ehthumbs.db
-ehthumbs_vista.db
 
 # Folder config file
 Desktop.ini
@@ -21,3 +22,53 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+*.filters
+*.vcxproj
+*.db
+*.sln
+*.opendb
+*.suo
+*.user
+*.log
+*.obj
+*.tlog
+*.pdb
+*.idb
+*.ilk
+*.exe
+*.exe
+MV-Engine/source/engine/resourceCache/temp.txt
+MV-Engine/source/to do.txt
+MV-Engine/Debug/statesystem.obj.enc
+MV-Engine/Debug/MV-Engine.exe
+MV-Engine/Debug/main.obj.enc
+MV-Engine/data/textures/WY,eNAĆ ALTAS!.txt
+*.dll
+
+*.enc
+*.xcf
