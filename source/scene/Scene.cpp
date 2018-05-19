@@ -42,9 +42,16 @@ void Scene::pollEvents()
 
 }
 
+void Scene::clear()
+{
+  SDL_SetRenderDrawColor(&*renderer, 0, 0, 200, 255);
+  SDL_RenderClear(&*renderer);
+  SDL_RenderPresent(&*renderer);
+}
+
 Scene::Scene()
   :opened(true)
 {
-  window = std::make_shared<SDL_Window>(SDL_CreateWindow("Crystal Swirl", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0));
-  renderer = std::make_shared<SDL_Renderer>(SDL_CreateRenderer(&*window, -1, SDL_RENDERER_ACCELERATED));
+  window = std::shared_ptr<SDL_Window>(SDL_CreateWindow("Crystal Swirl", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0));
+  renderer = std::shared_ptr<SDL_Renderer>(SDL_CreateRenderer(&*window, -1, SDL_RENDERER_ACCELERATED));
 }

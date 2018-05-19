@@ -6,7 +6,7 @@ https://github.com/mvxxx
 #pragma once
 
 #include <memory>
-#include <SDL_render.h>
+#//include <SDL_render.h>
 //#include <close_code.h>
 //#include <SDL_quit.h>
 #include <SDL.h>
@@ -32,7 +32,7 @@ public:
   bool isOpen();
 
   void pollEvents();
+  void clear();
 protected:
 private:
-  Scene();
 };
