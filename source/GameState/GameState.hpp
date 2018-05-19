@@ -8,21 +8,21 @@ https://github.com/mvxxx
 #include <memory>
 
 #include "scene/Scene.hpp"
-#include "GameState/GameState.hpp"
 
-class Game
-{	
+class GameState
+{
   /* ===Objects=== */
 public:
 protected:
 private:
   std::shared_ptr<Scene> scene;
-  std::shared_ptr<GameState> gameState;
   /* ===Methods=== */
 public:
+  GameState(std::shared_ptr<Scene> scenePtr);
+
+  void onStart();
+  void onStop();
   void run();
 protected:
 private:
-  void init();
-
 };

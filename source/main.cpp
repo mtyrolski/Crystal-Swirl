@@ -3,19 +3,11 @@ mvxxx 2018
 https://github.com/mvxxx
 */
 
-
-#include <iostream>
-#include <SDL.h>
+#include <game/Game.hpp>
 
 int main(int argc, char **argv)
 {
-  if(SDL_Init(SDL_INIT_EVERYTHING)!=0)
-  { 
-    std::cerr << "STD FAILED TO INIT";
-  }
-  else
-  {
-    std::cout << "SUCCES" << std::endl;
-  }
+  Game game;
+  game.run();
   return 0;
 }

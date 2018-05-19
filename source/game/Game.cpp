@@ -8,9 +8,16 @@ https://github.com/mvxxx
 
 void Game::run()
 {
+
   init();
+  while ( scene->isOpen() )
+  {
+    gameState->run();
+  }
 }
 
 void Game::init()
 {
+  scene = std::make_shared<Scene>();
+  gameState = std::make_shared<GameState>(scene);
 }
