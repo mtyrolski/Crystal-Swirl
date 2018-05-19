@@ -1,3 +1,8 @@
+/*
+mvxxx 2018
+https://github.com/mvxxx
+*/
+
 #include "GameState.hpp"
 
 GameState::GameState(std::shared_ptr<Scene> scenePtr)
@@ -19,7 +24,7 @@ void GameState::onStop()
 void GameState::run()
 {
   scene->pollEvents();
-  /*if ( !scene->isOpen() )
-    return;*/
+  if ( !scene->isOpen() )
+    return;
   scene->clear();
 }

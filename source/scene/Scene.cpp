@@ -1,3 +1,8 @@
+/*
+mvxxx 2018
+https://github.com/mvxxx
+*/
+
 #include "Scene.hpp"
 
 Scene::~Scene()
@@ -52,6 +57,6 @@ void Scene::clear()
 Scene::Scene()
   :opened(true)
 {
-  window = std::shared_ptr<SDL_Window>(SDL_CreateWindow("Crystal Swirl", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0));
+  window = std::shared_ptr<SDL_Window>(SDL_CreateWindow("Crystal Swirl", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,mv::constants::defaults::WINDOW_DIMENSIONS.x, mv::constants::defaults::WINDOW_DIMENSIONS.y, 0));
   renderer = std::shared_ptr<SDL_Renderer>(SDL_CreateRenderer(&*window, -1, SDL_RENDERER_ACCELERATED));
 }

@@ -6,10 +6,10 @@ https://github.com/mvxxx
 #pragma once
 
 #include <memory>
-#//include <SDL_render.h>
-//#include <close_code.h>
-//#include <SDL_quit.h>
 #include <SDL.h>
+
+#include "wrappers/Point.hpp"
+#include "Config.hpp"
 
 class Scene
 {
