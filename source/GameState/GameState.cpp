@@ -24,7 +24,5 @@ void GameState::onStop()
 void GameState::run()
 {
   scene->pollEvents();
-  if ( !scene->isOpen() )
-    return;
   scene->clear();
 }
