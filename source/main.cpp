@@ -1,3 +1,9 @@
+/*
+mvxxx 2018
+https://github.com/mvxxx
+*/
+
+
 #include <iostream>
 #include <SDL.h>
 
