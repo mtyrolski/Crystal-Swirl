@@ -14,7 +14,7 @@ GameState::GameState(std::shared_ptr<Scene> scenePtr)
 
 void GameState::onStart()
 {
-  /*IT WILL BE REFACTOR*/
+  /*IT WILL BE REFACTORED*/
    /*const in future*/
   /*
   0-8 - Crystals
@@ -44,9 +44,11 @@ void GameState::onStart()
   objects[7]->getComponent<ProperBody>()->setPosition({ 390,380 });
   objects[8]->getComponent<ProperBody>()->setPosition({ 570,380 });
 
+  objects[9]->addComponent<Clickable>();
   objects[9]->getComponent<ProperBody>()->setType(textureCache, mv::constants::texture::TEXTURE_ID::BUTTON_PLUS, scene->getRenderer());
   objects[9]->getComponent<ProperBody>()->setPosition({ 260,500 });
 
+  objects[10]->addComponent<Clickable>();
   objects[10]->getComponent<ProperBody>()->setType(textureCache, mv::constants::texture::TEXTURE_ID::BUTTON_MINUS, scene->getRenderer());
   objects[10]->getComponent<ProperBody>()->setPosition({ 40,500 });
  
@@ -54,6 +56,7 @@ void GameState::onStart()
   objects[11]->getComponent<ProperBody>()->setSize({ 170,100 });
   objects[11]->getComponent<ProperBody>()->setPosition({150,500 });
 
+  objects[12]->addComponent<Clickable>();
   objects[12]->getComponent<ProperBody>()->setType(textureCache, mv::constants::texture::TEXTURE_ID::PLAY, scene->getRenderer());
   objects[12]->getComponent<ProperBody>()->setSize({ 170,100 });
   objects[12]->getComponent<ProperBody>()->setPosition({ 400,500 });

@@ -41,6 +41,15 @@ void Scene::pollEvents()
       opened = false;
       break;
 
+
+    case SDL_MOUSEBUTTONDOWN:
+      if ( event.button.button == SDL_BUTTON_LEFT )
+      {
+        mouseClicked = true;
+        mousePosition = { static_cast<float>(event.button.x),static_cast<float>(event.button.y) };
+        break;
+      }
+
     default:
       break;
     }
@@ -59,9 +68,41 @@ void Scene::clear(const std::vector<std::shared_ptr<mv::Entity>>& entities)
     {
       auto PB = var->getComponent<ProperBody>();
       SDL_RenderCopy(&*renderer, &*PB->getTexture(), nullptr, &PB->getRect());
+
+      if ( mouseClicked )
+        if ( var->hasComponent<Clickable>() )
+          if ( var->getComponent<Clickable>()->wasClicked(mousePosition, PB->getRect().x, PB->getRect().y, PB->getRect().w, PB->getRect().h) )
+          {
+            switch ( PB->getType() )
+            {
+            case mv::constants::texture::TEXTURE_ID::BUTTON_PLUS:
+            {
+              mv::Logger::Log("PLUS HAS BEEN CLICKED!");
+              break;
+            }
+
+            case mv::constants::texture::TEXTURE_ID::BUTTON_MINUS:
+            {
+              mv::Logger::Log("MINUS HAS BEEN CLICKED!");
+              break;
+            }
+
+            case mv::constants::texture::TEXTURE_ID::PLAY:
+            {
+              mv::Logger::Log("PLAY HAS BEEN CLICKED!");
+              break;
+            }
+
+            default: break;
+            }
+          }
     }
-    
+
+
   }
+  if ( mouseClicked )
+    mouseClicked = false;
+
   SDL_RenderPresent(&*renderer);
 }
 

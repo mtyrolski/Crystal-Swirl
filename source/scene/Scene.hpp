@@ -14,6 +14,8 @@ https://github.com/mvxxx
 #include "Config.hpp"
 #include "ecs/entity/Entity.hpp"
 #include "ecs/component/ProperBody.hpp"
+#include "ecs/component/Clickable.hpp"
+ 
 
 
 class Scene
@@ -24,6 +26,11 @@ protected:
 private:
   std::shared_ptr<SDL_Window> window;
   std::shared_ptr<SDL_Renderer> renderer;
+
+  bool mouseClicked = false;
+
+  //this object is used when it is need to check properBody->wasClicked
+  Vector2<float> mousePosition;
 
   bool opened;
 	/* ===Methods=== */
