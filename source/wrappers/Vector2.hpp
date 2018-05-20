@@ -7,15 +7,15 @@ https://github.com/mvxxx
 #pragma once
 
 template <class T>
-class Point
+class Vector2
 {
 public:
   T x;
   T y;
 
-  Point(const T& _x, const T& _y)
+  Vector2(const T& _x, const T& _y)
     :x(_x), y(_y) {}
 
-  Point()
+  Vector2()
   {}
 };

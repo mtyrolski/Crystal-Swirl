@@ -7,7 +7,7 @@ https://github.com/mvxxx
 
 #include <map>
 #include <string>
-#include <wrappers/Point.hpp>
+#include <wrappers/Vector2.hpp>
 
 namespace mv
 {
@@ -42,7 +42,7 @@ namespace mv
 		{
 			constexpr auto EMPTY = "EMPTY";
 			constexpr auto UNNAMED = "unnamed";
-			const Point<int> WINDOW_DIMENSIONS = { 800,600 };
+			const Vector2<int> WINDOW_DIMENSIONS = { 800,600 };
 		}
 
     namespace texture

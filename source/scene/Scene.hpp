@@ -10,7 +10,7 @@ https://github.com/mvxxx
 #include <SDL.h>
 
 #include "logger/Logger.hpp"
-#include "wrappers/Point.hpp"
+#include "wrappers/Vector2.hpp"
 #include "Config.hpp"
 #include "ecs/entity/Entity.hpp"
 #include "ecs/component/ProperBody.hpp"
