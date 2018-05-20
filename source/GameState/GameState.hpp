@@ -8,6 +8,7 @@ https://github.com/mvxxx
 #include <memory>
 #include <vector>
 
+#include "Math.hpp"
 #include "cache/Cache.hpp"
 #include "scene/Scene.hpp"
 

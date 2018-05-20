@@ -23,9 +23,10 @@ void GameState::onStart()
     objects[i] = std::make_shared<mv::Entity>();
     objects[i]->addComponent<ProperBody>();
     objects[i]->getComponent<ProperBody>()->setSize({ 100,100 });
+    mv::constants::texture::TEXTURE_ID t = mv::constants::texture::TEXTURE_ID(Math::random(3, 5));
     if ( i < 9 )
     {
-      objects[i]->getComponent<ProperBody>()->setType(textureCache, mv::constants::texture::TEXTURE_ID::CRYSTAL_RED, scene->getRenderer());
+      objects[i]->getComponent<ProperBody>()->setType(textureCache, t, scene->getRenderer());
       objects[i]->getComponent<ProperBody>()->setPosition({ 0.167f*mv::constants::defaults::WINDOW_DIMENSIONS.x*(2 * (i % 3) + 1),0.167f*mv::constants::defaults::WINDOW_DIMENSIONS.y*(2 * (i / 3) + 1) });
       this->entities.push_back(objects[i]);
     }   
