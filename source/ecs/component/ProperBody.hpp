@@ -24,18 +24,18 @@ private:
   std::shared_ptr<SDL_Texture> texture;
   /* ===Methods=== */
 public:
-  void setType(/*const std::shared_ptr<mv::Cache<SDL_Texture>>& cache, */type_id id, const std::shared_ptr<SDL_Renderer>& renderer);
+  void setType(const std::shared_ptr<mv::Cache<SDL_Texture>>& cache, type_id id, const std::shared_ptr<SDL_Renderer>& renderer);
   const std::shared_ptr<SDL_Texture>& getTexture();
   type_id getType();
 protected:
 private:
-  void loadTexture(/*const std::shared_ptr<mv::Cache<SDL_Texture>>& cache,*/ const std::shared_ptr<SDL_Renderer>& renderer);
+  void loadTexture(const std::shared_ptr<mv::Cache<SDL_Texture>>& cache, const std::shared_ptr<SDL_Renderer>& renderer);
 };
 
-inline void ProperBody::setType(/*const std::shared_ptr<mv::Cache<SDL_Texture>>& cache,*/ type_id id, const std::shared_ptr<SDL_Renderer>& renderer)
+inline void ProperBody::setType(const std::shared_ptr<mv::Cache<SDL_Texture>>& cache, type_id id, const std::shared_ptr<SDL_Renderer>& renderer)
 {
   type = id;
-  loadTexture(/*cache,*/renderer);
+  loadTexture(cache,renderer);
 }
 
 inline const std::shared_ptr<SDL_Texture>& ProperBody::getTexture()
@@ -48,9 +48,9 @@ inline mv::constants::texture::TEXTURE_ID ProperBody::getType()
   return type;
 }
 
-inline void ProperBody::loadTexture(/*const std::shared_ptr<mv::Cache<SDL_Texture>>& cache,*/ const std::shared_ptr<SDL_Renderer>& renderer)
+inline void ProperBody::loadTexture(const std::shared_ptr<mv::Cache<SDL_Texture>>& cache, const std::shared_ptr<SDL_Renderer>& renderer)
 {
-  std::string path = "source/data/graphics/plus.png";
+  std::string path = mv::constants::texture::texturePath.at(type);
   auto surface = IMG_Load(path.c_str());
   texture = std::shared_ptr<SDL_Texture>(SDL_CreateTextureFromSurface(&*renderer, surface));
   SDL_FreeSurface(surface);

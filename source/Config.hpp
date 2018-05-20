@@ -61,7 +61,7 @@ namespace mv
       /*id/path*/
       const std::map<TEXTURE_ID, std::string> texturePath
       {
-        {TEXTURE_ID::BUTTON_PLUS,"data/graphics/plus.png"}
+        {TEXTURE_ID::BUTTON_PLUS,"source/data/graphics/plus.png"}
       };
     }
 	}

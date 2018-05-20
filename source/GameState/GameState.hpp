@@ -8,6 +8,7 @@ https://github.com/mvxxx
 #include <memory>
 #include <vector>
 
+#include "cache/Cache.hpp"
 #include "scene/Scene.hpp"
 
 class GameState
@@ -17,7 +18,7 @@ public:
 protected:
 private:
   std::shared_ptr<Scene> scene;
-
+  std::shared_ptr<mv::Cache<SDL_Texture>> textureCache;
   std::vector<std::shared_ptr<mv::Entity>> entities;
   /* ===Methods=== */
 public:
