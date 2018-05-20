@@ -56,7 +56,8 @@ namespace mv
         CRYSTAL_GREEN,
         CRYSTAL_BLUE,
         PRIZE,
-        CREDITS
+        CREDITS,
+        PLAY
       };
       /*id/path*/
       const std::map<TEXTURE_ID, std::string> texturePath
@@ -65,7 +66,11 @@ namespace mv
         { TEXTURE_ID::BUTTON_MINUS,"source/data/graphics/minus.png" },
         { TEXTURE_ID::CRYSTAL_RED,"source/data/graphics/crystal_red.png" },
         { TEXTURE_ID::CRYSTAL_GREEN,"source/data/graphics/crystal_green.png" },
-        { TEXTURE_ID::CRYSTAL_BLUE,"source/data/graphics/crystal_blue.png" }
+        { TEXTURE_ID::CRYSTAL_BLUE,"source/data/graphics/crystal_blue.png" },
+        { TEXTURE_ID::RATE,"source/data/graphics/rate.png" },
+        { TEXTURE_ID::PRIZE,"source/data/graphics/prize.png" },
+        { TEXTURE_ID::CREDITS,"source/data/graphics/credits.png" },
+        { TEXTURE_ID::PLAY,"source/data/graphics/play.png" }
       };
     }
   }
