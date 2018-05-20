@@ -50,18 +50,19 @@ void Scene::pollEvents()
 
 void Scene::clear(const std::vector<std::shared_ptr<mv::Entity>>& entities)
 {
-  SDL_Rect rect = { 200,200,50,50 };
-  SDL_SetRenderDrawColor(&*renderer, 0, 0, 200, 255);
+  SDL_SetRenderDrawColor(&*renderer, 0, 100, 100, 255);
   SDL_RenderClear(&*renderer);
 
   for ( auto&var : entities )
   {
     if ( var->hasComponent<ProperBody>() )
-      SDL_RenderCopy(&*renderer, &*var->getComponent<ProperBody>()->getTexture(), nullptr,&rect);
+    {
+      auto PB = var->getComponent<ProperBody>();
+      SDL_RenderCopy(&*renderer, &*PB->getTexture(), nullptr, &PB->getRect());
+    }
+    
   }
-
   SDL_RenderPresent(&*renderer);
- 
 }
 
 Scene::Scene()

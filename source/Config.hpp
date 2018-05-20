@@ -11,39 +11,39 @@ https://github.com/mvxxx
 
 namespace mv
 {
-	namespace constants
-	{
-		namespace error
-		{
-			namespace scene
-			{
+  namespace constants
+  {
+    namespace error
+    {
+      namespace scene
+      {
         constexpr auto FAILED_IMG = "Failed to init SDL_Image";
       }
 
-			namespace fileManager
-			{
-				constexpr auto PATH_IS_NOT_CORRET = "Given path is not correct";
-			}
+      namespace fileManager
+      {
+        constexpr auto PATH_IS_NOT_CORRET = "Given path is not correct";
+      }
 
-			namespace singleton
-			{
-				constexpr auto SINGLETON_NOT_INITED = "Singleon must be inited!";
-				constexpr auto SINGLETON_INITED = "Singleon has been inited before";
-			}
+      namespace singleton
+      {
+        constexpr auto SINGLETON_NOT_INITED = "Singleon must be inited!";
+        constexpr auto SINGLETON_INITED = "Singleon has been inited before";
+      }
 
-			namespace soundObject
-			{
-				constexpr auto ALREADY_EXIST = "Sound with given name already exists";
-				constexpr auto DOES_NOT_EXIST_IN_SYSTEM = "Sound with given doesn't exist in system";
-			}
-		}
+      namespace soundObject
+      {
+        constexpr auto ALREADY_EXIST = "Sound with given name already exists";
+        constexpr auto DOES_NOT_EXIST_IN_SYSTEM = "Sound with given doesn't exist in system";
+      }
+    }
 
-		namespace defaults
-		{
-			constexpr auto EMPTY = "EMPTY";
-			constexpr auto UNNAMED = "unnamed";
-			const Vector2<int> WINDOW_DIMENSIONS = { 800,600 };
-		}
+    namespace defaults
+    {
+      constexpr auto EMPTY = "EMPTY";
+      constexpr auto UNNAMED = "unnamed";
+      const Vector2<int> WINDOW_DIMENSIONS = { 800,600 };
+    }
 
     namespace texture
     {
@@ -61,8 +61,12 @@ namespace mv
       /*id/path*/
       const std::map<TEXTURE_ID, std::string> texturePath
       {
-        {TEXTURE_ID::BUTTON_PLUS,"source/data/graphics/plus.png"}
+        { TEXTURE_ID::BUTTON_PLUS,"source/data/graphics/plus.png" },
+        { TEXTURE_ID::BUTTON_MINUS,"source/data/graphics/minus.png" },
+        { TEXTURE_ID::CRYSTAL_RED,"source/data/graphics/crystal_red.png" },
+        { TEXTURE_ID::CRYSTAL_GREEN,"source/data/graphics/crystal_green.png" },
+        { TEXTURE_ID::CRYSTAL_BLUE,"source/data/graphics/crystal_blue.png" }
       };
     }
-	}
+  }
 }

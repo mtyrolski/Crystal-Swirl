@@ -27,14 +27,16 @@ public:
   void setType(const std::shared_ptr<mv::Cache<SDL_Texture>>& cache, type_id id, const std::shared_ptr<SDL_Renderer>& renderer);
   const std::shared_ptr<SDL_Texture>& getTexture();
   type_id getType();
-protected:
-private:
-  void loadTexture(const std::shared_ptr<mv::Cache<SDL_Texture>>& cache, const std::shared_ptr<SDL_Renderer>& renderer);
   void setPosition(const Vector2<float>& position);
   void setSize(const Vector2<float>& size);
   void move(const Vector2<float>& vector);
-
   const Vector2<float>& getPosition();
+  const SDL_Rect& getRect();
+
+protected:
+private:
+  void loadTexture(const std::shared_ptr<mv::Cache<SDL_Texture>>& cache, const std::shared_ptr<SDL_Renderer>& renderer);
+
 
 };
 
@@ -83,4 +85,9 @@ inline void ProperBody::move(const Vector2<float>& vector)
 inline const Vector2<float>& ProperBody::getPosition()
 {
   return{ rect.x + rect.w / 2.f, rect.y + rect.h / 2.f };
+}
+
+inline const SDL_Rect & ProperBody::getRect()
+{
+  return rect;
 }
