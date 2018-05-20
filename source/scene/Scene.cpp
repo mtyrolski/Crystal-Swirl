@@ -9,6 +9,7 @@ Scene::~Scene()
 {
   SDL_DestroyRenderer(&*renderer);
   SDL_DestroyWindow(&*window);
+  IMG_Quit();
   SDL_Quit();
 }
 
@@ -47,16 +48,29 @@ void Scene::pollEvents()
 
 }
 
-void Scene::clear()
+void Scene::clear(const std::vector<std::shared_ptr<mv::Entity>>& entities)
 {
+  SDL_Rect rect = { 200,200,50,50 };
   SDL_SetRenderDrawColor(&*renderer, 0, 0, 200, 255);
   SDL_RenderClear(&*renderer);
+
+  for ( auto&var : entities )
+  {
+    if ( var->hasComponent<ProperBody>() )
+      SDL_RenderCopy(&*renderer, &*var->getComponent<ProperBody>()->getTexture(), nullptr,&rect);
+  }
+
   SDL_RenderPresent(&*renderer);
+ 
 }
 
 Scene::Scene()
   :opened(true)
 {
+  if ( IMG_Init(IMG_INIT_PNG) != IMG_INIT_PNG )
+  {
+    mv::Logger::Log(mv::constants::error::scene::FAILED_IMG, mv::Logger::STREAM::BOTH, mv::Logger::TYPE::ERROR);
+  }
   window = std::shared_ptr<SDL_Window>(SDL_CreateWindow("Crystal Swirl", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mv::constants::defaults::WINDOW_DIMENSIONS.x, mv::constants::defaults::WINDOW_DIMENSIONS.y, 0));
   renderer = std::shared_ptr<SDL_Renderer>(SDL_CreateRenderer(&*window, -1, SDL_RENDERER_ACCELERATED));
 }

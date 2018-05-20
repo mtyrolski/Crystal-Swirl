@@ -17,8 +17,8 @@ namespace mv
 		{
 			namespace scene
 			{
-				constexpr auto T_DOES_NOT_INHERT_FROM_DRAWABLE = "T doesn't inhert from sf::Drawable. It cannont be drawn by this method";
-			}
+        constexpr auto FAILED_IMG = "Failed to init SDL_Image";
+      }
 
 			namespace fileManager
 			{

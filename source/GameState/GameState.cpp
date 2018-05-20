@@ -14,6 +14,10 @@ GameState::GameState(std::shared_ptr<Scene> scenePtr)
 void GameState::onStart()
 {
   /*ADD ENTITIES*/
+  auto entity = std::make_shared<mv::Entity>();
+  entity->addComponent<ProperBody>();
+  entity->getComponent<ProperBody>()->setType(mv::constants::texture::TEXTURE_ID::BUTTON_PLUS,scene->getRenderer());
+  this->entities.emplace_back(entity);
 }
 
 void GameState::onStop()
@@ -24,5 +28,5 @@ void GameState::onStop()
 void GameState::run()
 {
   scene->pollEvents();
-  scene->clear();
+  scene->clear(entities);
 }

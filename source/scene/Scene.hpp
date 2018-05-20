@@ -6,10 +6,15 @@ https://github.com/mvxxx
 #pragma once
 
 #include <memory>
+#include <SDL_image.h>
 #include <SDL.h>
 
+#include "logger/Logger.hpp"
 #include "wrappers/Point.hpp"
 #include "Config.hpp"
+#include "ecs/entity/Entity.hpp"
+#include "ecs/component/ProperBody.hpp"
+
 
 class Scene
 {
@@ -32,7 +37,7 @@ public:
   bool isOpen();
 
   void pollEvents();
-  void clear();
+  void clear(const std::vector<std::shared_ptr<mv::Entity>>& entities);
 protected:
 private:
 };
