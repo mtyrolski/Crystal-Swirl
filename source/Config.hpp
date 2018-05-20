@@ -5,6 +5,8 @@ https://github.com/mvxxx
 
 #pragma once
 
+#include <map>
+#include <string>
 #include <wrappers/Point.hpp>
 
 namespace mv
@@ -42,5 +44,25 @@ namespace mv
 			constexpr auto UNNAMED = "unnamed";
 			const Point<int> WINDOW_DIMENSIONS = { 800,600 };
 		}
+
+    namespace texture
+    {
+      enum class TEXTURE_ID
+      {
+        BUTTON_PLUS,
+        BUTTON_MINUS,
+        RATE,
+        CRYSTAL_RED,
+        CRYSTAL_GREEN,
+        CRYSTAL_BLUE,
+        PRIZE,
+        CREDITS
+      };
+      /*id/path*/
+      const std::map<TEXTURE_ID, std::string> texturePath
+      {
+        {TEXTURE_ID::BUTTON_PLUS,"data/graphics/plus.png"}
+      };
+    }
 	}
 }
