@@ -67,6 +67,8 @@ namespace mv
     namespace font
     {
       constexpr auto FONT_PATH = "source/data/font/ARLRDBD.ttf";
+      constexpr auto FONT_SIZE = 10;
+      const SDL_Color FONT_COLOR = { 0,0,0,255 };
     }
 
     namespace textTypes
