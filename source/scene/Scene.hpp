@@ -6,8 +6,9 @@ https://github.com/mvxxx
 #pragma once
 
 #include <memory>
-#include <SDL_image.h>
 #include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
 
 #include "logger/Logger.hpp"
 #include "wrappers/Vector2.hpp"

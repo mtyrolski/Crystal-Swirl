@@ -30,4 +30,5 @@ public:
   void run();
 protected:
 private:
+  void initUI();
 };

@@ -18,17 +18,7 @@ namespace mv
       namespace scene
       {
         constexpr auto FAILED_IMG = "Failed to init SDL_Image";
-      }
-
-      namespace fileManager
-      {
-        constexpr auto PATH_IS_NOT_CORRET = "Given path is not correct";
-      }
-
-      namespace singleton
-      {
-        constexpr auto SINGLETON_NOT_INITED = "Singleon must be inited!";
-        constexpr auto SINGLETON_INITED = "Singleon has been inited before";
+        constexpr auto FAILED_TTF = "Failed to init SDL_TTF";
       }
 
       namespace soundObject
@@ -71,6 +61,21 @@ namespace mv
         { TEXTURE_ID::PRIZE,"source/data/graphics/prize.png" },
         { TEXTURE_ID::CREDITS,"source/data/graphics/credits.png" },
         { TEXTURE_ID::PLAY,"source/data/graphics/play.png" }
+      };
+    }
+
+    namespace font
+    {
+      constexpr auto FONT_PATH = "source/data/font/ARLRDBD.ttf";
+    }
+
+    namespace textTypes
+    {
+      enum class TYPE
+      {
+        RATE,
+        PRIZE,
+        CREDITS
       };
     }
   }

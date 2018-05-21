@@ -11,6 +11,8 @@ https://github.com/mvxxx
 #include <SDL.h>
 #include <SDL_ttf.h>
 
+#include "wrappers/Vector2.hpp"
+
 
 class Text
 {
@@ -23,8 +25,10 @@ private:
 	/* ===Methods=== */
 public:
   Text(const std::string& fontPath, int fontSize, const std::string& message, const SDL_Color& color, const std::shared_ptr<SDL_Renderer>& renderer);
-  void display() const;
+  void display(const std::shared_ptr<SDL_Renderer>& renderer);
   std::shared_ptr<SDL_Texture> loadFont(const std::string& fontPath, int fontSize, const std::string& message, const SDL_Color& color, const std::shared_ptr<SDL_Renderer>& renderer);
+  void setPosition(const Vector2<float>& position);
+
 protected:
 private:
 };
@@ -36,6 +40,11 @@ Text::Text(const std::string& fontPath, int fontSize, const std::string& message
     SDL_QueryTexture(&*textTexture, nullptr, nullptr, &textRect.w, &textRect.h);
 }
 
+inline void Text::display(const std::shared_ptr<SDL_Renderer>& renderer)
+{
+  SDL_RenderCopy(&*renderer, &*textTexture, nullptr, &textRect);
+}
+
 inline std::shared_ptr<SDL_Texture> Text::loadFont(const std::string & fontPath, int fontSize, const std::string & message, const SDL_Color & color, const std::shared_ptr<SDL_Renderer>& renderer)
 {
   TTF_Font* font = TTF_OpenFont(fontPath.c_str(), fontSize);
@@ -43,4 +52,10 @@ inline std::shared_ptr<SDL_Texture> Text::loadFont(const std::string & fontPath,
   auto textTexture = std::make_shared<SDL_Texture>(SDL_CreateTextureFromSurface(&*renderer, textSurface));
   SDL_FreeSurface(textSurface);
   return textTexture;
+}
+
+inline void Text::setPosition(const Vector2<float>& position)
+{
+  textRect.x = position.x - textRect.w / 2.f;
+  textRect.y = position.y - textRect.h / 2.f;
 }

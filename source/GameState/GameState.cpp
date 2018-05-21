@@ -12,9 +12,24 @@ GameState::GameState(std::shared_ptr<Scene> scenePtr)
   this->onStart();
 }
 
-void GameState::onStart()/*TOXIC AREA - MUST BE REFACTORED*/
+void GameState::onStart()
 {
-   /*const in future*/
+  initUI(); 
+}
+void GameState::onStop()
+{
+  /*soon*/
+}
+
+void GameState::run()
+{
+  scene->pollEvents();
+  scene->clear(entities);
+}
+
+void GameState::initUI() /*TOXIC AREA - MUST BE REFACTORED*/
+{
+  /*const in future*/
   /*
   0-8 - Crystals
   9 - PLUS
@@ -32,7 +47,7 @@ void GameState::onStart()/*TOXIC AREA - MUST BE REFACTORED*/
   {
     objects[i] = std::make_shared<mv::Entity>();
     objects[i]->addComponent<ProperBody>();
-    if(i<crystalAmmount +2 /* it will be refactored soon */) objects[i]->getComponent<ProperBody>()->setSize({ 100,100 });
+    if ( i<crystalAmmount + 2 /* it will be refactored soon */ ) objects[i]->getComponent<ProperBody>()->setSize({ 100,100 });
   }
   using namespace mv::constants::defaults;
   objects[0]->getComponent<ProperBody>()->setPosition({ 0.25f*WINDOW_DIMENSIONS.x,0.133f*WINDOW_DIMENSIONS.y });
@@ -52,10 +67,10 @@ void GameState::onStart()/*TOXIC AREA - MUST BE REFACTORED*/
   objects[10]->addComponent<Clickable>();
   objects[10]->getComponent<ProperBody>()->setType(textureCache, mv::constants::texture::TEXTURE_ID::BUTTON_MINUS, scene->getRenderer());
   objects[10]->getComponent<ProperBody>()->setPosition({ 0.05f*WINDOW_DIMENSIONS.x,0.833f*WINDOW_DIMENSIONS.y });
- 
+
   objects[11]->getComponent<ProperBody>()->setType(textureCache, mv::constants::texture::TEXTURE_ID::RATE, scene->getRenderer());
   objects[11]->getComponent<ProperBody>()->setSize({ 170,100 });
-  objects[11]->getComponent<ProperBody>()->setPosition({0.1875f*WINDOW_DIMENSIONS.x,0.833f*WINDOW_DIMENSIONS.y });
+  objects[11]->getComponent<ProperBody>()->setPosition({ 0.1875f*WINDOW_DIMENSIONS.x,0.833f*WINDOW_DIMENSIONS.y });
 
   objects[12]->addComponent<Clickable>();
   objects[12]->getComponent<ProperBody>()->setType(textureCache, mv::constants::texture::TEXTURE_ID::PLAY, scene->getRenderer());
@@ -64,25 +79,15 @@ void GameState::onStart()/*TOXIC AREA - MUST BE REFACTORED*/
 
   objects[13]->getComponent<ProperBody>()->setType(textureCache, mv::constants::texture::TEXTURE_ID::PRIZE, scene->getRenderer());
   objects[13]->getComponent<ProperBody>()->setSize({ 250,60 });
-  objects[13]->getComponent<ProperBody>()->setPosition({0.8375f*WINDOW_DIMENSIONS.x,0.783f*WINDOW_DIMENSIONS.y});
+  objects[13]->getComponent<ProperBody>()->setPosition({ 0.8375f*WINDOW_DIMENSIONS.x,0.783f*WINDOW_DIMENSIONS.y });
 
   objects[14]->getComponent<ProperBody>()->setType(textureCache, mv::constants::texture::TEXTURE_ID::CREDITS, scene->getRenderer());
   objects[14]->getComponent<ProperBody>()->setSize({ 250,60 });
-  objects[14]->getComponent<ProperBody>()->setPosition({0.8375f*WINDOW_DIMENSIONS.x,0.866f*WINDOW_DIMENSIONS.y});
+  objects[14]->getComponent<ProperBody>()->setPosition({ 0.8375f*WINDOW_DIMENSIONS.x,0.866f*WINDOW_DIMENSIONS.y });
 
   for ( int i = 0; i < entityAmmount; i++ )
   {
-    if(i<9) objects[i]->getComponent<ProperBody>()->setType(textureCache, mv::constants::texture::TEXTURE_ID(Math::random(3, 5)), scene->getRenderer());
+    if ( i<9 ) objects[i]->getComponent<ProperBody>()->setType(textureCache, mv::constants::texture::TEXTURE_ID(Math::random(3, 5)), scene->getRenderer());
     entities.push_back(objects[i]);
   }
-}
-void GameState::onStop()
-{
-  /*soon*/
-}
-
-void GameState::run()
-{
-  scene->pollEvents();
-  scene->clear(entities);
 }
