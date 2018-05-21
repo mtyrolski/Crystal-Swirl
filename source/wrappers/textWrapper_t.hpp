@@ -11,9 +11,10 @@ class textWrapper_t
 {
 public:
 
-  textWrapper_t(const std::string& _text, const std::shared_ptr<mv::Entity> ent)
+  textWrapper_t(const std::string& _text="", const std::shared_ptr<mv::Entity> ent=nullptr)
     :entity(ent),text(_text)
   {}
+
 
   std::shared_ptr<mv::Entity> entity;
   std::string text;

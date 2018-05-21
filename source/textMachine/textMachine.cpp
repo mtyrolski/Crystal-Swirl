@@ -15,7 +15,7 @@ void TextMachine::setText(mv::constants::textTypes::TYPE type, const std::string
    data[type].text = text;
 }
 
-unsigned int TextMachine::getValue(mv::constants::textTypes::TYPE type)
+int TextMachine::getValue(mv::constants::textTypes::TYPE type)
 {
   return std::atoi(data[type].text.c_str());
 }
