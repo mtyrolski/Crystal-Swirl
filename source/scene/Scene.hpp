@@ -46,6 +46,11 @@ public:
 
   void pollEvents();
   void clear(const std::vector<std::shared_ptr<mv::Entity>>& entities);
+
+  bool mouseState();
+  void setMouseState(bool flag);
+
+  const Vector2<float>& getMousePosition();
 protected:
 private:
 };
