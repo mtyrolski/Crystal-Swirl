@@ -16,4 +16,25 @@ public:
   T first;
   T second;
   T third;
+
+
+  typedef T* iterator;
+  typedef const T* const_iterator;
+
+  iterator begin() 
+  {
+    return &first;
+  }
+  const_iterator begin() const
+  {
+    return &first;
+  }
+  iterator end()
+  {
+    return &third+1;
+  }
+  const_iterator end() const 
+  {
+    return &third + 1;
+  }
 };
