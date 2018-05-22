@@ -2,6 +2,7 @@
 mvxxx 2018
 https://github.com/mvxxx
 */
+#pragma once
 #include <random>
 class Math
 {

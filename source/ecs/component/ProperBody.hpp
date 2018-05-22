@@ -8,6 +8,7 @@ https://github.com/mvxxx
 #include <SDL.h>
 #include <SDL_image.h>
 
+#include "GraphicManager/GraphicManager.hpp"
 #include "cache/Cache.hpp"
 #include "wrappers/Vector2.hpp"
 #include "Config.hpp"
@@ -24,7 +25,7 @@ private:
   std::shared_ptr<SDL_Texture> texture;
   /* ===Methods=== */
 public:
-  void setType(const std::shared_ptr<mv::Cache<SDL_Texture>>& cache, type_id id, const std::shared_ptr<SDL_Renderer>& renderer);
+  void setType(const std::shared_ptr<GraphicManager>& graphicManager, type_id id, const std::shared_ptr<SDL_Renderer>& renderer);
   const std::shared_ptr<SDL_Texture>& getTexture();
   type_id getType();
   void setPosition(const Vector2<float>& position);
@@ -35,15 +36,15 @@ public:
 
 protected:
 private:
-  void loadTexture(const std::shared_ptr<mv::Cache<SDL_Texture>>& cache, const std::shared_ptr<SDL_Renderer>& renderer);
+  void loadTexture(const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<SDL_Renderer>& renderer);
 
 
 };
 
-inline void ProperBody::setType(const std::shared_ptr<mv::Cache<SDL_Texture>>& cache, type_id id, const std::shared_ptr<SDL_Renderer>& renderer)
+inline void ProperBody::setType(const std::shared_ptr<GraphicManager>& graphicManager, type_id id, const std::shared_ptr<SDL_Renderer>& renderer)
 {
   type = id;
-  loadTexture(cache, renderer);
+  loadTexture(graphicManager, renderer);
 }
 
 inline const std::shared_ptr<SDL_Texture>& ProperBody::getTexture()
@@ -56,12 +57,9 @@ inline mv::constants::texture::TEXTURE_ID ProperBody::getType()
   return type;
 }
 
-inline void ProperBody::loadTexture(const std::shared_ptr<mv::Cache<SDL_Texture>>& cache, const std::shared_ptr<SDL_Renderer>& renderer)
+inline void ProperBody::loadTexture(const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<SDL_Renderer>& renderer)
 {
-  std::string path = mv::constants::texture::texturePath.at(type);
-  auto surface = IMG_Load(path.c_str());
-  texture = std::shared_ptr<SDL_Texture>(SDL_CreateTextureFromSurface(&*renderer, surface));
-  SDL_FreeSurface(surface);
+  texture = std::shared_ptr<SDL_Texture>(&*graphicManager->get(type));
 }
 
 inline void ProperBody::setPosition(const Vector2<float>& position)

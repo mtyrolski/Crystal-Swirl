@@ -6,8 +6,8 @@ https://github.com/mvxxx
 
 #include "oneArmedBandit.hpp"
 
-OneArmedBandit::OneArmedBandit(float dTime, float sTime)
-  :delayTime(dTime), simulateTime(sTime)
+OneArmedBandit::OneArmedBandit(float dTime, float sTime, const std::shared_ptr<Scene>& _scene, const std::shared_ptr<GraphicManager>& _graphicManager)
+  :delayTime(dTime), simulateTime(sTime), scene(_scene),graphicManager(_graphicManager),processing(false)
 {
 }
 
@@ -18,6 +18,12 @@ bool OneArmedBandit::startSimulate()
     //logger inf
     return false;
   }
+
+  //crystalStructure.first.first->getComponent<ProperBody>()->setType(textureCache, mv::constants::texture::TEXTURE_ID(Math::random(3, 5)), scene->getRenderer());
+
+  for ( auto&line : crystalStructure )
+    for ( auto&var : line )
+      var->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID(Math::random(3, 5)), scene->getRenderer());
 
 }
 

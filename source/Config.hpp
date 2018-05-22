@@ -33,6 +33,8 @@ namespace mv
       constexpr auto EMPTY = "EMPTY";
       constexpr auto UNNAMED = "unnamed";
       const Vector2<int> WINDOW_DIMENSIONS = { 800,600 };
+      constexpr auto BANDIT_MACHINE_DELAY = 0.5f;
+      constexpr auto BANDIT_MACHINE_SIMULATION_TIME = 3.f;
     }
 
     namespace texture
