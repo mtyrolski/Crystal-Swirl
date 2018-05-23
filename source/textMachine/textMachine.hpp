@@ -30,7 +30,7 @@ public:
   TextMachine(uint16_t credits, uint16_t rate, const std::shared_ptr<SDL_Renderer>& renderer);
 
   const std::string& getText(mv::constants::textTypes::TYPE type);
-  void setText(mv::constants::textTypes::TYPE type, const std::string& text);
+  void setText(mv::constants::textTypes::TYPE type, const std::string& text, const std::shared_ptr <SDL_Renderer> & renderer);
   int getValue(mv::constants::textTypes::TYPE type);
 
   void display(const std::shared_ptr<SDL_Renderer>& renderer);

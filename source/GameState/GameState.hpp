@@ -27,7 +27,7 @@ private:
   std::shared_ptr<GraphicManager> graphicManager;
   std::vector<std::shared_ptr<mv::Entity>> entities;
   MouseManager mouseManager;
-  TextMachine textMachine;
+  std::shared_ptr<TextMachine> textMachine;
 
   std::shared_ptr<OneArmedBandit> banditMachine;
 

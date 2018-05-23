@@ -26,6 +26,12 @@ namespace mv
         constexpr auto ALREADY_EXIST = "Sound with given name already exists";
         constexpr auto DOES_NOT_EXIST_IN_SYSTEM = "Sound with given doesn't exist in system";
       }
+
+      namespace textMachine
+      {
+        constexpr auto NOT_ENOUGH_MONEY = "You have't got enough moneyt to do that.";
+        constexpr auto POSITIVE_RATE = "Rate must be positive value";
+      }
     }
 
     namespace defaults

@@ -6,11 +6,7 @@ https://github.com/mvxxx
 #include "GameState.hpp"
 
 GameState::GameState(const std::shared_ptr<Scene>& scenePtr)
-  :scene(scenePtr),
-  textMachine
-  (mv::constants::defaults::CREDITS,
-    mv::constants::defaults::RATE,
-    scenePtr->getRenderer())
+  :scene(scenePtr)
 {
   graphicManager = std::make_shared<GraphicManager>();
 
@@ -19,6 +15,10 @@ GameState::GameState(const std::shared_ptr<Scene>& scenePtr)
       mv::constants::defaults::BANDIT_MACHINE_SIMULATION_TIME,
       scenePtr,
       graphicManager);
+
+  textMachine = std::make_shared<TextMachine>(mv::constants::defaults::CREDITS,
+    mv::constants::defaults::RATE,
+    scenePtr->getRenderer());
 
   this->onStart();
 }
@@ -37,9 +37,9 @@ void GameState::onStop()
 void GameState::run()
 {
   scene->pollEvents();
-  mouseManager.manage(scene, banditMachine, entities);
+  mouseManager.manage(scene, banditMachine, entities,textMachine,scene->getRenderer());
   scene->clear(entities);
-  textMachine.display(scene->getRenderer());
+  textMachine->display(scene->getRenderer());
 }
 
 void GameState::initUI() /*TOXIC AREA - MUST BE REFACTORED*/

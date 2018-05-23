@@ -19,8 +19,6 @@ bool OneArmedBandit::startSimulate()
     return false;
   }
 
-  //crystalStructure.first.first->getComponent<ProperBody>()->setType(textureCache, mv::constants::texture::TEXTURE_ID(Math::random(3, 5)), scene->getRenderer());
-
   for ( auto&line : crystalStructure )
     for ( auto&var : line )
       var->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID(Math::random(3, 5)), scene->getRenderer());
@@ -64,5 +62,7 @@ int OneArmedBandit::multiplier()
     crystalStructure.third.second->getComponent<ProperBody>()->getType() == crystalStructure.third.third->getComponent<ProperBody>()->getType() )
     counter++;
 
-  return counter;
+  if ( counter > 0) return counter*(counter + 1);
+
+  return 0;
 }
