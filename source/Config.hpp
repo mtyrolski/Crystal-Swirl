@@ -35,6 +35,9 @@ namespace mv
       const Vector2<int> WINDOW_DIMENSIONS = { 800,600 };
       constexpr auto BANDIT_MACHINE_DELAY = 0.5f;
       constexpr auto BANDIT_MACHINE_SIMULATION_TIME = 3.f;
+      constexpr auto CREDITS = 1000;
+      constexpr auto RATE = 50;
+      constexpr auto DELTA_RATE = 50;
     }
 
     namespace texture
@@ -49,7 +52,8 @@ namespace mv
         CRYSTAL_BLUE,
         PRIZE,
         CREDITS,
-        PLAY
+        PLAY,
+        BACKGROUND
       };
       /*id/path*/
       const std::map<TEXTURE_ID, std::string> texturePath
@@ -62,15 +66,16 @@ namespace mv
         { TEXTURE_ID::RATE,"source/data/graphics/rate.png" },
         { TEXTURE_ID::PRIZE,"source/data/graphics/prize.png" },
         { TEXTURE_ID::CREDITS,"source/data/graphics/credits.png" },
-        { TEXTURE_ID::PLAY,"source/data/graphics/play.png" }
+        { TEXTURE_ID::PLAY,"source/data/graphics/play.png" },
+        { TEXTURE_ID::BACKGROUND, "source/data/graphics/background.jpg"}
       };
     }
 
     namespace font
     {
-      constexpr auto FONT_PATH = "source/data/font/ARLRDBD.ttf";
-      constexpr auto FONT_SIZE = 10;
-      const SDL_Color FONT_COLOR = { 0,0,0,255 };
+      constexpr auto FONT_PATH = "source/data/font/arial.ttf";
+      constexpr auto FONT_SIZE = 25;
+      const SDL_Color FONT_COLOR = { 255,255,255};
     }
 
     namespace textTypes

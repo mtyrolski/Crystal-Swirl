@@ -11,6 +11,8 @@ https://github.com/mvxxx
 #include <SDL_image.h>
 #include <SDL_render.h>
 #include <SDL.h>
+#include <SDL_ttf.h>
+
 #include "ecs/entity/Entity.hpp"
 #include "ecs/component/text/Text.hpp"
 #include "wrappers/textWrapper_t.hpp"

@@ -11,6 +11,7 @@ void GraphicManager::loadTextures(const std::shared_ptr<SDL_Renderer>& renderer)
   loadSingleTexture(renderer, mv::constants::texture::TEXTURE_ID::PLAY);
   loadSingleTexture(renderer, mv::constants::texture::TEXTURE_ID::PRIZE);
   loadSingleTexture(renderer, mv::constants::texture::TEXTURE_ID::RATE);
+  loadSingleTexture(renderer, mv::constants::texture::TEXTURE_ID::BACKGROUND);
 }
 
 SDL_Texture* GraphicManager::get(mv::constants::texture::TEXTURE_ID type)

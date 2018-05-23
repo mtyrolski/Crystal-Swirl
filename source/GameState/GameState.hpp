@@ -11,6 +11,7 @@ https://github.com/mvxxx
 #include "OneArmedBandit/oneArmedBandit.hpp"
 #include "mouseManager/MouseManager.hpp"
 #include "GraphicManager/GraphicManager.hpp"
+#include "textMachine/textMachine.hpp"
 #include "cache/Cache.hpp"
 #include "scene/Scene.hpp"
 #include "Math.hpp"
@@ -26,6 +27,7 @@ private:
   std::shared_ptr<GraphicManager> graphicManager;
   std::vector<std::shared_ptr<mv::Entity>> entities;
   MouseManager mouseManager;
+  TextMachine textMachine;
 
   std::shared_ptr<OneArmedBandit> banditMachine;
 

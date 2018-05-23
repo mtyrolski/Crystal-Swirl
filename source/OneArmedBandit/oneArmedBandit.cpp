@@ -44,9 +44,9 @@ bool OneArmedBandit::getStatusOfProcessing()
 
 void OneArmedBandit::initStructure(const std::vector<std::shared_ptr<mv::Entity>>& data)
 {
-  crystalStructure.first = { data[0],data[1],data[2] };
-  crystalStructure.second = { data[2],data[3],data[4] };
-  crystalStructure.third = { data[5],data[6],data[7] };
+  crystalStructure.first = { data[1],data[2],data[3] };
+  crystalStructure.second = { data[4],data[5],data[6] };
+  crystalStructure.third = { data[7],data[8],data[9] };
 }
 
 int OneArmedBandit::multiplier()

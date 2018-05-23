@@ -22,11 +22,11 @@ private:
   using type_id = mv::constants::texture::TEXTURE_ID;
   SDL_Rect rect;
   type_id type;
-  std::shared_ptr<SDL_Texture> texture;
+  SDL_Texture* texture;
   /* ===Methods=== */
 public:
   void setType(const std::shared_ptr<GraphicManager>& graphicManager, type_id id, const std::shared_ptr<SDL_Renderer>& renderer);
-  const std::shared_ptr<SDL_Texture>& getTexture();
+  SDL_Texture* getTexture();
   type_id getType();
   void setPosition(const Vector2<float>& position);
   void setSize(const Vector2<float>& size);
@@ -47,7 +47,7 @@ inline void ProperBody::setType(const std::shared_ptr<GraphicManager>& graphicMa
   loadTexture(graphicManager, renderer);
 }
 
-inline const std::shared_ptr<SDL_Texture>& ProperBody::getTexture()
+inline SDL_Texture* ProperBody::getTexture()
 {
   return texture;
 }
@@ -59,7 +59,7 @@ inline mv::constants::texture::TEXTURE_ID ProperBody::getType()
 
 inline void ProperBody::loadTexture(const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<SDL_Renderer>& renderer)
 {
-  texture = std::shared_ptr<SDL_Texture>(&*graphicManager->get(type));
+  texture = graphicManager->get(type);
 }
 
 inline void ProperBody::setPosition(const Vector2<float>& position)
@@ -77,7 +77,7 @@ inline void ProperBody::setSize(const Vector2<float>& size)
 inline void ProperBody::move(const Vector2<float>& vector)
 {
   auto pos = this->getPosition();
-  this->setPosition({pos.x + vector.x, pos.y + vector.y});
+  this->setPosition({ pos.x + vector.x, pos.y + vector.y });
 }
 
 inline const Vector2<float>& ProperBody::getPosition()

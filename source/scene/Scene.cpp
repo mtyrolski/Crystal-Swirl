@@ -68,7 +68,7 @@ void Scene::clear(const std::vector<std::shared_ptr<mv::Entity>>& entities)
     if ( var->hasComponent<ProperBody>() )
     {
       auto PB = var->getComponent<ProperBody>();
-      SDL_RenderCopy(&*renderer, &*PB->getTexture(), nullptr, &PB->getRect());    
+      SDL_RenderCopy(&*renderer, PB->getTexture(), nullptr, &PB->getRect());    
     }
   }
   SDL_RenderPresent(&*renderer);
