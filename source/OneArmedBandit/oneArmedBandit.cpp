@@ -15,7 +15,7 @@ bool OneArmedBandit::startSimulate()
 {
   if ( processing )
   {
-    //logger inf
+    mv::Logger::Log(mv::constants::error::banditMachine::PROCESSING, mv::Logger::STREAM::CONSOLE, mv::Logger::TYPE::INFO);
     return false;
   }
 

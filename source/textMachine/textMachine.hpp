@@ -30,7 +30,7 @@ private:
   std::map<mv::constants::textTypes::TYPE, textWrapper_t> data;
   /* ===Methods=== */
 public:
-  TextMachine(uint16_t credits, uint16_t rate, const std::shared_ptr<SDL_Renderer>& renderer);
+  TextMachine(uint16_t credits, uint16_t rate, SDL_Renderer* renderer);
 
   /*
    * Returns text | classic getter
@@ -40,7 +40,7 @@ public:
   /*
    *  Sets text | classic setter
    */
-  void setText(mv::constants::textTypes::TYPE type, const std::string& text, const std::shared_ptr <SDL_Renderer> & renderer);
+  void setText(mv::constants::textTypes::TYPE type, const std::string& text, SDL_Renderer* renderer);
  
   /*
    * Returns value from text with given type
@@ -50,11 +50,11 @@ public:
   /*
    * Display all texts
    */
-  void display(const std::shared_ptr<SDL_Renderer>& renderer);
+  void display(SDL_Renderer* renderer);
 private:
 
   /*
    * Initialise data
    */
-  void init(uint16_t credits, uint16_t rate, const std::shared_ptr<SDL_Renderer>& renderer);
+  void init(uint16_t credits, uint16_t rate, SDL_Renderer* renderer);
 };

@@ -1,6 +1,6 @@
 #include "GraphicManager.hpp"
 
-void GraphicManager::loadTextures(const std::shared_ptr<SDL_Renderer>& renderer)
+void GraphicManager::loadTextures(SDL_Renderer* renderer)
 {
   loadSingleTexture(renderer, mv::constants::texture::TEXTURE_ID::BUTTON_MINUS);
   loadSingleTexture(renderer, mv::constants::texture::TEXTURE_ID::BUTTON_PLUS);
@@ -19,7 +19,7 @@ SDL_Texture* GraphicManager::get(mv::constants::texture::TEXTURE_ID type)
   return texturePack[type];
 }
 
-void GraphicManager::loadSingleTexture(const std::shared_ptr<SDL_Renderer>& renderer, mv::constants::texture::TEXTURE_ID type)
+void GraphicManager::loadSingleTexture(SDL_Renderer* renderer, mv::constants::texture::TEXTURE_ID type)
 {
   std::string path = mv::constants::texture::texturePath.at(type);
   auto surface = IMG_Load(path.c_str());

@@ -37,7 +37,7 @@ public:
   /*
    * Sets type of object
    */
-  void setType(const std::shared_ptr<GraphicManager>& graphicManager, type_id id, const std::shared_ptr<SDL_Renderer>& renderer);
+  void setType(const std::shared_ptr<GraphicManager>& graphicManager, type_id id, SDL_Renderer* renderer);
 
   /*
    * Returns pointer to texture of proper body
@@ -79,10 +79,10 @@ private:
   /*
    * Loads texture to and assign it to properbody's texture
    */
-  void loadTexture(const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<SDL_Renderer>& renderer);
+  void loadTexture(const std::shared_ptr<GraphicManager>& graphicManager, SDL_Renderer* renderer);
 };
 
-inline void ProperBody::setType(const std::shared_ptr<GraphicManager>& graphicManager, type_id id, const std::shared_ptr<SDL_Renderer>& renderer)
+inline void ProperBody::setType(const std::shared_ptr<GraphicManager>& graphicManager, type_id id, SDL_Renderer* renderer)
 {
   type = id;
   loadTexture(graphicManager, renderer);
@@ -98,7 +98,7 @@ inline mv::constants::texture::TEXTURE_ID ProperBody::getType() const
   return type;
 }
 
-inline void ProperBody::loadTexture(const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<SDL_Renderer>& renderer)
+inline void ProperBody::loadTexture(const std::shared_ptr<GraphicManager>& graphicManager, SDL_Renderer* renderer)
 {
   texture = graphicManager->get(type);
 }

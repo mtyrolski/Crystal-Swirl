@@ -25,7 +25,7 @@ public:
     const std::shared_ptr<OneArmedBandit>& bandit,
     const std::vector<std::shared_ptr<mv::Entity>>& entities,
     const std::shared_ptr<TextMachine>& textMachine,
-    const std::shared_ptr <SDL_Renderer> & renderer);
+    SDL_Renderer* renderer);
 private:
 
   /*
@@ -33,19 +33,19 @@ private:
    *Returns false if it can not be.
    *Returns true if it is done.
    */
-  bool tryAdd(const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer) const;
+  bool tryAdd(const std::shared_ptr<TextMachine>& textMachine, SDL_Renderer* renderer) const;
   
   /*
    *This method try to run mechanism of game
    *Returns false if it can not be.
    *Returns true if it is done.
   */
-  bool tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer) const;
+  bool tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, const std::shared_ptr<TextMachine>& textMachine,  SDL_Renderer* renderer) const;
  
   /*
   *This method try to substract rate value
   *Returns false if it can not be.
   *Returns true if it is done.
   */
-  bool trySubtract(const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer) const;
+  bool trySubtract(const std::shared_ptr<TextMachine>& textMachine, SDL_Renderer* renderer) const;
 };

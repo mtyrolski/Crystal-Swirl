@@ -27,9 +27,14 @@ namespace mv
         constexpr auto DOES_NOT_EXIST_IN_SYSTEM = "Sound with given doesn't exist in system";
       }
 
+      namespace banditMachine
+      {
+        constexpr auto PROCESSING = "You can't start new simulate because bandit machine is processing now.";
+      }
+
       namespace textMachine
       {
-        constexpr auto NOT_ENOUGH_MONEY = "You have't got enough moneyt to do that.";
+        constexpr auto NOT_ENOUGH_MONEY = "You have't got enough money to do that.";
         constexpr auto POSITIVE_RATE = "Rate must be positive value";
       }
     }

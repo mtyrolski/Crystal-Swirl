@@ -5,7 +5,7 @@ https://github.com/mvxxx
 
 #include "ActionForwarder.hpp"
 
-void ActionForwarder::manage(const std::shared_ptr<Scene>& scene, const std::shared_ptr<OneArmedBandit>& bandit, const std::vector<std::shared_ptr<mv::Entity>>& entities, const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer)
+void ActionForwarder::manage(const std::shared_ptr<Scene>& scene, const std::shared_ptr<OneArmedBandit>& bandit, const std::vector<std::shared_ptr<mv::Entity>>& entities, const std::shared_ptr<TextMachine>& textMachine, SDL_Renderer* renderer)
 {
   if ( scene->mouseState() )
   {
@@ -39,7 +39,7 @@ void ActionForwarder::manage(const std::shared_ptr<Scene>& scene, const std::sha
   }
 }
 
-bool ActionForwarder::tryAdd(const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer) const
+bool ActionForwarder::tryAdd(const std::shared_ptr<TextMachine>& textMachine, SDL_Renderer* renderer) const
 {
   auto actualRate = textMachine->getValue(mv::constants::textTypes::TYPE::RATE);
 
@@ -53,7 +53,7 @@ bool ActionForwarder::tryAdd(const std::shared_ptr<TextMachine>& textMachine, co
   return true;
 }
 
-bool ActionForwarder::tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer) const
+bool ActionForwarder::tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, const std::shared_ptr<TextMachine>& textMachine, SDL_Renderer* renderer) const
 {
   auto actualRate = textMachine->getValue(mv::constants::textTypes::TYPE::RATE);
   auto actualMoney = textMachine->getValue(mv::constants::textTypes::TYPE::CREDITS);
@@ -80,7 +80,7 @@ bool ActionForwarder::tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, con
   return true;
 }
 
-bool ActionForwarder::trySubtract(const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer) const
+bool ActionForwarder::trySubtract(const std::shared_ptr<TextMachine>& textMachine, SDL_Renderer* renderer) const
 {
   auto actualRate = textMachine->getValue(mv::constants::textTypes::TYPE::RATE);
 

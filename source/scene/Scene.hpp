@@ -26,10 +26,10 @@ class Scene
 
 private:
   // pointer to window of SDL game
-  std::shared_ptr<SDL_Window> window;
+  SDL_Window* window;
 
   // pointer to renderer of SDL
-  std::shared_ptr<SDL_Renderer> renderer;
+  SDL_Renderer* renderer;
 
   //flag which informs if mouse has been clicked
   bool mouseClicked = false;
@@ -47,12 +47,12 @@ public:
   /*
    * Window getter
    */
-  std::shared_ptr<SDL_Window> getWindow() const;
+  SDL_Window* getWindow() const;
 
   /*
    * Renderer getter
    */
-  std::shared_ptr<SDL_Renderer> getRenderer() const;
+  SDL_Renderer* getRenderer() const;
 
   /*
    * returns state of window (open or close)

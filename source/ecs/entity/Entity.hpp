@@ -45,7 +45,7 @@ namespace mv
     bool addComponent();
 
     /*
-     * Returns false if component with given type already not exists
+     * Returns false if component with given type already not exist
      * Othewrise returns false
      */
     template<class T>

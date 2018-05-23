@@ -14,12 +14,12 @@ Scene::~Scene()
   SDL_Quit();
 }
 
-std::shared_ptr<SDL_Window> Scene::getWindow() const
+SDL_Window* Scene::getWindow() const
 {
   return window;
 }
 
-std::shared_ptr<SDL_Renderer> Scene::getRenderer() const
+SDL_Renderer* Scene::getRenderer() const
 {
   return renderer;
 }
@@ -51,6 +51,13 @@ void Scene::pollEvents()
         break;
       }
 
+    case SDL_KEYDOWN:
+      if ( event.key.keysym.scancode == SDL_SCANCODE_ESCAPE )
+      {
+        opened = false;
+        break;
+        }
+         
     default:
       break;
     }
@@ -96,6 +103,6 @@ Scene::Scene()
   if( TTF_Init()==-1 )
     mv::Logger::Log(mv::constants::error::scene::FAILED_TTF, mv::Logger::STREAM::BOTH, mv::Logger::TYPE::ERROR);
 
-  window = std::shared_ptr<SDL_Window>(SDL_CreateWindow("Crystal Swirl", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mv::constants::defaults::WINDOW_DIMENSIONS.x, mv::constants::defaults::WINDOW_DIMENSIONS.y, 0));
-  renderer = std::shared_ptr<SDL_Renderer>(SDL_CreateRenderer(&*window, -1, SDL_RENDERER_ACCELERATED));
+  window = SDL_CreateWindow("Crystal Swirl", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mv::constants::defaults::WINDOW_DIMENSIONS.x, mv::constants::defaults::WINDOW_DIMENSIONS.y, 0);
+  renderer = SDL_CreateRenderer(&*window, -1, SDL_RENDERER_ACCELERATED);
 }

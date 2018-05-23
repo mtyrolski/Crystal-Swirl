@@ -34,12 +34,12 @@ public:
   /*
    *Initialise texture and its physical properties
    */
-  void init(const std::string& fontPath, int fontSize, const std::string& message, const SDL_Color& color, const std::shared_ptr<SDL_Renderer>& renderer);
+  void init(const std::string& fontPath, int fontSize, const std::string& message, const SDL_Color& color, SDL_Renderer* renderer);
 
   /*
    * Displays text on the screen
    */
-  void display(const std::shared_ptr<SDL_Renderer>& renderer) const;
+  void display(SDL_Renderer* renderer) const;
 
   /*
    * Sets position of rect (which is equivalent with texture)
@@ -49,7 +49,7 @@ public:
   /*
    * Sets text and put it on texture
    */
-  void setText(const std::string& fontPath, int fontSize, const std::string& message, const SDL_Color& color, const std::shared_ptr<SDL_Renderer>& renderer);
+  void setText(const std::string& fontPath, int fontSize, const std::string& message, const SDL_Color& color, SDL_Renderer* renderer);
  
   /*
    * Sets size of rect (which is equivalent with size of texture)
@@ -60,7 +60,7 @@ private:
   /*
    * Creates texture and returns pointer to it.
    */
-  SDL_Texture* getTextTexture(const std::string& fontPath, int fontSize, const std::string& message, const SDL_Color& color, const std::shared_ptr<SDL_Renderer>& renderer) const;
+  SDL_Texture* getTextTexture(const std::string& fontPath, int fontSize, const std::string& message, const SDL_Color& color, SDL_Renderer* renderer) const;
 };
 
 

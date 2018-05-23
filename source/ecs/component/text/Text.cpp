@@ -5,18 +5,18 @@ https://github.com/mvxxx
 
 #include "Text.hpp"
 
-void Text::init(const std::string & fontPath, int fontSize, const std::string & message, const SDL_Color & color, const std::shared_ptr<SDL_Renderer>& renderer)
+void Text::init(const std::string & fontPath, int fontSize, const std::string & message, const SDL_Color & color, SDL_Renderer* renderer)
 {
   textTexture = getTextTexture(fontPath, fontSize, message, color, renderer);
   SDL_QueryTexture(&*textTexture, nullptr, nullptr, &textRect.w, &textRect.h);
 }
 
-void Text::display(const std::shared_ptr<SDL_Renderer>& renderer) const
+void Text::display(SDL_Renderer* renderer) const
 {
   SDL_RenderCopy(&*renderer, &*textTexture, nullptr, &textRect);
 }
 
-SDL_Texture* Text::getTextTexture(const std::string & fontPath, int fontSize, const std::string & message, const SDL_Color & color, const std::shared_ptr<SDL_Renderer>& renderer) const
+SDL_Texture* Text::getTextTexture(const std::string & fontPath, int fontSize, const std::string & message, const SDL_Color & color, SDL_Renderer* renderer) const
 {
   TTF_Font* font = TTF_OpenFont(fontPath.c_str(), fontSize);
   auto textSurface = TTF_RenderText_Solid(font, message.c_str(), color);
@@ -32,7 +32,7 @@ void Text::setPosition(const Vector2<float>& position)
   textRect.y = position.y - textRect.h / 2.f;
 }
 
-void Text::setText(const std::string & fontPath, int fontSize, const std::string & message, const SDL_Color & color, const std::shared_ptr<SDL_Renderer>& renderer)
+void Text::setText(const std::string & fontPath, int fontSize, const std::string & message, const SDL_Color & color, SDL_Renderer* renderer)
 {
   textTexture = getTextTexture(fontPath, fontSize, message, color, renderer);
 }

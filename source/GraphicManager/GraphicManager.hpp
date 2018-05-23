@@ -29,7 +29,7 @@ public:
   /*
    * Loads all textures
    */
-  void loadTextures(const std::shared_ptr<SDL_Renderer>& renderer);
+  void loadTextures(SDL_Renderer* renderer);
 
   /*
    * Finds and returns texture with given ID
@@ -40,5 +40,5 @@ private:
   /*
    * Loads one texture
    */
-  void loadSingleTexture(const std::shared_ptr<SDL_Renderer>& renderer, mv::constants::texture::TEXTURE_ID type);
+  void loadSingleTexture(SDL_Renderer* renderer, mv::constants::texture::TEXTURE_ID type);
 };

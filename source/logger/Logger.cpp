@@ -53,7 +53,7 @@ namespace mv
 
 	void Logger::fileMessage(const std::string& message, std::string &prefix, std::time_t& time)
 	{
-		std::ofstream file("data/log/log.txt",std::ios::app);
+		std::ofstream file("source/log.txt",std::ios::app);
 
 		file << std::ctime(&time);
 		file << prefix << ' ';
