@@ -14,17 +14,17 @@ Scene::~Scene()
   SDL_Quit();
 }
 
-std::shared_ptr<SDL_Window> Scene::getWindow()
+std::shared_ptr<SDL_Window> Scene::getWindow() const
 {
   return window;
 }
 
-std::shared_ptr<SDL_Renderer> Scene::getRenderer()
+std::shared_ptr<SDL_Renderer> Scene::getRenderer() const
 {
   return renderer;
 }
 
-bool Scene::isOpen()
+bool Scene::isOpen() const
 {
   return opened;
 }
@@ -71,7 +71,7 @@ void Scene::clear(const std::vector<std::shared_ptr<mv::Entity>>& entities)
   }
 }
 
-bool Scene::mouseState()
+bool Scene::mouseState() const
 {
   return mouseClicked;
 }
@@ -81,7 +81,7 @@ void Scene::setMouseState(bool flag)
   mouseClicked = flag;
 }
 
-const Vector2<float>& Scene::getMousePosition()
+const Vector2<float>& Scene::getMousePosition() const
 {
   return mousePosition;
 }

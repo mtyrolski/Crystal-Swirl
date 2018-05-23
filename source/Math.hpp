@@ -4,9 +4,17 @@ https://github.com/mvxxx
 */
 #pragma once
 #include <random>
+
+/*
+ * Class which is used to compute more complex things
+ */
 class Math
 {
 public:
+
+  /*
+   * Returns random value from "from" to "to"
+   */
   static int random(int from, int to)
   {
     std::random_device rd; 

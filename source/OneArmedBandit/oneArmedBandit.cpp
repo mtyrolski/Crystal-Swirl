@@ -35,7 +35,7 @@ void OneArmedBandit::setDelayTime(float time)
   delayTime = time;
 }
 
-bool OneArmedBandit::getStatusOfProcessing()
+bool OneArmedBandit::getStatusOfProcessing() const
 {
   return processing;
 }

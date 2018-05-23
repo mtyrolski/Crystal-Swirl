@@ -13,29 +13,72 @@ https://github.com/mvxxx
 #include "cache/Cache.hpp"
 #include "Config.hpp"
 
+/*
+ * Component which represents real body of object
+ */
 class ProperBody
 {
   /* ===Objects=== */
-public:
-protected:
 private:
   using type_id = mv::constants::texture::TEXTURE_ID;
+
+  // Rect which keep physical properties of texture  
   SDL_Rect rect;
+
+  //Kind of properbody
   type_id type;
+
+  //Pointer do SDL_Texture / Container of texture
   SDL_Texture* texture;
+
   /* ===Methods=== */
 public:
-  void setType(const std::shared_ptr<GraphicManager>& graphicManager, type_id id, const std::shared_ptr<SDL_Renderer>& renderer);
-  SDL_Texture* getTexture();
-  type_id getType();
-  void setPosition(const Vector2<float>& position);
-  void setSize(const Vector2<float>& size);
-  void move(const Vector2<float>& vector);
-  const Vector2<float>& getPosition();
-  const SDL_Rect& getRect();
 
-protected:
+  /*
+   * Sets type of object
+   */
+  void setType(const std::shared_ptr<GraphicManager>& graphicManager, type_id id, const std::shared_ptr<SDL_Renderer>& renderer);
+
+  /*
+   * Returns pointer to texture of proper body
+   */
+  SDL_Texture* getTexture() const;
+
+  /*
+   * Returns type of object
+   */
+  type_id getType() const;
+
+  /*
+   * Sets position of object
+   */
+  void setPosition(const Vector2<float>& position);
+
+  /*
+   * Sets size of object
+   */
+  void setSize(const Vector2<float>& size);
+
+  /*
+   * Moves rect
+   */
+  void move(const Vector2<float>& vector);
+
+  /*
+   * Return position of rect
+   */
+  const Vector2<float>& getPosition() const;
+
+  /*
+   * Returns rect which keep physical properties of texture
+   */
+  const SDL_Rect& getRect() const;
+
 private:
+
+  /*
+   * Loads texture to and assign it to properbody's texture
+   */
   void loadTexture(const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<SDL_Renderer>& renderer);
 };
 
@@ -45,12 +88,12 @@ inline void ProperBody::setType(const std::shared_ptr<GraphicManager>& graphicMa
   loadTexture(graphicManager, renderer);
 }
 
-inline SDL_Texture* ProperBody::getTexture()
+inline SDL_Texture* ProperBody::getTexture() const
 {
   return texture;
 }
 
-inline mv::constants::texture::TEXTURE_ID ProperBody::getType()
+inline mv::constants::texture::TEXTURE_ID ProperBody::getType() const
 {
   return type;
 }
@@ -78,12 +121,12 @@ inline void ProperBody::move(const Vector2<float>& vector)
   this->setPosition({ pos.x + vector.x, pos.y + vector.y });
 }
 
-inline const Vector2<float>& ProperBody::getPosition()
+inline const Vector2<float>& ProperBody::getPosition() const
 {
   return{ rect.x + rect.w / 2.f, rect.y + rect.h / 2.f };
 }
 
-inline const SDL_Rect & ProperBody::getRect()
+inline const SDL_Rect & ProperBody::getRect() const
 {
   return rect;
 }

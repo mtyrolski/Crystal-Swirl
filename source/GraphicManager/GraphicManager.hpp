@@ -12,18 +12,33 @@ https://github.com/mvxxx
 
 #include "Config.hpp"
 
+
+/*
+ * Class which represents container of textures
+ */
 class GraphicManager
 {
 	/* ===Objects=== */
-public:
-protected:
 private:
+
+  //map which support finding a texture by TEXTURE_ID
   std::map<mv::constants::texture::TEXTURE_ID, SDL_Texture*> texturePack;
 	/* ===Methods=== */
 public:
+
+  /*
+   * Loads all textures
+   */
   void loadTextures(const std::shared_ptr<SDL_Renderer>& renderer);
+
+  /*
+   * Finds and returns texture with given ID
+   */
   SDL_Texture* get(mv::constants::texture::TEXTURE_ID type);
-protected:
 private:
+
+  /*
+   * Loads one texture
+   */
   void loadSingleTexture(const std::shared_ptr<SDL_Renderer>& renderer, mv::constants::texture::TEXTURE_ID type);
 };

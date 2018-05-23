@@ -18,23 +18,43 @@ https://github.com/mvxxx
 #include "ecs/entity/Entity.hpp"
 #include "Config.hpp"
 
+/*
+ * Class which manages each text on the screen
+ */
 class TextMachine
 {
   /* ===Objects=== */
-public:
-protected:
 private:
+
+  //cointainer to keep text data
   std::map<mv::constants::textTypes::TYPE, textWrapper_t> data;
   /* ===Methods=== */
 public:
   TextMachine(uint16_t credits, uint16_t rate, const std::shared_ptr<SDL_Renderer>& renderer);
 
+  /*
+   * Returns text | classic getter
+   */
   const std::string& getText(mv::constants::textTypes::TYPE type);
+
+  /*
+   *  Sets text | classic setter
+   */
   void setText(mv::constants::textTypes::TYPE type, const std::string& text, const std::shared_ptr <SDL_Renderer> & renderer);
+ 
+  /*
+   * Returns value from text with given type
+   */
   int getValue(mv::constants::textTypes::TYPE type);
 
+  /*
+   * Display all texts
+   */
   void display(const std::shared_ptr<SDL_Renderer>& renderer);
-protected:
 private:
+
+  /*
+   * Initialise data
+   */
   void init(uint16_t credits, uint16_t rate, const std::shared_ptr<SDL_Renderer>& renderer);
 };

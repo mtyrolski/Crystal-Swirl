@@ -39,21 +39,21 @@ void ActionForwarder::manage(const std::shared_ptr<Scene>& scene, const std::sha
   }
 }
 
-bool ActionForwarder::tryAdd(const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer)
+bool ActionForwarder::tryAdd(const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer) const
 {
   auto actualRate = textMachine->getValue(mv::constants::textTypes::TYPE::RATE);
 
   if ( actualRate + mv::constants::defaults::DELTA_RATE > textMachine->getValue(mv::constants::textTypes::TYPE::CREDITS) )
   {
     mv::Logger::Log(mv::constants::error::textMachine::NOT_ENOUGH_MONEY, mv::Logger::STREAM::CONSOLE, mv::Logger::TYPE::INFO);
-    return false;;
+    return false;
   }
 
   textMachine->setText(mv::constants::textTypes::TYPE::RATE, std::to_string(actualRate + mv::constants::defaults::DELTA_RATE), renderer);
-  return true;;
+  return true;
 }
 
-bool ActionForwarder::tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer)
+bool ActionForwarder::tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer) const
 {
   auto actualRate = textMachine->getValue(mv::constants::textTypes::TYPE::RATE);
   auto actualMoney = textMachine->getValue(mv::constants::textTypes::TYPE::CREDITS);
@@ -80,7 +80,7 @@ bool ActionForwarder::tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, con
   return true;
 }
 
-bool ActionForwarder::trySubtract(const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer)
+bool ActionForwarder::trySubtract(const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer) const
 {
   auto actualRate = textMachine->getValue(mv::constants::textTypes::TYPE::RATE);
 

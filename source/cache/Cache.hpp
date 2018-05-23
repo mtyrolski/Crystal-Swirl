@@ -22,8 +22,6 @@ namespace mv
   class Cache
   {
     /* ===Objects=== */
-  public:
-  protected:
   private:
 
     /*
@@ -39,8 +37,6 @@ namespace mv
      *Otherwise returns old resource
      */
     std::shared_ptr<T> get(const std::string& path);
-  protected:
-  private:
   };
 
   template<typename T>

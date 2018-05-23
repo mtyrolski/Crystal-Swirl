@@ -14,6 +14,9 @@ https://github.com/mvxxx
 
 namespace mv
 {
+  /*
+   * Class for giving a message
+   */
 	class Logger
 	{
 		/* ===Objects=== */
@@ -32,20 +35,33 @@ namespace mv
 			WARNING = 2,
 			ERROR = 3
 		};
-	protected:
-	private:
 		/* ===Methods=== */
 	public:
+
+    /*
+     * Give a message
+     */
 		static void Log(const std::string&, const Logger::STREAM& = Logger::STREAM::CONSOLE, const Logger::TYPE& = Logger::TYPE::ERROR);
-	protected:
 	private:
 
+    /*
+     * Broadcast message to different streams
+     */
 		static void sendMessage(const std::string& message, Logger::STREAM stream, std::string &prefix);
 
+    /*
+    * Broadcast message to console
+    */
 		static void consoleMessage(const std::string&message, std::string &prefix, std::time_t& time);
 
+    /*
+     * Broadcast message to file
+     */
 		static void fileMessage(const std::string&, std::string &prefix, std::time_t& time);
 
+    /*
+     * Adds prefix to message
+     */
 		static void setPrefix(Logger::TYPE type, std::string &prefix);
 	};
 }
