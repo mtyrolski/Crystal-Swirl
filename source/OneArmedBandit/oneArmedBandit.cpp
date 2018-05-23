@@ -50,19 +50,35 @@ void OneArmedBandit::initStructure(const std::vector<std::shared_ptr<mv::Entity>
 int OneArmedBandit::multiplier()
 {
   auto counter = 0;
-  if ( crystalStructure.first.first->getComponent<ProperBody>()->getType() == crystalStructure.first.second->getComponent<ProperBody>()->getType() &&
-    crystalStructure.first.second->getComponent<ProperBody>()->getType() == crystalStructure.first.third->getComponent<ProperBody>()->getType() )
-    counter++;
 
-  if ( crystalStructure.second.first->getComponent<ProperBody>()->getType() == crystalStructure.second.second->getComponent<ProperBody>()->getType() &&
-    crystalStructure.second.second->getComponent<ProperBody>()->getType() == crystalStructure.second.third->getComponent<ProperBody>()->getType() )
-    counter++;
+  {//horizontal axis
+    if ( crystalStructure.first.first->getComponent<ProperBody>()->getType() == crystalStructure.first.second->getComponent<ProperBody>()->getType() &&
+      crystalStructure.first.second->getComponent<ProperBody>()->getType() == crystalStructure.first.third->getComponent<ProperBody>()->getType() )
+      counter++;
 
-  if ( crystalStructure.third.first->getComponent<ProperBody>()->getType() == crystalStructure.third.second->getComponent<ProperBody>()->getType() &&
-    crystalStructure.third.second->getComponent<ProperBody>()->getType() == crystalStructure.third.third->getComponent<ProperBody>()->getType() )
-    counter++;
+    if ( crystalStructure.second.first->getComponent<ProperBody>()->getType() == crystalStructure.second.second->getComponent<ProperBody>()->getType() &&
+      crystalStructure.second.second->getComponent<ProperBody>()->getType() == crystalStructure.second.third->getComponent<ProperBody>()->getType() )
+      counter++;
 
-  if ( counter > 0) return counter*(counter + 1);
+    if ( crystalStructure.third.first->getComponent<ProperBody>()->getType() == crystalStructure.third.second->getComponent<ProperBody>()->getType() &&
+      crystalStructure.third.second->getComponent<ProperBody>()->getType() == crystalStructure.third.third->getComponent<ProperBody>()->getType() )
+      counter++;
 
-  return 0;
+  }
+
+  {//vertical axis
+    if ( crystalStructure.first.first->getComponent<ProperBody>()->getType() == crystalStructure.second.first->getComponent<ProperBody>()->getType() &&
+      crystalStructure.second.first->getComponent<ProperBody>()->getType() == crystalStructure.third.first->getComponent<ProperBody>()->getType() )
+      counter++;
+
+    if ( crystalStructure.first.second->getComponent<ProperBody>()->getType() == crystalStructure.second.second->getComponent<ProperBody>()->getType() &&
+      crystalStructure.second.second->getComponent<ProperBody>()->getType() == crystalStructure.third.second->getComponent<ProperBody>()->getType() )
+      counter++;
+
+    if ( crystalStructure.first.third->getComponent<ProperBody>()->getType() == crystalStructure.second.third->getComponent<ProperBody>()->getType() &&
+      crystalStructure.second.third->getComponent<ProperBody>()->getType() == crystalStructure.third.third->getComponent<ProperBody>()->getType() )
+      counter++;
+  }
+
+  return counter;
 }

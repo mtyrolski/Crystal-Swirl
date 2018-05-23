@@ -9,7 +9,7 @@ https://github.com/mvxxx
 #include <vector>
 
 #include "OneArmedBandit/oneArmedBandit.hpp"
-#include "mouseManager/MouseManager.hpp"
+#include "ActionForwarder/ActionForwarder.hpp"
 #include "GraphicManager/GraphicManager.hpp"
 #include "textMachine/textMachine.hpp"
 #include "cache/Cache.hpp"
@@ -26,7 +26,7 @@ private:
   std::shared_ptr<Scene> scene;
   std::shared_ptr<GraphicManager> graphicManager;
   std::vector<std::shared_ptr<mv::Entity>> entities;
-  MouseManager mouseManager;
+  ActionForwarder actionForwarder;
   std::shared_ptr<TextMachine> textMachine;
 
   std::shared_ptr<OneArmedBandit> banditMachine;

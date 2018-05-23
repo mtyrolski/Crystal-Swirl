@@ -37,7 +37,7 @@ void GameState::onStop()
 void GameState::run()
 {
   scene->pollEvents();
-  mouseManager.manage(scene, banditMachine, entities,textMachine,scene->getRenderer());
+  actionForwarder.manage(scene, banditMachine, entities,textMachine,scene->getRenderer());
   scene->clear(entities);
   textMachine->display(scene->getRenderer());
 }

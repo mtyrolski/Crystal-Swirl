@@ -9,7 +9,7 @@ https://github.com/mvxxx
 #include "OneArmedBandit/OneArmedBandit.hpp"
 #include "textMachine/textMachine.hpp"
 
-class MouseManager
+class ActionForwarder
 {
   /* ===Objects=== */
 public:

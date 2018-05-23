@@ -1,6 +1,6 @@
-#include "MouseManager.hpp"
+#include "ActionForwarder.hpp"
 
-void MouseManager::manage(const std::shared_ptr<Scene>& scene, const std::shared_ptr<OneArmedBandit>& bandit, const std::vector<std::shared_ptr<mv::Entity>>& entities, const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer)
+void ActionForwarder::manage(const std::shared_ptr<Scene>& scene, const std::shared_ptr<OneArmedBandit>& bandit, const std::vector<std::shared_ptr<mv::Entity>>& entities, const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer)
 {
   if ( scene->mouseState() )
   {
@@ -51,8 +51,10 @@ void MouseManager::manage(const std::shared_ptr<Scene>& scene, const std::shared
                 break;
               }
 
-              actualMoney -= actualRate;
               bandit->startSimulate();
+
+              if( bandit->multiplier() == 0  )actualMoney -= actualRate;
+
               actualMoney += bandit->multiplier()*actualRate;
 
               textMachine->setText(mv::constants::textTypes::TYPE::PRIZE, std::to_string(bandit->multiplier()* actualRate) , renderer);
