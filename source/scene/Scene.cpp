@@ -71,7 +71,6 @@ void Scene::clear(const std::vector<std::shared_ptr<mv::Entity>>& entities)
       SDL_RenderCopy(&*renderer, PB->getTexture(), nullptr, &PB->getRect());    
     }
   }
-  SDL_RenderPresent(&*renderer);
 }
 
 bool Scene::mouseState()

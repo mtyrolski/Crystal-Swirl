@@ -24,6 +24,8 @@ void TextMachine::display(const std::shared_ptr<SDL_Renderer>& renderer)
 {
   for ( auto&var : data )
     var.second.entity->getComponent<Text>()->display(renderer);
+
+  SDL_RenderPresent(&*renderer);
 }
 
 void TextMachine::init(uint16_t credits, uint16_t rate, const std::shared_ptr<SDL_Renderer>& renderer)
@@ -37,8 +39,8 @@ void TextMachine::init(uint16_t credits, uint16_t rate, const std::shared_ptr<SD
     var.second.entity->getComponent<Text>()->init(mv::constants::font::FONT_PATH, mv::constants::font::FONT_SIZE, data[var.first].text, mv::constants::font::FONT_COLOR, renderer);
   }
   using namespace mv::constants::defaults;
-  //data[mv::constants::textTypes::TYPE::CREDITS].entity->getComponent<Text>()->setPosition({ 0.8375f*WINDOW_DIMENSIONS.x,0.866f*WINDOW_DIMENSIONS.y });
- // data[mv::constants::textTypes::TYPE::PRIZE].entity->getComponent<Text>()->setPosition({ 0.8375f*WINDOW_DIMENSIONS.x,0.783f*WINDOW_DIMENSIONS.y });
- // data[mv::constants::textTypes::TYPE::RATE].entity->getComponent<Text>()->setPosition({ 0.1875f*WINDOW_DIMENSIONS.x,0.833f*WINDOW_DIMENSIONS.y });
+  data[mv::constants::textTypes::TYPE::CREDITS].entity->getComponent<Text>()->setPosition({ 0.8975f*WINDOW_DIMENSIONS.x,0.866f*WINDOW_DIMENSIONS.y });
+  data[mv::constants::textTypes::TYPE::PRIZE].entity->getComponent<Text>()->setPosition({ 0.8975f*WINDOW_DIMENSIONS.x,0.783f*WINDOW_DIMENSIONS.y });
+  data[mv::constants::textTypes::TYPE::RATE].entity->getComponent<Text>()->setPosition({ 0.1875f*WINDOW_DIMENSIONS.x,0.833f*WINDOW_DIMENSIONS.y });
 
 }

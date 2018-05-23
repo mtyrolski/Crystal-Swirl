@@ -25,8 +25,6 @@ GameState::GameState(const std::shared_ptr<Scene>& scenePtr)
 
 void GameState::onStart()
 {
-  using namespace mv::constants::texture;
-  //textureCache->get(texturePath.at(TEXTURE_ID::BUTTON_MINUS)); tak nie mozna bo przypisuje surface
   graphicManager->loadTextures(scene->getRenderer());
   initUI();
   banditMachine->initStructure(entities);

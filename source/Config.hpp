@@ -75,7 +75,7 @@ namespace mv
     {
       constexpr auto FONT_PATH = "source/data/font/arial.ttf";
       constexpr auto FONT_SIZE = 25;
-      const SDL_Color FONT_COLOR = { 255,255,255};
+      const SDL_Color FONT_COLOR = { 0,0,0};
     }
 
     namespace textTypes
