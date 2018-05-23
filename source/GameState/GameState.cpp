@@ -71,15 +71,15 @@ void GameState::initUI() /*TOXIC AREA - MUST BE REFACTORED*/
   objects[0]->getComponent<ProperBody>()->setPosition({ 0.5f*WINDOW_DIMENSIONS.x,0.5f*WINDOW_DIMENSIONS.y });
 
 
-  objects[1]->getComponent<ProperBody>()->setPosition({ 0.25f*WINDOW_DIMENSIONS.x,0.133f*WINDOW_DIMENSIONS.y });
-  objects[2]->getComponent<ProperBody>()->setPosition({ 0.4875f*WINDOW_DIMENSIONS.x,0.133f*WINDOW_DIMENSIONS.y });
-  objects[3]->getComponent<ProperBody>()->setPosition({ 0.7125f*WINDOW_DIMENSIONS.x,0.133f*WINDOW_DIMENSIONS.y });
-  objects[4]->getComponent<ProperBody>()->setPosition({ 0.25f*WINDOW_DIMENSIONS.x,0.383f*WINDOW_DIMENSIONS.y });
-  objects[5]->getComponent<ProperBody>()->setPosition({ 0.4875f*WINDOW_DIMENSIONS.x,0.383f*WINDOW_DIMENSIONS.y });
-  objects[6]->getComponent<ProperBody>()->setPosition({ 0.7125f*WINDOW_DIMENSIONS.x,0.383f*WINDOW_DIMENSIONS.y });
-  objects[7]->getComponent<ProperBody>()->setPosition({ 0.25f*WINDOW_DIMENSIONS.x,0.633f*WINDOW_DIMENSIONS.y });
-  objects[8]->getComponent<ProperBody>()->setPosition({ 0.4875f*WINDOW_DIMENSIONS.x,0.633f*WINDOW_DIMENSIONS.y });
-  objects[9]->getComponent<ProperBody>()->setPosition({ 0.7125f*WINDOW_DIMENSIONS.x,0.633f*WINDOW_DIMENSIONS.y });
+  objects[1]->getComponent<ProperBody>()->setPosition({ 0.37f*WINDOW_DIMENSIONS.x,0.133f*WINDOW_DIMENSIONS.y });
+  objects[2]->getComponent<ProperBody>()->setPosition({ 0.5175f*WINDOW_DIMENSIONS.x,0.133f*WINDOW_DIMENSIONS.y });
+  objects[3]->getComponent<ProperBody>()->setPosition({ 0.6525f*WINDOW_DIMENSIONS.x,0.133f*WINDOW_DIMENSIONS.y });
+  objects[4]->getComponent<ProperBody>()->setPosition({ 0.37f*WINDOW_DIMENSIONS.x,0.383f*WINDOW_DIMENSIONS.y });
+  objects[5]->getComponent<ProperBody>()->setPosition({ 0.5175f*WINDOW_DIMENSIONS.x,0.383f*WINDOW_DIMENSIONS.y });
+  objects[6]->getComponent<ProperBody>()->setPosition({ 0.6525f*WINDOW_DIMENSIONS.x,0.383f*WINDOW_DIMENSIONS.y });
+  objects[7]->getComponent<ProperBody>()->setPosition({ 0.37f*WINDOW_DIMENSIONS.x,0.633f*WINDOW_DIMENSIONS.y });
+  objects[8]->getComponent<ProperBody>()->setPosition({ 0.5175f*WINDOW_DIMENSIONS.x,0.633f*WINDOW_DIMENSIONS.y });
+  objects[9]->getComponent<ProperBody>()->setPosition({ 0.6525f*WINDOW_DIMENSIONS.x,0.633f*WINDOW_DIMENSIONS.y });
 
   objects[10]->addComponent<Clickable>();
   objects[10]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::BUTTON_PLUS, scene->getRenderer());

@@ -67,13 +67,13 @@ namespace mv
         { TEXTURE_ID::PRIZE,"source/data/graphics/prize.png" },
         { TEXTURE_ID::CREDITS,"source/data/graphics/credits.png" },
         { TEXTURE_ID::PLAY,"source/data/graphics/play.png" },
-        { TEXTURE_ID::BACKGROUND, "source/data/graphics/background.jpg"}
+        { TEXTURE_ID::BACKGROUND, "source/data/graphics/background.png"}
       };
     }
 
     namespace font
     {
-      constexpr auto FONT_PATH = "source/data/font/arial.ttf";
+      constexpr auto FONT_PATH = "source/data/font/ARLRDBD.ttf";
       constexpr auto FONT_SIZE = 25;
       const SDL_Color FONT_COLOR = { 0,0,0};
     }
