@@ -10,14 +10,13 @@ https://github.com/mvxxx
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
-#include "logger/Logger.hpp"
-#include "wrappers/Vector2.hpp"
-#include "Config.hpp"
-#include "ecs/entity/Entity.hpp"
 #include "ecs/component/ProperBody.hpp"
 #include "ecs/component/Clickable.hpp"
+#include "ecs/entity/Entity.hpp"
+#include "wrappers/Vector2.hpp"
+#include "logger/Logger.hpp"
+#include "Config.hpp"
  
-
 
 class Scene
 {

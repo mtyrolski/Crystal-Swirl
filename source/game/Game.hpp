@@ -6,11 +6,11 @@ https://github.com/mvxxx
 #pragma once
 
 #include <memory>
+
 #include <SDL.h>
 
-#include "scene/Scene.hpp"
 #include "GameState/GameState.hpp"
-
+#include "scene/Scene.hpp"
 
 class Game
 {	
@@ -26,5 +26,4 @@ public:
 protected:
 private:
   void init();
-
 };

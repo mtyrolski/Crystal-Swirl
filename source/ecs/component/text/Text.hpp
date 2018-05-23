@@ -8,12 +8,13 @@ https://github.com/mvxxx
 #include <string>
 #include <memory>
 
-#include <SDL.h>
-#include <SDL_ttf.h>
 #include <SDL_render.h>
+#include <SDL_ttf.h>
+#include <SDL.h>
 
-#include "wrappers/Vector2.hpp"
 #include "ecs/entity/Entity.hpp"
+#include "wrappers/Vector2.hpp"
+
 
 class Text
 {

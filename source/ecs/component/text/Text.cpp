@@ -1,3 +1,8 @@
+/*
+mvxxx 2018
+https://github.com/mvxxx
+*/
+
 #include "Text.hpp"
 
 void Text::init(const std::string & fontPath, int fontSize, const std::string & message, const SDL_Color & color, const std::shared_ptr<SDL_Renderer>& renderer)

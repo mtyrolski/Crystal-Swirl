@@ -8,14 +8,14 @@ https://github.com/mvxxx
 #include <map>
 #include <string>
 
-#include <SDL_image.h>
 #include <SDL_render.h>
-#include <SDL.h>
+#include <SDL_image.h>
 #include <SDL_ttf.h>
+#include <SDL.h>
 
-#include "ecs/entity/Entity.hpp"
 #include "ecs/component/text/Text.hpp"
 #include "wrappers/textWrapper_t.hpp"
+#include "ecs/entity/Entity.hpp"
 #include "Config.hpp"
 
 class TextMachine

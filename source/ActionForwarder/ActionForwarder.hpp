@@ -24,4 +24,7 @@ public:
     const std::shared_ptr <SDL_Renderer> & renderer);
 protected:
 private:
+  bool tryAdd(const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer);
+  bool tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer);
+  bool trySubtract(const std::shared_ptr<TextMachine>& textMachine, const std::shared_ptr<SDL_Renderer>& renderer);
 };

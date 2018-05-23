@@ -9,8 +9,8 @@ https://github.com/mvxxx
 #include <SDL_image.h>
 
 #include "GraphicManager/GraphicManager.hpp"
-#include "cache/Cache.hpp"
 #include "wrappers/Vector2.hpp"
+#include "cache/Cache.hpp"
 #include "Config.hpp"
 
 class ProperBody
@@ -37,8 +37,6 @@ public:
 protected:
 private:
   void loadTexture(const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<SDL_Renderer>& renderer);
-
-
 };
 
 inline void ProperBody::setType(const std::shared_ptr<GraphicManager>& graphicManager, type_id id, const std::shared_ptr<SDL_Renderer>& renderer)

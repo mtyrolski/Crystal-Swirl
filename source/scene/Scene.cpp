@@ -55,12 +55,10 @@ void Scene::pollEvents()
       break;
     }
   }
-
 }
 
 void Scene::clear(const std::vector<std::shared_ptr<mv::Entity>>& entities)
 {
-  SDL_SetRenderDrawColor(&*renderer, 0, 100, 100, 255);
   SDL_RenderClear(&*renderer);
 
   for ( auto&var : entities )
