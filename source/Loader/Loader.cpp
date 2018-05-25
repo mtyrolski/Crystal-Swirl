@@ -1,3 +1,8 @@
+/*
+mvxxx 2018
+https://github.com/mvxxx
+*/
+
 #include "Loader.hpp"
 
 std::string Loader::getPathOf(const std::string& name,

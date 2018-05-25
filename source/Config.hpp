@@ -16,23 +16,20 @@ namespace mv
 {
   namespace constants
   {
-    namespace loader
+    namespace audio
     {
-      constexpr auto GRAPHIC_CONFIG = "source/data/config/graphic.txt";
-      constexpr auto AUDIO_CONFIG = "source/data/config/audio.txt";
-      constexpr auto TECHNICALITIES_CONFIG = "source/data/config/technicalities.txt";
-
-      enum class CONFIG_MODE
+      enum class AUDIO_ID
       {
-        GRAPHIC,
-        AUDIO,
-        TECHNICALITIES
+        SOUNDTRACK,
+        CLICK,
+        PLAY
       };
-      
-      enum class STORAGE_MODE
+
+      const std::map<AUDIO_ID, std::string> audioKey
       {
-        STORE,
-        FREE
+        { AUDIO_ID::SOUNDTRACK,"SOUNDTRACK" },
+        { AUDIO_ID::CLICK,"CLICK" },
+        { AUDIO_ID::PLAY,"PLAY" },
       };
     }
 
@@ -103,6 +100,26 @@ namespace mv
         RATE,
         PRIZE,
         CREDITS
+      };
+    }
+
+    namespace loader
+    {
+      constexpr auto GRAPHIC_CONFIG = "source/data/config/graphic.txt";
+      constexpr auto AUDIO_CONFIG = "source/data/config/audio.txt";
+      constexpr auto TECHNICALITIES_CONFIG = "source/data/config/technicalities.txt";
+
+      enum class CONFIG_MODE
+      {
+        GRAPHIC,
+        AUDIO,
+        TECHNICALITIES
+      };
+
+      enum class STORAGE_MODE
+      {
+        STORE,
+        FREE
       };
     }
   }

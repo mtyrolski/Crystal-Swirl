@@ -11,6 +11,10 @@ https://github.com/mvxxx
 
 #include "Config.hpp"
 
+
+/*
+* Class for loading data
+*/
 class Loader
 {
   /* ===Objects=== */
@@ -24,8 +28,6 @@ class Loader
 
   /* ===Methods=== */
 public:
-
- 
 
   /*
    * Recognizes the mode,
