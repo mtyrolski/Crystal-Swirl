@@ -10,10 +10,13 @@ void ActionForwarder::manage(const std::shared_ptr<Scene>& scene,
   const std::vector<std::shared_ptr<mv::Entity>>& entities,
   const std::shared_ptr<TextMachine>& textMachine,
   const std::shared_ptr<Loader>& loader,
+  const std::shared_ptr<AudioManager>& audioManager,
   SDL_Renderer* renderer)
 {
   if ( scene->mouseState() )
   {
+    audioManager->play(mv::constants::audio::AUDIO_ID::CLICK);
+
     for ( auto&var : entities )
     {
       if ( var->hasComponent<ProperBody>() )
@@ -33,7 +36,7 @@ void ActionForwarder::manage(const std::shared_ptr<Scene>& scene,
               break;
 
             case mv::constants::texture::TEXTURE_ID::PLAY:
-              tryPlay(bandit, textMachine, renderer, loader);
+              tryPlay(bandit, textMachine, renderer, loader, audioManager);
               break;
 
             default: break;
@@ -59,7 +62,7 @@ bool ActionForwarder::tryAdd(const std::shared_ptr<TextMachine>& textMachine, SD
   return true;
 }
 
-bool ActionForwarder::tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, const std::shared_ptr<TextMachine>& textMachine, SDL_Renderer* renderer, const std::shared_ptr<Loader>& loader) const
+bool ActionForwarder::tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, const std::shared_ptr<TextMachine>& textMachine, SDL_Renderer* renderer, const std::shared_ptr<Loader>& loader, const std::shared_ptr<AudioManager>& audioManager) const
 {
   auto actualRate = textMachine->getValue(mv::constants::textTypes::TYPE::RATE);
   auto actualMoney = textMachine->getValue(mv::constants::textTypes::TYPE::CREDITS);
@@ -69,6 +72,8 @@ bool ActionForwarder::tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, con
     mv::Logger::Log(mv::constants::error::textMachine::NOT_ENOUGH_MONEY, mv::Logger::STREAM::CONSOLE, mv::Logger::TYPE::INFO);
     return false;
   }
+
+  audioManager->play(mv::constants::audio::AUDIO_ID::PLAY);
 
   bandit->startSimulate();
 

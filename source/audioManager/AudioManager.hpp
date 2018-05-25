@@ -28,13 +28,13 @@ private:
   std::map<mv::constants::audio::AUDIO_ID, Mix_Chunk*> soundData;
 	/* ===Methods=== */
 public:
-  AudioManager();
+  AudioManager(const std::shared_ptr<Loader>& loader);
   ~AudioManager();
 
   /*
    * Loads all sounds
    */
-  void loadAll(const std::shared_ptr<Loader> loader);
+  void loadAll(const std::shared_ptr<Loader>& loader);
 
   /*
    * Tries to play a music/sound
