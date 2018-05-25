@@ -21,7 +21,7 @@ SDL_Texture* GraphicManager::get(mv::constants::texture::TEXTURE_ID type)
 
 void GraphicManager::loadSingleTexture(SDL_Renderer* renderer, mv::constants::texture::TEXTURE_ID type, const std::shared_ptr<Loader>& loader)
 {
-  std::string path = mv::constants::texture::BASIC_TEXTURE_PATH + loader->getPathOf(mv::constants::texture::textureKey.at(type), mv::constants::loader::MODE::GRAPHIC);
+  std::string path = mv::constants::texture::BASIC_TEXTURE_PATH + loader->getPathOf(mv::constants::texture::textureKey.at(type), mv::constants::loader::CONFIG_MODE::GRAPHIC);
   auto surface = IMG_Load(path.c_str());
   texturePack[type] = SDL_CreateTextureFromSurface(&*renderer, surface);
   SDL_FreeSurface(surface);

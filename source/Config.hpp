@@ -22,11 +22,17 @@ namespace mv
       constexpr auto AUDIO_CONFIG = "source/data/config/audio.txt";
       constexpr auto TECHNICALITIES_CONFIG = "source/data/config/technicalities.txt";
 
-      enum class MODE
+      enum class CONFIG_MODE
       {
         GRAPHIC,
         AUDIO,
         TECHNICALITIES
+      };
+      
+      enum class STORAGE_MODE
+      {
+        STORE,
+        FREE
       };
     }
 
