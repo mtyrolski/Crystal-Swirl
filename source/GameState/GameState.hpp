@@ -8,11 +8,11 @@ https://github.com/mvxxx
 #include <memory>
 #include <vector>
 
-#include "OneArmedBandit/oneArmedBandit.hpp"
 #include "ActionForwarder/ActionForwarder.hpp"
+#include "OneArmedBandit/oneArmedBandit.hpp"
 #include "GraphicManager/GraphicManager.hpp"
 #include "textMachine/textMachine.hpp"
-#include "cache/Cache.hpp"
+#include "Loader/Loader.hpp"
 #include "scene/Scene.hpp"
 #include "Math.hpp"
 
@@ -41,6 +41,9 @@ private:
 
   //Pointer to One Armed Bandit Machine
   std::shared_ptr<OneArmedBandit> banditMachine;
+
+  //pointer to resource Loader
+  std::shared_ptr<Loader> loader;
 
   /* ===Methods=== */
 public:

@@ -10,7 +10,6 @@ https://github.com/mvxxx
 
 #include "Config.hpp"
 
-
 class Loader
 {
   /* ===Methods=== */
@@ -21,12 +20,12 @@ public:
    * Searches for the key in the file,
    * Returns the value
    */
-  const std::string& getPathOf(const std::string& name, const mv::constants::loader::MODE& mode);
+   std::string getPathOf(const std::string& name, const mv::constants::loader::MODE& mode);
 private:
 
   /*
    * Searches for the key in the file,
    * Returns the value
    */
-  const std::string& findValue(const std::string& name, const std::string& path);
+   std::string findValue(const std::string& name, const std::string& path);
 };

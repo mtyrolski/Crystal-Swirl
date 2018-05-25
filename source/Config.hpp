@@ -5,6 +5,9 @@ https://github.com/mvxxx
 
 #pragma once
 
+#include <SDL.h>
+#include <SDL_image.h>
+
 #include <map>
 #include <string>
 #include <wrappers/Vector2.hpp>
@@ -80,27 +83,30 @@ namespace mv
         PLAY,
         BACKGROUND
       };
-      /*id/path*/
-      const std::map<TEXTURE_ID, std::string> texturePath
+
+      /*id/Key*/
+      const std::map<TEXTURE_ID, std::string> textureKey
       {
-        { TEXTURE_ID::BUTTON_PLUS,"source/data/graphics/plus.png" },
-        { TEXTURE_ID::BUTTON_MINUS,"source/data/graphics/minus.png" },
-        { TEXTURE_ID::CRYSTAL_RED,"source/data/graphics/crystal_red.png" },
-        { TEXTURE_ID::CRYSTAL_GREEN,"source/data/graphics/crystal_green.png" },
-        { TEXTURE_ID::CRYSTAL_BLUE,"source/data/graphics/crystal_blue.png" },
-        { TEXTURE_ID::RATE,"source/data/graphics/rate.png" },
-        { TEXTURE_ID::PRIZE,"source/data/graphics/prize.png" },
-        { TEXTURE_ID::CREDITS,"source/data/graphics/credits.png" },
-        { TEXTURE_ID::PLAY,"source/data/graphics/play.png" },
-        { TEXTURE_ID::BACKGROUND, "source/data/graphics/background.png"}
+        { TEXTURE_ID::BUTTON_PLUS,"PLUS" },
+        { TEXTURE_ID::BUTTON_MINUS,"MINUS" },
+        { TEXTURE_ID::CRYSTAL_RED,"CRYSTAL_RED" },
+        { TEXTURE_ID::CRYSTAL_GREEN,"CRYSTAL_GREEN" },
+        { TEXTURE_ID::CRYSTAL_BLUE,"CRYSTAL_BLUE" },
+        { TEXTURE_ID::RATE,"RATE" },
+        { TEXTURE_ID::PRIZE,"PRIZE" },
+        { TEXTURE_ID::CREDITS,"CREDITS" },
+        { TEXTURE_ID::PLAY,"PLAY" },
+        { TEXTURE_ID::BACKGROUND, "BACKGROUND"}
       };
+
+      constexpr auto BASIC_TEXTURE_PATH = "source/data/graphics/";
     }
 
     namespace font
     {
       constexpr auto FONT_PATH = "source/data/font/ARLRDBD.ttf";
       constexpr auto FONT_SIZE = 25;
-      const SDL_Color FONT_COLOR = { 0,0,0};
+      const SDL_Color FONT_COLOR = { 0,0,0 };
     }
 
     namespace textTypes

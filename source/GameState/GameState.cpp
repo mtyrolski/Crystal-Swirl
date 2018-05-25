@@ -8,6 +8,8 @@ https://github.com/mvxxx
 GameState::GameState(const std::shared_ptr<Scene>& scenePtr)
   :scene(scenePtr)
 {
+  loader = std::make_shared<Loader>();
+
   graphicManager = std::make_shared<GraphicManager>();
 
   banditMachine = std::make_shared<OneArmedBandit>
@@ -25,7 +27,7 @@ GameState::GameState(const std::shared_ptr<Scene>& scenePtr)
 
 void GameState::onStart()
 {
-  graphicManager->loadTextures(scene->getRenderer());
+  graphicManager->loadTextures(scene->getRenderer(),loader);
   initUI();
   banditMachine->initStructure(entities);
 }

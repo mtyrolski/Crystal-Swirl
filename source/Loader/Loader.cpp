@@ -1,11 +1,11 @@
 #include "Loader.hpp"
 
-const std::string & Loader::getPathOf(const std::string& name,const mv::constants::loader::MODE& mode)
+ std::string Loader::getPathOf(const std::string& name,const mv::constants::loader::MODE& mode)
 {
   switch ( mode )
   {
   case mv::constants::loader::MODE::GRAPHIC:
-    return findValue(name, mv::constants::loader::AUDIO_CONFIG);
+    return findValue(name, mv::constants::loader::GRAPHIC_CONFIG);
     break;
 
   case mv::constants::loader::MODE::AUDIO:
@@ -18,7 +18,7 @@ const std::string & Loader::getPathOf(const std::string& name,const mv::constant
   }
 }
 
-const std::string& Loader::findValue(const std::string & name, const std::string & path)
+std::string Loader::findValue(const std::string & name, const std::string & path)
 {
   std::ifstream input(path);
   //logger_czy otworzono//
@@ -28,9 +28,10 @@ const std::string& Loader::findValue(const std::string & name, const std::string
   while ( std::getline(input, line) ) 
     if ( line.find(name,0)!= std::string::npos ) 
     {
-      auto begin = line.find(' ');
-      return line.substr(begin,line.size()-begin);
+      auto begin = line.find(' ') + 1;
+      auto length = line.size() - begin;
+      return  line.substr(begin,line.size()-begin);
     }
   
-  //logger z flaga czy znaleziono//
+  //logger z flaga czy znaleziono albo i bez//
 }

@@ -1,0 +1,10 @@
+PLUS plus.png
+MINUS minus.png
+CRYSTAL_RED crystal_red.png
+CRYSTAL_GREEN crystal_green.png
+CRYSTAL_BLUE crystal_blue.png
+RATE rate.png
+PRIZE prize.png
+CREDITS credits.png
+PLAY play.png
+BACKGROUND background.png
