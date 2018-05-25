@@ -13,6 +13,20 @@ namespace mv
 {
   namespace constants
   {
+    namespace loader
+    {
+      constexpr auto GRAPHIC_CONFIG = "source/data/config/graphic.txt";
+      constexpr auto AUDIO_CONFIG = "source/data/config/audio.txt";
+      constexpr auto TECHNICALITIES_CONFIG = "source/data/config/technicalities.txt";
+
+      enum class MODE
+      {
+        GRAPHIC,
+        AUDIO,
+        TECHNICALITIES
+      };
+    }
+
     namespace error
     {
       namespace scene
