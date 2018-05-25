@@ -4,7 +4,11 @@ std::string Loader::getPathOf(const std::string& name,
   const mv::constants::loader::CONFIG_MODE& configMode,
   const mv::constants::loader::STORAGE_MODE storageMode)
 {
+  if ( storage[name] != "" )
+    return storage[name];
+
   std::string data;
+
   switch ( configMode )
   {
   case mv::constants::loader::CONFIG_MODE::GRAPHIC:

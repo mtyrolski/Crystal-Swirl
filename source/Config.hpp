@@ -62,18 +62,6 @@ namespace mv
       }
     }
 
-    namespace defaults
-    {
-      constexpr auto EMPTY = "EMPTY";
-      constexpr auto UNNAMED = "unnamed";
-      const Vector2<int> WINDOW_DIMENSIONS = { 800,600 };
-      constexpr auto BANDIT_MACHINE_DELAY = 0.5f;
-      constexpr auto BANDIT_MACHINE_SIMULATION_TIME = 3.f;
-      constexpr auto CREDITS = 1000;
-      constexpr auto RATE = 50;
-      constexpr auto DELTA_RATE = 50;
-    }
-
     namespace texture
     {
       enum class TEXTURE_ID
@@ -106,13 +94,6 @@ namespace mv
       };
 
       constexpr auto BASIC_TEXTURE_PATH = "source/data/graphics/";
-    }
-
-    namespace font
-    {
-      constexpr auto FONT_PATH = "source/data/font/ARLRDBD.ttf";
-      constexpr auto FONT_SIZE = 25;
-      const SDL_Color FONT_COLOR = { 0,0,0 };
     }
 
     namespace textTypes

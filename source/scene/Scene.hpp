@@ -15,6 +15,7 @@ https://github.com/mvxxx
 #include "ecs/entity/Entity.hpp"
 #include "wrappers/Vector2.hpp"
 #include "logger/Logger.hpp"
+#include "Loader/Loader.hpp"
 #include "Config.hpp"
  
 /*
@@ -44,6 +45,10 @@ public:
   Scene();
   ~Scene();
 
+  /*
+  * Creates window
+  */
+  void create(const std::shared_ptr<Loader>& loader);
   /*
    * Window getter
    */
@@ -86,4 +91,8 @@ public:
    * Returns last position of mouse
    */
   const Vector2<float>& getMousePosition() const;
+
+  /*
+  
+  */
 };

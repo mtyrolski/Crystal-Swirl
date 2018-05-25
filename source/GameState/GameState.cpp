@@ -9,18 +9,16 @@ GameState::GameState(const std::shared_ptr<Scene>& scenePtr)
   :scene(scenePtr)
 {
   loader = std::make_shared<Loader>();
-
+  scene->create(loader);
   graphicManager = std::make_shared<GraphicManager>();
 
-  banditMachine = std::make_shared<OneArmedBandit>
-    (mv::constants::defaults::BANDIT_MACHINE_DELAY,
-      mv::constants::defaults::BANDIT_MACHINE_SIMULATION_TIME,
-      scenePtr,
-      graphicManager);
+  banditMachine = std::make_shared<OneArmedBandit>(loader, scenePtr, graphicManager);
 
-  textMachine = std::make_shared<TextMachine>(mv::constants::defaults::CREDITS,
-    mv::constants::defaults::RATE,
-    scenePtr->getRenderer());
+  textMachine = std::make_shared<TextMachine>
+    ( std::atoi(loader->getPathOf("CREDITS",mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()),
+      std::atoi(loader->getPathOf("RATE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()),
+    scenePtr->getRenderer(),
+    loader);
 
   this->onStart();
 }
@@ -35,7 +33,7 @@ void GameState::onStart()
 void GameState::run()
 {
   scene->pollEvents();
-  actionForwarder.manage(scene, banditMachine, entities,textMachine,scene->getRenderer());
+  actionForwarder.manage(scene, banditMachine, entities,textMachine,loader,scene->getRenderer());
   scene->clear(entities);
   textMachine->display(scene->getRenderer());
 }
@@ -57,6 +55,10 @@ void GameState::initUI() /*TOXIC AREA - MUST BE REFACTORED*/
   const auto crystalMaxIndex = 10;
   std::shared_ptr<mv::Entity> objects[entityAmmount];
 
+  const Vector2<float> WINDOW_DIMENSIONS =
+  { static_cast<float>(std::atof(loader->getPathOf("WINDOW_DIMENSIONS_X", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())),
+    static_cast<float>(std::atof(loader->getPathOf("WINDOW_DIMENSIONS_Y", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())) };
+
   for ( int i = 0; i < entityAmmount; i++ )
   {
     objects[i] = std::make_shared<mv::Entity>();
@@ -65,7 +67,6 @@ void GameState::initUI() /*TOXIC AREA - MUST BE REFACTORED*/
     if ( i < crystalMaxIndex + 2 /* Becasue crystals and plus/minus button has got properbody */ )
       objects[i]->getComponent<ProperBody>()->setSize({ 100,100 });
   }
-  using namespace mv::constants::defaults;
 
   { //Background
     objects[0]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::BACKGROUND, scene->getRenderer());

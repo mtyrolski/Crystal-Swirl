@@ -8,3 +8,8 @@ PRIZE prize.png
 CREDITS credits.png
 PLAY play.png
 BACKGROUND background.png
+FONT_PATH source/data/font/ARLRDBD.ttf
+FONT_SIZE 25
+FONT_COLOR_R 0
+FONT_COLOR_G 0
+FONT_COLOR_B 0

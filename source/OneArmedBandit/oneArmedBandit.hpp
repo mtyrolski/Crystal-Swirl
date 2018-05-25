@@ -44,7 +44,7 @@ private:
   std::shared_ptr<GraphicManager> graphicManager;
 	/* ===Methods=== */
 public:
-  OneArmedBandit(float dTime, float sTime,const std::shared_ptr<Scene>& _scene,const std::shared_ptr<GraphicManager>& _graphicManager);
+  OneArmedBandit(const std::shared_ptr<Loader>& loader,const std::shared_ptr<Scene>& _scene,const std::shared_ptr<GraphicManager>& _graphicManager);
  
   /*
    * Starts the process of simulating slot game

@@ -6,9 +6,11 @@ https://github.com/mvxxx
 
 #include "oneArmedBandit.hpp"
 
-OneArmedBandit::OneArmedBandit(float dTime, float sTime, const std::shared_ptr<Scene>& _scene, const std::shared_ptr<GraphicManager>& _graphicManager)
-  :delayTime(dTime), simulateTime(sTime), scene(_scene),graphicManager(_graphicManager),processing(false)
+OneArmedBandit::OneArmedBandit(const std::shared_ptr<Loader>& loader, const std::shared_ptr<Scene>& _scene, const std::shared_ptr<GraphicManager>& _graphicManager)
+  : scene(_scene),graphicManager(_graphicManager),processing(false)
 {
+  delayTime = std::atof(loader->getPathOf("BANDIT_MACHINE_DELAY", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
+  simulateTime = std::atof(loader->getPathOf("BANDIT_MACHINE_SIMULATION_TIME", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
 }
 
 bool OneArmedBandit::startSimulate()

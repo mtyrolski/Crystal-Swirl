@@ -13,15 +13,19 @@ https://github.com/mvxxx
 
 class Loader
 {
-  /* ===Methods=== */
-public:
+  /* ===Objects=== */
 
- /*
+  /*
   * Store often used data
   * Used only when storage mode is enabled
   * name(key) / data
   */
   std::map<std::string, std::string> storage;
+
+  /* ===Methods=== */
+public:
+
+ 
 
   /*
    * Recognizes the mode,
@@ -39,6 +43,4 @@ private:
    */
    std::string findValue(const std::string& name, const std::string& path);
 
-   
-   void storeData(const std::string& data);
 };
