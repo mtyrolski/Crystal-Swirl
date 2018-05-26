@@ -69,11 +69,11 @@ void GameState::initUI() /*TOXIC AREA - MUST BE REFACTORED*/
       objects[i]->getComponent<ProperBody>()->setSize({ 100,100 });
   }
 
-  { //Background
-    objects[0]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::BACKGROUND, scene->getRenderer());
-    objects[0]->getComponent<ProperBody>()->setSize({ static_cast<float>(WINDOW_DIMENSIONS.x),static_cast<float>(WINDOW_DIMENSIONS.y) });
-    objects[0]->getComponent<ProperBody>()->setPosition({ 0.5f*WINDOW_DIMENSIONS.x,0.5f*WINDOW_DIMENSIONS.y });
-  }
+  //{ //Background
+  //  objects[0]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::BACKGROUND, scene->getRenderer());
+  //  objects[0]->getComponent<ProperBody>()->setSize({ static_cast<float>(WINDOW_DIMENSIONS.x),static_cast<float>(WINDOW_DIMENSIONS.y) });
+  //  objects[0]->getComponent<ProperBody>()->setPosition({ 0.5f*WINDOW_DIMENSIONS.x,0.5f*WINDOW_DIMENSIONS.y });
+  //}
   
   {//Position of crystals
     objects[1]->getComponent<ProperBody>()->setPosition({ 0.37f*WINDOW_DIMENSIONS.x,0.133f*WINDOW_DIMENSIONS.y });
@@ -87,41 +87,41 @@ void GameState::initUI() /*TOXIC AREA - MUST BE REFACTORED*/
     objects[9]->getComponent<ProperBody>()->setPosition({ 0.6525f*WINDOW_DIMENSIONS.x,0.633f*WINDOW_DIMENSIONS.y });
   }
 
-  {// PLUS/MINUS Button
-    objects[10]->addComponent<Clickable>();
-    objects[10]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::BUTTON_PLUS, scene->getRenderer());
-    objects[10]->getComponent<ProperBody>()->setPosition({ 0.325f*WINDOW_DIMENSIONS.x,0.833f*WINDOW_DIMENSIONS.y });
+  //{// PLUS/MINUS Button
+  //  objects[10]->addComponent<Clickable>();
+  //  objects[10]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::BUTTON_PLUS, scene->getRenderer());
+  //  objects[10]->getComponent<ProperBody>()->setPosition({ 0.325f*WINDOW_DIMENSIONS.x,0.833f*WINDOW_DIMENSIONS.y });
 
-    objects[11]->addComponent<Clickable>();
-    objects[11]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::BUTTON_MINUS, scene->getRenderer());
-    objects[11]->getComponent<ProperBody>()->setPosition({ 0.05f*WINDOW_DIMENSIONS.x,0.833f*WINDOW_DIMENSIONS.y });
+  //  objects[11]->addComponent<Clickable>();
+  //  objects[11]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::BUTTON_MINUS, scene->getRenderer());
+  //  objects[11]->getComponent<ProperBody>()->setPosition({ 0.05f*WINDOW_DIMENSIONS.x,0.833f*WINDOW_DIMENSIONS.y });
 
-  }
+  //}
   
-  {//RATE
-    objects[12]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::RATE, scene->getRenderer());
-    objects[12]->getComponent<ProperBody>()->setSize({ 170,100 });
-    objects[12]->getComponent<ProperBody>()->setPosition({ 0.1875f*WINDOW_DIMENSIONS.x,0.833f*WINDOW_DIMENSIONS.y });
-  }
+  //{//RATE
+  //  objects[12]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::RATE, scene->getRenderer());
+  //  objects[12]->getComponent<ProperBody>()->setSize({ 170,100 });
+  //  objects[12]->getComponent<ProperBody>()->setPosition({ 0.1875f*WINDOW_DIMENSIONS.x,0.833f*WINDOW_DIMENSIONS.y });
+  //}
 
-  {//PLAY BUTTON
-    objects[13]->addComponent<Clickable>();
-    objects[13]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::PLAY, scene->getRenderer());
-    objects[13]->getComponent<ProperBody>()->setSize({ 170,100 });
-    objects[13]->getComponent<ProperBody>()->setPosition({ 0.5f*WINDOW_DIMENSIONS.x,0.833f*WINDOW_DIMENSIONS.y });
-  }
+  //{//PLAY BUTTON
+  //  objects[13]->addComponent<Clickable>();
+  //  objects[13]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::PLAY, scene->getRenderer());
+  //  objects[13]->getComponent<ProperBody>()->setSize({ 170,100 });
+  //  objects[13]->getComponent<ProperBody>()->setPosition({ 0.5f*WINDOW_DIMENSIONS.x,0.833f*WINDOW_DIMENSIONS.y });
+  //}
   
-  {//PRIZE
-    objects[14]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::PRIZE, scene->getRenderer());
-    objects[14]->getComponent<ProperBody>()->setSize({ 250,60 });
-    objects[14]->getComponent<ProperBody>()->setPosition({ 0.8375f*WINDOW_DIMENSIONS.x,0.783f*WINDOW_DIMENSIONS.y });
-  }
+  //{//PRIZE
+  //  objects[14]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::PRIZE, scene->getRenderer());
+  //  objects[14]->getComponent<ProperBody>()->setSize({ 250,60 });
+  //  objects[14]->getComponent<ProperBody>()->setPosition({ 0.8375f*WINDOW_DIMENSIONS.x,0.783f*WINDOW_DIMENSIONS.y });
+  //}
  
-  { //CREDITS
-    objects[15]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::CREDITS, scene->getRenderer());
-    objects[15]->getComponent<ProperBody>()->setSize({ 250,60 });
-    objects[15]->getComponent<ProperBody>()->setPosition({ 0.8375f*WINDOW_DIMENSIONS.x,0.866f*WINDOW_DIMENSIONS.y });
-  }
+  //{ //CREDITS
+  //  objects[15]->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::CREDITS, scene->getRenderer());
+  //  objects[15]->getComponent<ProperBody>()->setSize({ 250,60 });
+  //  objects[15]->getComponent<ProperBody>()->setPosition({ 0.8375f*WINDOW_DIMENSIONS.x,0.866f*WINDOW_DIMENSIONS.y });
+  //}
  
   for ( int i = 0; i < entityAmmount; i++ )
   {
