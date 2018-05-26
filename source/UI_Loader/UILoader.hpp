@@ -30,4 +30,6 @@ private:
 
   void loadBackground(std::vector<std::shared_ptr<mv::Entity>>& entities, const Vector2<float>& windowSize,
     const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<Scene>& scene);
+
+  void checkDimensions(std::shared_ptr<mv::Entity> exampleSymbol, const Vector2<float>& delta, const std::shared_ptr<Loader>& loader);
 };

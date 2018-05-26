@@ -28,7 +28,6 @@ void GameState::onStart()
   graphicManager->loadTextures(scene->getRenderer(),loader);
   audioManager->play(mv::constants::audio::AUDIO_ID::SOUNDTRACK);
   initUI();
- // banditMachine->initStructure(entities);
 }
 
 void GameState::run()

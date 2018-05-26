@@ -87,6 +87,7 @@ void UILoader::loadRolls(std::vector<std::shared_ptr<mv::Entity>>& entities, con
   float delta_y = (windowSize.y*gamePartOfWindow) / (crystalAmmount.y + 1);
 
   banditMachine->initStructure(crystalAmmount, entities, { delta_x, delta_y });
+  checkDimensions(entities.back(),{ delta_x, delta_y },loader);
 }
 
 void UILoader::loadBackground(std::vector<std::shared_ptr<mv::Entity>>& entities, const Vector2<float>& windowSize,
@@ -98,4 +99,30 @@ void UILoader::loadBackground(std::vector<std::shared_ptr<mv::Entity>>& entities
   background->getComponent<ProperBody>()->setSize({ static_cast<float>(windowSize.x),static_cast<float>(windowSize.y) });
   background->getComponent<ProperBody>()->setPosition({ 0.5f*windowSize.x,0.5f*windowSize.y });
   entities.emplace_back(background);
+}
+
+void UILoader::checkDimensions(std::shared_ptr<mv::Entity> exampleSymbol, const Vector2<float>& delta, const std::shared_ptr<Loader>& loader)
+{
+  auto tolerance = std::atof(loader->getPathOf("TOLERANCE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
+  std::string error;
+  bool flag_error = false;
+  if ( exampleSymbol->getComponent<ProperBody>()->getRect().w*(1 + tolerance) > delta.x )
+  {
+    error = mv::constants::error::UI::TOO_CLOSE_HORIZONTALLY;
+    flag_error = true;
+  }
+
+  if ( exampleSymbol->getComponent<ProperBody>()->getRect().h*(1 + tolerance) > delta.y )
+  {
+    error = mv::constants::error::UI::TOO_CLOSE_VERTICALLY;
+    flag_error = true;
+  }
+
+  if ( flag_error )
+  {
+    error.append(" ");
+    error.append(mv::constants::error::UI::SOLUTION);
+    mv::Logger::Log(error, mv::Logger::STREAM::CONSOLE, mv::Logger::TYPE::WARNING);
+  }
+ 
 }

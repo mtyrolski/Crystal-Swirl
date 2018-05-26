@@ -57,6 +57,12 @@ namespace mv
         constexpr auto NOT_ENOUGH_MONEY = "You have't got enough money to do that.";
         constexpr auto POSITIVE_RATE = "Rate must be positive value";
       }
+      namespace UI
+      {
+        constexpr auto TOO_CLOSE_VERTICALLY = "The elements are too close together vertically! This can make it difficult to play.";
+        constexpr auto TOO_CLOSE_HORIZONTALLY = "The elements are too close together horizontally! This can make it difficult to play.";
+        constexpr auto SOLUTION = "Replace textures or modify 'technicalities' file.";
+      }
     }
 
     namespace texture
