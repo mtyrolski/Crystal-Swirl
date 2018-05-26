@@ -21,10 +21,11 @@ https://github.com/mvxxx
 class OneArmedBandit
 {
 	/* ===Objects=== */
-public:
-protected:
 private:
- 
+
+  //Wrapper which represents roll
+  using RollWrapper_t = std::vector<std::shared_ptr<mv::Entity>>;
+
   //flag which will be used in future
   bool processing;
 
@@ -34,8 +35,8 @@ private:
   //value which will be used in future
   float simulateTime;
 
-  //Crystal pointer container
-  Troika<Troika<std::shared_ptr<mv::Entity>>> crystalStructure;
+  //container of rolls with symbols
+  std::vector<RollWrapper_t> crystalStructure;
 
   //scene pointer
   std::shared_ptr<Scene> scene;
@@ -69,7 +70,11 @@ public:
   /*
    * Initialise structure, assign main pointers
    */
-  void initStructure(const std::vector<std::shared_ptr<mv::Entity>>& data);
+  void initStructure(const Vector2<float>& windowSize,
+    const Vector2<int8_t>& crystalAmmount,
+    float gamePartOfWindow, 
+    std::vector<std::shared_ptr<mv::Entity>>& entities,
+    const Vector2<float>& delta);
 
   /*
    * Checks result of game

@@ -7,7 +7,7 @@ https://github.com/mvxxx
 #include "oneArmedBandit.hpp"
 
 OneArmedBandit::OneArmedBandit(const std::shared_ptr<Loader>& loader, const std::shared_ptr<Scene>& _scene, const std::shared_ptr<GraphicManager>& _graphicManager)
-  : scene(_scene),graphicManager(_graphicManager),processing(false)
+  : scene(_scene), graphicManager(_graphicManager), processing(false)
 {
   delayTime = std::atof(loader->getPathOf("BANDIT_MACHINE_DELAY", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
   simulateTime = std::atof(loader->getPathOf("BANDIT_MACHINE_SIMULATION_TIME", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
@@ -42,45 +42,34 @@ bool OneArmedBandit::getStatusOfProcessing() const
   return processing;
 }
 
-void OneArmedBandit::initStructure(const std::vector<std::shared_ptr<mv::Entity>>& data)
+void OneArmedBandit::initStructure(const Vector2<float>& windowSize,
+  const Vector2<int8_t>& crystalAmmount,
+  float gamePartOfWindow,
+  std::vector<std::shared_ptr<mv::Entity>>& entities,
+  const Vector2<float>& delta)
 {
-  crystalStructure.first = { data[1],data[2],data[3] };
-  crystalStructure.second = { data[4],data[5],data[6] };
-  crystalStructure.third = { data[7],data[8],data[9] };
+  for ( int i = 0; i < crystalAmmount.x; i++ )
+  {
+    crystalStructure.emplace_back();
+    for ( int j = 0; j < crystalAmmount.y; j++ )
+    {
+      auto entity = std::make_shared<mv::Entity>();
+      entity->addComponent<ProperBody>();
+      entity->getComponent<ProperBody>()->setSize({ 100,100 });
+      entity->getComponent<ProperBody>()->setPosition({ delta.x*(i + 1),delta.y*(j + 1) });
+      entity->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID(Math::random(3, 5)), scene->getRenderer());
+      crystalStructure[i].emplace_back();
+      crystalStructure[i][j] = entity;
+      entities.emplace_back(entity);
+    }
+  }
 }
 
 int OneArmedBandit::multiplier()
 {
   auto counter = 0;
 
-  {//horizontal axis
-    if ( crystalStructure.first.first->getComponent<ProperBody>()->getType() == crystalStructure.first.second->getComponent<ProperBody>()->getType() &&
-      crystalStructure.first.second->getComponent<ProperBody>()->getType() == crystalStructure.first.third->getComponent<ProperBody>()->getType() )
-      counter++;
 
-    if ( crystalStructure.second.first->getComponent<ProperBody>()->getType() == crystalStructure.second.second->getComponent<ProperBody>()->getType() &&
-      crystalStructure.second.second->getComponent<ProperBody>()->getType() == crystalStructure.second.third->getComponent<ProperBody>()->getType() )
-      counter++;
-
-    if ( crystalStructure.third.first->getComponent<ProperBody>()->getType() == crystalStructure.third.second->getComponent<ProperBody>()->getType() &&
-      crystalStructure.third.second->getComponent<ProperBody>()->getType() == crystalStructure.third.third->getComponent<ProperBody>()->getType() )
-      counter++;
-
-  }
-
-  {//vertical axis
-    if ( crystalStructure.first.first->getComponent<ProperBody>()->getType() == crystalStructure.second.first->getComponent<ProperBody>()->getType() &&
-      crystalStructure.second.first->getComponent<ProperBody>()->getType() == crystalStructure.third.first->getComponent<ProperBody>()->getType() )
-      counter++;
-
-    if ( crystalStructure.first.second->getComponent<ProperBody>()->getType() == crystalStructure.second.second->getComponent<ProperBody>()->getType() &&
-      crystalStructure.second.second->getComponent<ProperBody>()->getType() == crystalStructure.third.second->getComponent<ProperBody>()->getType() )
-      counter++;
-
-    if ( crystalStructure.first.third->getComponent<ProperBody>()->getType() == crystalStructure.second.third->getComponent<ProperBody>()->getType() &&
-      crystalStructure.second.third->getComponent<ProperBody>()->getType() == crystalStructure.third.third->getComponent<ProperBody>()->getType() )
-      counter++;
-  }
 
   return counter;
 }

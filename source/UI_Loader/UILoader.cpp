@@ -1,6 +1,7 @@
 #include "UILoader.hpp"
 
-void UILoader::LoadUI(std::vector<std::shared_ptr<mv::Entity>>& entities, const std::shared_ptr<Loader>& loader, const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<Scene>& scene)
+void UILoader::LoadUI(std::vector<std::shared_ptr<mv::Entity>>& entities, const std::shared_ptr<Loader>& loader,
+  const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<Scene>& scene, const std::shared_ptr<OneArmedBandit>& banditMachine)
 {
   Vector2<float> windowSize = { static_cast<float>(std::atof(loader->getPathOf("WINDOW_DIMENSIONS_X", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())),
     static_cast<float>(std::atof(loader->getPathOf("WINDOW_DIMENSIONS_Y", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())) };
@@ -8,7 +9,7 @@ void UILoader::LoadUI(std::vector<std::shared_ptr<mv::Entity>>& entities, const 
   loadBackground(entities, windowSize, graphicManager, scene);
   loadTextBoxes(entities, windowSize, graphicManager, scene);
   loadButtons(entities, windowSize, graphicManager, scene);
-  loadRolls(entities, loader, windowSize, graphicManager, scene);
+  loadRolls(entities, loader, windowSize, graphicManager, scene,banditMachine);
 }
 
 void UILoader::loadButtons(std::vector<std::shared_ptr<mv::Entity>>& entities, const Vector2<float>& windowSize,
@@ -69,8 +70,23 @@ void UILoader::loadTextBoxes(std::vector<std::shared_ptr<mv::Entity>>& entities,
 }
 
 void UILoader::loadRolls(std::vector<std::shared_ptr<mv::Entity>>& entities, const std::shared_ptr<Loader>& loader,
-  const Vector2<float>& windowSize, const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<Scene>& scene)
+  const Vector2<float>& windowSize, const std::shared_ptr<GraphicManager>& graphicManager, 
+  const std::shared_ptr<Scene>& scene, const std::shared_ptr<OneArmedBandit>& banditMachine)
 {
+  using RollWrapper_t = std::vector<std::shared_ptr<mv::Entity>>;
+
+  Vector2<int8_t> crystalAmmount
+  {
+    static_cast<int8_t>(std::atoi(loader->getPathOf("ROLLS", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())),
+    static_cast<int8_t>(std::atoi(loader->getPathOf("SYMBOLS", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()))
+  };
+
+  float gamePartOfWindow = std::atof(loader->getPathOf("GAME_PART", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
+
+  float delta_x = windowSize.x / (crystalAmmount.x + 1);
+  float delta_y = (windowSize.y*gamePartOfWindow) / (crystalAmmount.y + 1);
+
+  banditMachine->initStructure(windowSize, crystalAmmount, gamePartOfWindow, entities, { delta_x, delta_y });
 }
 
 void UILoader::loadBackground(std::vector<std::shared_ptr<mv::Entity>>& entities, const Vector2<float>& windowSize,
