@@ -8,11 +8,13 @@ https://github.com/mvxxx
 #include <memory>
 #include <vector>
 
-#include "OneArmedBandit/oneArmedBandit.hpp"
 #include "ActionForwarder/ActionForwarder.hpp"
+#include "OneArmedBandit/oneArmedBandit.hpp"
 #include "GraphicManager/GraphicManager.hpp"
+#include "audioManager/AudioManager.hpp"
 #include "textMachine/textMachine.hpp"
-#include "cache/Cache.hpp"
+#include "UI_Loader/UILoader.hpp"
+#include "Loader/Loader.hpp"
 #include "scene/Scene.hpp"
 #include "Math.hpp"
 
@@ -30,6 +32,9 @@ private:
   //Pointer to graphic manager
   std::shared_ptr<GraphicManager> graphicManager;
 
+  //Pointer to audio manager
+  std::shared_ptr<AudioManager> audioManager;
+
   //All entities which are under GameState control
   std::vector<std::shared_ptr<mv::Entity>> entities;
 
@@ -41,6 +46,9 @@ private:
 
   //Pointer to One Armed Bandit Machine
   std::shared_ptr<OneArmedBandit> banditMachine;
+
+  //pointer to resource Loader
+  std::shared_ptr<Loader> loader;
 
   /* ===Methods=== */
 public:

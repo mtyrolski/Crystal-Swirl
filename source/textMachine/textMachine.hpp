@@ -16,7 +16,8 @@ https://github.com/mvxxx
 #include "ecs/component/text/Text.hpp"
 #include "wrappers/textWrapper_t.hpp"
 #include "ecs/entity/Entity.hpp"
-#include "Config.hpp"
+#include "Loader/Loader.hpp"
+#include "ConfigSrc.hpp"
 
 /*
  * Class which manages each text on the screen
@@ -28,9 +29,12 @@ private:
 
   //cointainer to keep text data
   std::map<mv::constants::textTypes::TYPE, textWrapper_t> data;
+
+  //pointer to loader
+  std::shared_ptr<Loader> loader;
   /* ===Methods=== */
 public:
-  TextMachine(uint16_t credits, uint16_t rate, SDL_Renderer* renderer);
+  TextMachine(uint16_t credits, uint16_t rate, SDL_Renderer* renderer,const std::shared_ptr<Loader>& loaderPtr);
 
   /*
    * Returns text | classic getter

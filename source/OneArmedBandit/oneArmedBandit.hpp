@@ -12,7 +12,6 @@ https://github.com/mvxxx
 #include "ecs/component/ProperBody.hpp"
 #include "GraphicManager/GraphicManager.hpp"
 #include "scene/Scene.hpp"
-#include "wrappers/Troika.hpp"
 #include "Math.hpp"
 
 /*
@@ -21,10 +20,11 @@ https://github.com/mvxxx
 class OneArmedBandit
 {
 	/* ===Objects=== */
-public:
-protected:
 private:
- 
+
+  //Wrapper which represents roll
+  using RollWrapper_t = std::vector<std::shared_ptr<mv::Entity>>;
+
   //flag which will be used in future
   bool processing;
 
@@ -34,8 +34,8 @@ private:
   //value which will be used in future
   float simulateTime;
 
-  //Crystal pointer container
-  Troika<Troika<std::shared_ptr<mv::Entity>>> crystalStructure;
+  //container of rolls with symbols
+  std::vector<RollWrapper_t> crystalStructure;
 
   //scene pointer
   std::shared_ptr<Scene> scene;
@@ -44,7 +44,7 @@ private:
   std::shared_ptr<GraphicManager> graphicManager;
 	/* ===Methods=== */
 public:
-  OneArmedBandit(float dTime, float sTime,const std::shared_ptr<Scene>& _scene,const std::shared_ptr<GraphicManager>& _graphicManager);
+  OneArmedBandit(const std::shared_ptr<Loader>& loader,const std::shared_ptr<Scene>& _scene,const std::shared_ptr<GraphicManager>& _graphicManager);
  
   /*
    * Starts the process of simulating slot game
@@ -69,11 +69,26 @@ public:
   /*
    * Initialise structure, assign main pointers
    */
-  void initStructure(const std::vector<std::shared_ptr<mv::Entity>>& data);
+  void initStructure(
+    const Vector2<int8_t>& crystalAmmount,
+    std::vector<std::shared_ptr<mv::Entity>>& entities,
+    const Vector2<float>& delta,
+    const std::shared_ptr<Loader>& loader);
 
   /*
    * Checks result of game
    * temporarily this method is the most important part of this clas
    */
-  int multiplier(); /*s*/
+  float multiplier(const std::shared_ptr<Loader>& loader);
+
+private:
+  /*
+   * Checks vertical axises
+   */
+  int multipyVertical();
+
+  /*
+   * Checks horizontal axises
+   */
+  int multipyHorizontal();
 };

@@ -10,7 +10,9 @@ https://github.com/mvxxx
 #include <SDL.h>
 #include <SDL_image.h>
 
-#include "Config.hpp"
+#include "Loader/Loader.hpp"
+#include "logger/Logger.hpp"
+#include "ConfigSrc.hpp"
 
 
 /*
@@ -29,7 +31,7 @@ public:
   /*
    * Loads all textures
    */
-  void loadTextures(SDL_Renderer* renderer);
+  void loadTextures(SDL_Renderer* renderer, const std::shared_ptr<Loader>& loader);
 
   /*
    * Finds and returns texture with given ID
@@ -40,5 +42,5 @@ private:
   /*
    * Loads one texture
    */
-  void loadSingleTexture(SDL_Renderer* renderer, mv::constants::texture::TEXTURE_ID type);
+  void loadSingleTexture(SDL_Renderer* renderer, mv::constants::texture::TEXTURE_ID type, const std::shared_ptr<Loader>& loader);
 };

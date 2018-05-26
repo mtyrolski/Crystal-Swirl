@@ -11,7 +11,7 @@ https://github.com/mvxxx
 #include "GraphicManager/GraphicManager.hpp"
 #include "wrappers/Vector2.hpp"
 #include "cache/Cache.hpp"
-#include "Config.hpp"
+#include "ConfigSrc.hpp"
 
 /*
  * Component which represents real body of object

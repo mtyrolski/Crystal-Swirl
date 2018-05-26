@@ -6,9 +6,11 @@ https://github.com/mvxxx
 
 #include "oneArmedBandit.hpp"
 
-OneArmedBandit::OneArmedBandit(float dTime, float sTime, const std::shared_ptr<Scene>& _scene, const std::shared_ptr<GraphicManager>& _graphicManager)
-  :delayTime(dTime), simulateTime(sTime), scene(_scene),graphicManager(_graphicManager),processing(false)
+OneArmedBandit::OneArmedBandit(const std::shared_ptr<Loader>& loader, const std::shared_ptr<Scene>& _scene, const std::shared_ptr<GraphicManager>& _graphicManager)
+  : scene(_scene), graphicManager(_graphicManager), processing(false)
 {
+  delayTime = std::atof(loader->getValueByKey("BANDIT_MACHINE_DELAY", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
+  simulateTime = std::atof(loader->getValueByKey("BANDIT_MACHINE_SIMULATION_TIME", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
 }
 
 bool OneArmedBandit::startSimulate()
@@ -19,8 +21,8 @@ bool OneArmedBandit::startSimulate()
     return false;
   }
 
-  for ( auto&line : crystalStructure )
-    for ( auto&var : line )
+  for ( auto&roll : crystalStructure )
+    for ( auto&var : roll )
       var->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID(Math::random(3, 5)), scene->getRenderer());
 
 }
@@ -40,44 +42,81 @@ bool OneArmedBandit::getStatusOfProcessing() const
   return processing;
 }
 
-void OneArmedBandit::initStructure(const std::vector<std::shared_ptr<mv::Entity>>& data)
+void OneArmedBandit::initStructure(
+  const Vector2<int8_t>& crystalAmmount,
+  std::vector<std::shared_ptr<mv::Entity>>& entities,
+  const Vector2<float>& delta,
+  const std::shared_ptr<Loader>& loader)
 {
-  crystalStructure.first = { data[1],data[2],data[3] };
-  crystalStructure.second = { data[4],data[5],data[6] };
-  crystalStructure.third = { data[7],data[8],data[9] };
+  using namespace mv::constants::loader;
+
+  for ( int i = 0; i < crystalAmmount.x; i++ )
+  {
+    crystalStructure.emplace_back();
+    for ( int j = 0; j < crystalAmmount.y; j++ )
+    {
+      auto entity = std::make_shared<mv::Entity>();
+      entity->addComponent<ProperBody>();
+      entity->getComponent<ProperBody>()->setSize({ static_cast<float>(std::atof(loader->getValueByKey("SYMBOL_SIZE_X",CONFIG_MODE::GRAPHIC).c_str())),static_cast<float>(std::atof(loader->getValueByKey("SYMBOL_SIZE_Y",CONFIG_MODE::GRAPHIC).c_str())) });
+      entity->getComponent<ProperBody>()->setPosition({ delta.x*(i + 1),delta.y*(j + 1) });
+      entity->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID(Math::random(3, 5)), scene->getRenderer());
+      crystalStructure[i].emplace_back();
+      crystalStructure[i][j] = entity;
+      entities.emplace_back(entity);
+    }
+  }
 }
 
-int OneArmedBandit::multiplier()
+float OneArmedBandit::multiplier(const std::shared_ptr<Loader>& loader)
 {
-  auto counter = 0;
-
-  {//horizontal axis
-    if ( crystalStructure.first.first->getComponent<ProperBody>()->getType() == crystalStructure.first.second->getComponent<ProperBody>()->getType() &&
-      crystalStructure.first.second->getComponent<ProperBody>()->getType() == crystalStructure.first.third->getComponent<ProperBody>()->getType() )
-      counter++;
-
-    if ( crystalStructure.second.first->getComponent<ProperBody>()->getType() == crystalStructure.second.second->getComponent<ProperBody>()->getType() &&
-      crystalStructure.second.second->getComponent<ProperBody>()->getType() == crystalStructure.second.third->getComponent<ProperBody>()->getType() )
-      counter++;
-
-    if ( crystalStructure.third.first->getComponent<ProperBody>()->getType() == crystalStructure.third.second->getComponent<ProperBody>()->getType() &&
-      crystalStructure.third.second->getComponent<ProperBody>()->getType() == crystalStructure.third.third->getComponent<ProperBody>()->getType() )
-      counter++;
-
+  if ( crystalStructure.size() == 0 || crystalStructure.front().size() == 0 )
+  {
+    mv::Logger::Log(mv::constants::error::banditMachine::LACK_OF_SYMBOLS);
+    return -1;
   }
 
-  {//vertical axis
-    if ( crystalStructure.first.first->getComponent<ProperBody>()->getType() == crystalStructure.second.first->getComponent<ProperBody>()->getType() &&
-      crystalStructure.second.first->getComponent<ProperBody>()->getType() == crystalStructure.third.first->getComponent<ProperBody>()->getType() )
-      counter++;
+  return std::atof(loader->getValueByKey("PRIZE_FACTOR",mv::constants::loader::CONFIG_MODE::TECHNICALITIES,mv::constants::loader::STORAGE_MODE::STORE).c_str()) * (multipyHorizontal() + multipyVertical());
 
-    if ( crystalStructure.first.second->getComponent<ProperBody>()->getType() == crystalStructure.second.second->getComponent<ProperBody>()->getType() &&
-      crystalStructure.second.second->getComponent<ProperBody>()->getType() == crystalStructure.third.second->getComponent<ProperBody>()->getType() )
-      counter++;
+}
 
-    if ( crystalStructure.first.third->getComponent<ProperBody>()->getType() == crystalStructure.second.third->getComponent<ProperBody>()->getType() &&
-      crystalStructure.second.third->getComponent<ProperBody>()->getType() == crystalStructure.third.third->getComponent<ProperBody>()->getType() )
-      counter++;
+int OneArmedBandit::multipyVertical()
+{
+  auto counter = 0;
+  for ( auto& roll : crystalStructure )
+  {
+    bool lineUp = true;
+
+    for ( int j = 1; j < roll.size(); j++ )
+    {
+      if ( roll[j]->getComponent<ProperBody>()->getType() != roll[j - 1]->getComponent<ProperBody>()->getType() )
+      {
+        lineUp = false;
+        break;
+      }
+    }
+    if ( lineUp )
+      counter+=roll.size();
+  }
+  return counter;
+}
+
+int OneArmedBandit::multipyHorizontal()
+{
+  int ammountOfSymbolsInRoll = crystalStructure.front().size();
+  auto counter = 0;
+  for ( int j = 0; j < ammountOfSymbolsInRoll; j++ )
+  {
+    bool lineUp = true;
+    for ( int i = 1; i < crystalStructure.size(); i++ )
+    {
+      if ( crystalStructure[i][j]->getComponent<ProperBody>()->getType() != crystalStructure[i - 1][j]->getComponent<ProperBody>()->getType() )
+      {
+        lineUp = false;
+        break;
+      }
+    }
+    if ( lineUp )
+      counter += crystalStructure.size();
   }
 
   return counter;

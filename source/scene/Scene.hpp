@@ -15,7 +15,8 @@ https://github.com/mvxxx
 #include "ecs/entity/Entity.hpp"
 #include "wrappers/Vector2.hpp"
 #include "logger/Logger.hpp"
-#include "Config.hpp"
+#include "Loader/Loader.hpp"
+#include "ConfigSrc.hpp"
  
 /*
  * Class which manage scene, entities, rendering etc
@@ -44,6 +45,10 @@ public:
   Scene();
   ~Scene();
 
+  /*
+  * Creates window
+  */
+  void create(const std::shared_ptr<Loader>& loader);
   /*
    * Window getter
    */

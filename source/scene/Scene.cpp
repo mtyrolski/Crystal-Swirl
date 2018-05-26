@@ -14,6 +14,19 @@ Scene::~Scene()
   SDL_Quit();
 }
 
+void Scene::create(const std::shared_ptr<Loader>& loader)
+{
+  if ( IMG_Init(IMG_INIT_PNG) != IMG_INIT_PNG )
+    mv::Logger::Log(mv::constants::error::scene::FAILED_IMG, mv::Logger::STREAM::BOTH, mv::Logger::TYPE::ERROR);
+
+
+  if ( TTF_Init() == -1 )
+    mv::Logger::Log(mv::constants::error::scene::FAILED_TTF, mv::Logger::STREAM::BOTH, mv::Logger::TYPE::ERROR);
+
+  window = SDL_CreateWindow("Crystal Swirl", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, std::atoi(loader->getValueByKey("WINDOW_DIMENSIONS_X", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()), std::atoi(loader->getValueByKey("WINDOW_DIMENSIONS_Y", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()), 0);
+  renderer = SDL_CreateRenderer(&*window, -1, SDL_RENDERER_ACCELERATED);
+}
+
 SDL_Window* Scene::getWindow() const
 {
   return window;
@@ -66,14 +79,14 @@ void Scene::pollEvents()
 
 void Scene::clear(const std::vector<std::shared_ptr<mv::Entity>>& entities)
 {
-  SDL_RenderClear(&*renderer);
+  SDL_RenderClear(renderer);
 
   for ( auto&var : entities )
   {
     if ( var->hasComponent<ProperBody>() )
     {
       auto PB = var->getComponent<ProperBody>();
-      SDL_RenderCopy(&*renderer, PB->getTexture(), nullptr, &PB->getRect());    
+      SDL_RenderCopy(renderer, PB->getTexture(), nullptr, &PB->getRect());    
     }
   }
 }
@@ -96,13 +109,4 @@ const Vector2<float>& Scene::getMousePosition() const
 Scene::Scene()
   :opened(true)
 {
-  if ( IMG_Init(IMG_INIT_PNG) != IMG_INIT_PNG )
-    mv::Logger::Log(mv::constants::error::scene::FAILED_IMG, mv::Logger::STREAM::BOTH, mv::Logger::TYPE::ERROR);
-  
-
-  if( TTF_Init()==-1 )
-    mv::Logger::Log(mv::constants::error::scene::FAILED_TTF, mv::Logger::STREAM::BOTH, mv::Logger::TYPE::ERROR);
-
-  window = SDL_CreateWindow("Crystal Swirl", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mv::constants::defaults::WINDOW_DIMENSIONS.x, mv::constants::defaults::WINDOW_DIMENSIONS.y, 0);
-  renderer = SDL_CreateRenderer(&*window, -1, SDL_RENDERER_ACCELERATED);
 }
