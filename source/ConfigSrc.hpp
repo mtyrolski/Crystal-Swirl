@@ -41,15 +41,10 @@ namespace mv
         constexpr auto FAILED_TTF = "Failed to init SDL_TTF";
       }
 
-      namespace soundObject
-      {
-        constexpr auto ALREADY_EXIST = "Sound with given name already exists";
-        constexpr auto DOES_NOT_EXIST_IN_SYSTEM = "Sound with given doesn't exist in system";
-      }
-
       namespace banditMachine
       {
         constexpr auto PROCESSING = "You can't start new simulate because bandit machine is processing now.";
+        constexpr auto LACK_OF_SYMBOLS = "There is not enough symbols in the scene. Add some befoure you start a game." ;
       }
 
       namespace textMachine
@@ -57,6 +52,13 @@ namespace mv
         constexpr auto NOT_ENOUGH_MONEY = "You have't got enough money to do that.";
         constexpr auto POSITIVE_RATE = "Rate must be positive value";
       }
+
+      namespace audio
+      {
+        constexpr auto SDL_MIXER = "Failed to initialize SDL_mixer.";
+        constexpr auto PLAY_MUSIC = "Failed to play music.";
+      }
+
       namespace UI
       {
         constexpr auto TOO_CLOSE_VERTICALLY = "The elements are too close together vertically! This can make it difficult to play.";

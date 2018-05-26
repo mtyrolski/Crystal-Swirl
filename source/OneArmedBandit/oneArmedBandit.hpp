@@ -72,7 +72,8 @@ public:
   void initStructure(
     const Vector2<int8_t>& crystalAmmount,
     std::vector<std::shared_ptr<mv::Entity>>& entities,
-    const Vector2<float>& delta);
+    const Vector2<float>& delta,
+    const std::shared_ptr<Loader>& loader);
 
   /*
    * Checks result of game

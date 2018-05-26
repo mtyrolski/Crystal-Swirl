@@ -20,6 +20,7 @@ void UILoader::LoadUI(std::vector<std::shared_ptr<mv::Entity>>& entities, const 
 void UILoader::loadButtons(std::vector<std::shared_ptr<mv::Entity>>& entities, const Vector2<float>& windowSize,
   const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<Scene>& scene, const std::shared_ptr<Loader>& loader)
 {
+  using namespace mv::constants::loader;
   std::shared_ptr<mv::Entity> plus = std::make_shared<mv::Entity>();
   std::shared_ptr<mv::Entity> minus = std::make_shared<mv::Entity>();
   std::shared_ptr<mv::Entity> play = std::make_shared<mv::Entity>();
@@ -27,19 +28,19 @@ void UILoader::loadButtons(std::vector<std::shared_ptr<mv::Entity>>& entities, c
   play->addComponent<Clickable>();
   play->addComponent<ProperBody>();
   play->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::PLAY, scene->getRenderer());
-  play->getComponent<ProperBody>()->setSize({ 170,100 });
+  play->getComponent<ProperBody>()->setSize({ static_cast<float>(std::atof(loader->getValueByKey("PLAY_SIZE_X",CONFIG_MODE::GRAPHIC).c_str())),static_cast<float>(std::atof(loader->getValueByKey("PLAY_SIZE_Y",CONFIG_MODE::GRAPHIC).c_str())) });
   play->getComponent<ProperBody>()->setPosition({ 0.5f*windowSize.x,0.833f*windowSize.y });
 
   plus->addComponent<Clickable>();
   plus->addComponent<ProperBody>();
   plus->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::BUTTON_PLUS, scene->getRenderer());
-  plus->getComponent<ProperBody>()->setSize({ 100,100 });
+  plus->getComponent<ProperBody>()->setSize({ static_cast<float>(std::atof(loader->getValueByKey("PLUS_SIZE_X",CONFIG_MODE::GRAPHIC).c_str())),static_cast<float>(std::atof(loader->getValueByKey("PLUS_SIZE_Y",CONFIG_MODE::GRAPHIC).c_str())) });
   plus->getComponent<ProperBody>()->setPosition({ 0.335f*windowSize.x,0.833f*windowSize.y });
 
   minus->addComponent<Clickable>();
   minus->addComponent<ProperBody>();
   minus->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::BUTTON_MINUS, scene->getRenderer());
-  minus->getComponent<ProperBody>()->setSize({ 100,100 });
+  minus->getComponent<ProperBody>()->setSize({ static_cast<float>(std::atof(loader->getValueByKey("MINUS_SIZE_X",CONFIG_MODE::GRAPHIC).c_str())),static_cast<float>(std::atof(loader->getValueByKey("MINUS_SIZE_Y",CONFIG_MODE::GRAPHIC).c_str())) });
   minus->getComponent<ProperBody>()->setPosition({ 0.05f*windowSize.x,0.833f*windowSize.y });
 
   entities.emplace_back(plus);
@@ -50,22 +51,23 @@ void UILoader::loadButtons(std::vector<std::shared_ptr<mv::Entity>>& entities, c
 void UILoader::loadTextBoxes(std::vector<std::shared_ptr<mv::Entity>>& entities, const Vector2<float>& windowSize,
   const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<Scene>& scene, const std::shared_ptr<Loader>& loader)
 {
+  using namespace mv::constants::loader;
   std::shared_ptr<mv::Entity> rate = std::make_shared<mv::Entity>();
   rate->addComponent<ProperBody>();
   rate->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::RATE, scene->getRenderer());
-  rate->getComponent<ProperBody>()->setSize({ 170,100 });
+  rate->getComponent<ProperBody>()->setSize({ static_cast<float>(std::atof(loader->getValueByKey("RATE_SIZE_X",CONFIG_MODE::GRAPHIC).c_str())),static_cast<float>(std::atof(loader->getValueByKey("RATE_SIZE_Y",CONFIG_MODE::GRAPHIC).c_str())) });
   rate->getComponent<ProperBody>()->setPosition({ 0.1875f*windowSize.x,0.833f*windowSize.y });
 
   std::shared_ptr<mv::Entity> prize = std::make_shared<mv::Entity>();
   prize->addComponent<ProperBody>();
   prize->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::PRIZE, scene->getRenderer());
-  prize->getComponent<ProperBody>()->setSize({ 250,60 });
+  prize->getComponent<ProperBody>()->setSize({ static_cast<float>(std::atof(loader->getValueByKey("PRIZE_SIZE_X",CONFIG_MODE::GRAPHIC).c_str())),static_cast<float>(std::atof(loader->getValueByKey("PRIZE_SIZE_Y",CONFIG_MODE::GRAPHIC).c_str())) });
   prize->getComponent<ProperBody>()->setPosition({ 0.8375f*windowSize.x,0.783f*windowSize.y });
 
   std::shared_ptr<mv::Entity> credits = std::make_shared<mv::Entity>();
   credits->addComponent<ProperBody>();
   credits->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::CREDITS, scene->getRenderer());
-  credits->getComponent<ProperBody>()->setSize({ 250,60 });
+  credits->getComponent<ProperBody>()->setSize({ static_cast<float>(std::atof(loader->getValueByKey("CREDITS_SIZE_X",CONFIG_MODE::GRAPHIC).c_str())),static_cast<float>(std::atof(loader->getValueByKey("CREDITS_SIZE_Y",CONFIG_MODE::GRAPHIC).c_str())) });
   credits->getComponent<ProperBody>()->setPosition({ 0.8375f*windowSize.x,0.866f*windowSize.y });
 
   entities.emplace_back(rate);
@@ -90,7 +92,7 @@ void UILoader::loadRolls(std::vector<std::shared_ptr<mv::Entity>>& entities, con
   float delta_x = windowSize.x / (crystalAmmount.x + 1);
   float delta_y = (windowSize.y*resolutionFactor) / (crystalAmmount.y + 1);
 
-  banditMachine->initStructure(crystalAmmount, entities, { delta_x, delta_y });
+  banditMachine->initStructure(crystalAmmount, entities, { delta_x, delta_y },loader);
   checkDimensions(entities.back(),{ delta_x, delta_y },loader);
 }
 
@@ -108,25 +110,28 @@ void UILoader::loadBackground(std::vector<std::shared_ptr<mv::Entity>>& entities
 void UILoader::checkDimensions(std::shared_ptr<mv::Entity> exampleSymbol, const Vector2<float>& delta, const std::shared_ptr<Loader>& loader)
 {
   auto tolerance = std::atof(loader->getValueByKey("TOLERANCE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
-  std::string error;
+  std::vector<std::string> errors;
   bool flag_error = false;
   if ( exampleSymbol->getComponent<ProperBody>()->getRect().w*(1 + tolerance) > delta.x )
   {
-    error = mv::constants::error::UI::TOO_CLOSE_HORIZONTALLY;
+    errors.emplace_back(mv::constants::error::UI::TOO_CLOSE_HORIZONTALLY);
     flag_error = true;
   }
 
   if ( exampleSymbol->getComponent<ProperBody>()->getRect().h*(1 + tolerance) > delta.y )
   {
-    error = mv::constants::error::UI::TOO_CLOSE_VERTICALLY;
+    errors.emplace_back(mv::constants::error::UI::TOO_CLOSE_VERTICALLY);
     flag_error = true;
   }
 
   if ( flag_error )
   {
-    error.append(" ");
-    error.append(mv::constants::error::UI::SOLUTION);
-    mv::Logger::Log(error, mv::Logger::STREAM::CONSOLE, mv::Logger::TYPE::WARNING);
+    for(auto&var:errors )
+    {
+      var.append(" ");
+      var.append(mv::constants::error::UI::SOLUTION);
+      mv::Logger::Log(var, mv::Logger::STREAM::CONSOLE, mv::Logger::TYPE::WARNING);
+    }   
   }
  
 }

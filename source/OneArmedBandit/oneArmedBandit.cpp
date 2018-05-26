@@ -45,8 +45,11 @@ bool OneArmedBandit::getStatusOfProcessing() const
 void OneArmedBandit::initStructure(
   const Vector2<int8_t>& crystalAmmount,
   std::vector<std::shared_ptr<mv::Entity>>& entities,
-  const Vector2<float>& delta)
+  const Vector2<float>& delta,
+  const std::shared_ptr<Loader>& loader)
 {
+  using namespace mv::constants::loader;
+
   for ( int i = 0; i < crystalAmmount.x; i++ )
   {
     crystalStructure.emplace_back();
@@ -54,7 +57,7 @@ void OneArmedBandit::initStructure(
     {
       auto entity = std::make_shared<mv::Entity>();
       entity->addComponent<ProperBody>();
-      entity->getComponent<ProperBody>()->setSize({ 100,100 });
+      entity->getComponent<ProperBody>()->setSize({ static_cast<float>(std::atof(loader->getValueByKey("SYMBOL_SIZE_X",CONFIG_MODE::GRAPHIC).c_str())),static_cast<float>(std::atof(loader->getValueByKey("SYMBOL_SIZE_Y",CONFIG_MODE::GRAPHIC).c_str())) });
       entity->getComponent<ProperBody>()->setPosition({ delta.x*(i + 1),delta.y*(j + 1) });
       entity->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID(Math::random(3, 5)), scene->getRenderer());
       crystalStructure[i].emplace_back();
@@ -66,6 +69,12 @@ void OneArmedBandit::initStructure(
 
 float OneArmedBandit::multiplier(const std::shared_ptr<Loader>& loader)
 {
+  if ( crystalStructure.size() == 0 || crystalStructure.front().size() == 0 )
+  {
+    mv::Logger::Log(mv::constants::error::banditMachine::LACK_OF_SYMBOLS);
+    return -1;
+  }
+
   return std::atof(loader->getValueByKey("PRIZE_FACTOR",mv::constants::loader::CONFIG_MODE::TECHNICALITIES,mv::constants::loader::STORAGE_MODE::STORE).c_str()) * (multipyHorizontal() + multipyVertical());
 
 }

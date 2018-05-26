@@ -8,9 +8,8 @@ https://github.com/mvxxx
 AudioManager::AudioManager(const std::shared_ptr<Loader>& loader)
 {
   if ( Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1 )
-  {
-    //log o bledzie
-  }
+    mv::Logger::Log(mv::constants::error::audio::SDL_MIXER, mv::Logger::STREAM::BOTH);
+  
 
   loadAll(loader);
 }
@@ -38,8 +37,6 @@ bool AudioManager::play(mv::constants::audio::AUDIO_ID id)
 {
   switch ( id )
   {
-
-
   case mv::constants::audio::AUDIO_ID::SOUNDTRACK:
   {
     if ( Mix_PlayingMusic() == 0 )
