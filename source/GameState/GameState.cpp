@@ -42,5 +42,4 @@ void GameState::initUI()
 {
   UILoader uiLoader;
   uiLoader.LoadUI(entities, loader, graphicManager, scene,banditMachine);
-  int t = 5;
 }
