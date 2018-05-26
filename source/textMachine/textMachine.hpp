@@ -17,7 +17,7 @@ https://github.com/mvxxx
 #include "wrappers/textWrapper_t.hpp"
 #include "ecs/entity/Entity.hpp"
 #include "Loader/Loader.hpp"
-#include "Config.hpp"
+#include "ConfigSrc.hpp"
 
 /*
  * Class which manages each text on the screen

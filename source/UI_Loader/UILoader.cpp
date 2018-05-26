@@ -1,19 +1,24 @@
+/*
+mvxxx 2018
+https://github.com/mvxxx
+*/
+
 #include "UILoader.hpp"
 
 void UILoader::LoadUI(std::vector<std::shared_ptr<mv::Entity>>& entities, const std::shared_ptr<Loader>& loader,
   const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<Scene>& scene, const std::shared_ptr<OneArmedBandit>& banditMachine)
 {
-  Vector2<float> windowSize = { static_cast<float>(std::atof(loader->getPathOf("WINDOW_DIMENSIONS_X", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())),
-    static_cast<float>(std::atof(loader->getPathOf("WINDOW_DIMENSIONS_Y", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())) };
+  Vector2<float> windowSize = { static_cast<float>(std::atof(loader->getValueByKey("WINDOW_DIMENSIONS_X", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())),
+    static_cast<float>(std::atof(loader->getValueByKey("WINDOW_DIMENSIONS_Y", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())) };
 
-  loadBackground(entities, windowSize, graphicManager, scene);
-  loadTextBoxes(entities, windowSize, graphicManager, scene);
-  loadButtons(entities, windowSize, graphicManager, scene);
+  loadBackground(entities, windowSize, graphicManager, scene, loader);
+  loadTextBoxes(entities, windowSize, graphicManager, scene, loader);
+  loadButtons(entities, windowSize, graphicManager, scene, loader);
   loadRolls(entities, loader, windowSize, graphicManager, scene, banditMachine);
 }
 
 void UILoader::loadButtons(std::vector<std::shared_ptr<mv::Entity>>& entities, const Vector2<float>& windowSize,
-  const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<Scene>& scene)
+  const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<Scene>& scene, const std::shared_ptr<Loader>& loader)
 {
   std::shared_ptr<mv::Entity> plus = std::make_shared<mv::Entity>();
   std::shared_ptr<mv::Entity> minus = std::make_shared<mv::Entity>();
@@ -29,7 +34,7 @@ void UILoader::loadButtons(std::vector<std::shared_ptr<mv::Entity>>& entities, c
   plus->addComponent<ProperBody>();
   plus->getComponent<ProperBody>()->setType(graphicManager, mv::constants::texture::TEXTURE_ID::BUTTON_PLUS, scene->getRenderer());
   plus->getComponent<ProperBody>()->setSize({ 100,100 });
-  plus->getComponent<ProperBody>()->setPosition({ 0.325f*windowSize.x,0.833f*windowSize.y });
+  plus->getComponent<ProperBody>()->setPosition({ 0.335f*windowSize.x,0.833f*windowSize.y });
 
   minus->addComponent<Clickable>();
   minus->addComponent<ProperBody>();
@@ -37,14 +42,13 @@ void UILoader::loadButtons(std::vector<std::shared_ptr<mv::Entity>>& entities, c
   minus->getComponent<ProperBody>()->setSize({ 100,100 });
   minus->getComponent<ProperBody>()->setPosition({ 0.05f*windowSize.x,0.833f*windowSize.y });
 
-  plus->getComponent<ProperBody>()->setSize({ 100,100 });
   entities.emplace_back(plus);
   entities.emplace_back(minus);
   entities.emplace_back(play);
 }
 
 void UILoader::loadTextBoxes(std::vector<std::shared_ptr<mv::Entity>>& entities, const Vector2<float>& windowSize,
-  const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<Scene>& scene)
+  const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<Scene>& scene, const std::shared_ptr<Loader>& loader)
 {
   std::shared_ptr<mv::Entity> rate = std::make_shared<mv::Entity>();
   rate->addComponent<ProperBody>();
@@ -77,21 +81,21 @@ void UILoader::loadRolls(std::vector<std::shared_ptr<mv::Entity>>& entities, con
 
   Vector2<int8_t> crystalAmmount
   {
-    static_cast<int8_t>(std::atoi(loader->getPathOf("ROLLS", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())),
-    static_cast<int8_t>(std::atoi(loader->getPathOf("SYMBOLS", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()))
+    static_cast<int8_t>(std::atoi(loader->getValueByKey("ROLLS", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())),
+    static_cast<int8_t>(std::atoi(loader->getValueByKey("SYMBOLS", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()))
   };
 
-  float gamePartOfWindow = std::atof(loader->getPathOf("GAME_PART", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
+  float resolutionFactor = std::atof(loader->getValueByKey("RESOLUTION_FACTOR", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
 
   float delta_x = windowSize.x / (crystalAmmount.x + 1);
-  float delta_y = (windowSize.y*gamePartOfWindow) / (crystalAmmount.y + 1);
+  float delta_y = (windowSize.y*resolutionFactor) / (crystalAmmount.y + 1);
 
   banditMachine->initStructure(crystalAmmount, entities, { delta_x, delta_y });
   checkDimensions(entities.back(),{ delta_x, delta_y },loader);
 }
 
 void UILoader::loadBackground(std::vector<std::shared_ptr<mv::Entity>>& entities, const Vector2<float>& windowSize,
-  const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<Scene>& scene)
+  const std::shared_ptr<GraphicManager>& graphicManager, const std::shared_ptr<Scene>& scene, const std::shared_ptr<Loader>& loader)
 {
   std::shared_ptr<mv::Entity> background = std::make_shared<mv::Entity>();
   background->addComponent<ProperBody>();
@@ -103,7 +107,7 @@ void UILoader::loadBackground(std::vector<std::shared_ptr<mv::Entity>>& entities
 
 void UILoader::checkDimensions(std::shared_ptr<mv::Entity> exampleSymbol, const Vector2<float>& delta, const std::shared_ptr<Loader>& loader)
 {
-  auto tolerance = std::atof(loader->getPathOf("TOLERANCE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
+  auto tolerance = std::atof(loader->getValueByKey("TOLERANCE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
   std::string error;
   bool flag_error = false;
   if ( exampleSymbol->getComponent<ProperBody>()->getRect().w*(1 + tolerance) > delta.x )

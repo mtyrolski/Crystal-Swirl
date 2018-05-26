@@ -5,7 +5,7 @@ https://github.com/mvxxx
 
 #include "Loader.hpp"
 
-std::string Loader::getPathOf(const std::string& name,
+std::string Loader::getValueByKey(const std::string& name,
   const mv::constants::loader::CONFIG_MODE& configMode,
   const mv::constants::loader::STORAGE_MODE storageMode)
 {

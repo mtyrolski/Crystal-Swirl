@@ -23,7 +23,7 @@ void Scene::create(const std::shared_ptr<Loader>& loader)
   if ( TTF_Init() == -1 )
     mv::Logger::Log(mv::constants::error::scene::FAILED_TTF, mv::Logger::STREAM::BOTH, mv::Logger::TYPE::ERROR);
 
-  window = SDL_CreateWindow("Crystal Swirl", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, std::atoi(loader->getPathOf("WINDOW_DIMENSIONS_X", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()), std::atoi(loader->getPathOf("WINDOW_DIMENSIONS_Y", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()), 0);
+  window = SDL_CreateWindow("Crystal Swirl", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, std::atoi(loader->getValueByKey("WINDOW_DIMENSIONS_X", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()), std::atoi(loader->getValueByKey("WINDOW_DIMENSIONS_Y", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()), 0);
   renderer = SDL_CreateRenderer(&*window, -1, SDL_RENDERER_ACCELERATED);
 }
 

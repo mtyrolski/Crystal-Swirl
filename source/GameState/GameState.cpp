@@ -15,8 +15,8 @@ GameState::GameState(const std::shared_ptr<Scene>& scenePtr)
   banditMachine = std::make_shared<OneArmedBandit>(loader, scenePtr, graphicManager);
 
   textMachine = std::make_shared<TextMachine>
-    ( std::atoi(loader->getPathOf("CREDITS",mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()),
-      std::atoi(loader->getPathOf("RATE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()),
+    ( std::atoi(loader->getValueByKey("CREDITS",mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()),
+      std::atoi(loader->getValueByKey("RATE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str()),
     scenePtr->getRenderer(),
     loader);
 

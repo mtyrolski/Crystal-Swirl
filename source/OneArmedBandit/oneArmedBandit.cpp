@@ -9,8 +9,8 @@ https://github.com/mvxxx
 OneArmedBandit::OneArmedBandit(const std::shared_ptr<Loader>& loader, const std::shared_ptr<Scene>& _scene, const std::shared_ptr<GraphicManager>& _graphicManager)
   : scene(_scene), graphicManager(_graphicManager), processing(false)
 {
-  delayTime = std::atof(loader->getPathOf("BANDIT_MACHINE_DELAY", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
-  simulateTime = std::atof(loader->getPathOf("BANDIT_MACHINE_SIMULATION_TIME", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
+  delayTime = std::atof(loader->getValueByKey("BANDIT_MACHINE_DELAY", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
+  simulateTime = std::atof(loader->getValueByKey("BANDIT_MACHINE_SIMULATION_TIME", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str());
 }
 
 bool OneArmedBandit::startSimulate()
@@ -66,7 +66,7 @@ void OneArmedBandit::initStructure(
 
 float OneArmedBandit::multiplier(const std::shared_ptr<Loader>& loader)
 {
-  return std::atof(loader->getPathOf("PRIZE_FACTOR",mv::constants::loader::CONFIG_MODE::TECHNICALITIES,mv::constants::loader::STORAGE_MODE::STORE).c_str()) * (multipyHorizontal() + multipyVertical());
+  return std::atof(loader->getValueByKey("PRIZE_FACTOR",mv::constants::loader::CONFIG_MODE::TECHNICALITIES,mv::constants::loader::STORAGE_MODE::STORE).c_str()) * (multipyHorizontal() + multipyVertical());
 
 }
 

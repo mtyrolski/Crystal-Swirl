@@ -16,12 +16,12 @@ void TextMachine::setText(mv::constants::textTypes::TYPE type, const std::string
   using namespace mv::constants;
   data[type].text = text;
   data[type].entity->getComponent<Text>()->
-      setText(loader->getPathOf("FONT_PATH",loader::CONFIG_MODE::GRAPHIC,loader::STORAGE_MODE::STORE), 
-      std::atoi(loader->getPathOf("FONT_SIZE", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str()),
+      setText(loader->getValueByKey("FONT_PATH",loader::CONFIG_MODE::GRAPHIC,loader::STORAGE_MODE::STORE),
+      std::atoi(loader->getValueByKey("FONT_SIZE", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str()),
       text,
-      { static_cast<const uint8_t>(std::atoi(loader->getPathOf("FONT_COLOR_R", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())),
-        static_cast<const uint8_t>(std::atoi(loader->getPathOf("FONT_COLOR_G", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())),
-        static_cast<const uint8_t>(std::atoi(loader->getPathOf("FONT_COLOR_B", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())) },
+      { static_cast<const uint8_t>(std::atoi(loader->getValueByKey("FONT_COLOR_R", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())),
+        static_cast<const uint8_t>(std::atoi(loader->getValueByKey("FONT_COLOR_G", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())),
+        static_cast<const uint8_t>(std::atoi(loader->getValueByKey("FONT_COLOR_B", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())) },
       renderer);
 }
 
@@ -49,18 +49,18 @@ void TextMachine::init(uint16_t credits, uint16_t rate, SDL_Renderer* renderer)
   {
     var.second.entity->addComponent<Text>();
     var.second.entity->getComponent<Text>()->init(
-      loader->getPathOf("FONT_PATH", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE),
-      std::atoi(loader->getPathOf("FONT_SIZE", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())
+      loader->getValueByKey("FONT_PATH", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE),
+      std::atoi(loader->getValueByKey("FONT_SIZE", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())
       , data[var.first].text,
-      { static_cast<const uint8_t>(std::atoi(loader->getPathOf("FONT_COLOR_R", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())),
-      static_cast<const uint8_t>(std::atoi(loader->getPathOf("FONT_COLOR_G", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())),
-      static_cast<const uint8_t>(std::atoi(loader->getPathOf("FONT_COLOR_B", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())) },
+      { static_cast<const uint8_t>(std::atoi(loader->getValueByKey("FONT_COLOR_R", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())),
+      static_cast<const uint8_t>(std::atoi(loader->getValueByKey("FONT_COLOR_G", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())),
+      static_cast<const uint8_t>(std::atoi(loader->getValueByKey("FONT_COLOR_B", loader::CONFIG_MODE::GRAPHIC, loader::STORAGE_MODE::STORE).c_str())) },
       renderer);
   }
 
   const Vector2<float> WINDOW_DIMENSIONS =
-  { static_cast<float>(std::atof(loader->getPathOf("WINDOW_DIMENSIONS_X", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())),
-    static_cast<float>(std::atof(loader->getPathOf("WINDOW_DIMENSIONS_Y", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())) };
+  { static_cast<float>(std::atof(loader->getValueByKey("WINDOW_DIMENSIONS_X", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())),
+    static_cast<float>(std::atof(loader->getValueByKey("WINDOW_DIMENSIONS_Y", mv::constants::loader::CONFIG_MODE::TECHNICALITIES).c_str())) };
 
 
   data[textTypes::TYPE::CREDITS].entity->getComponent<Text>()->setPosition({ 0.8975f*WINDOW_DIMENSIONS.x,0.866f*WINDOW_DIMENSIONS.y });

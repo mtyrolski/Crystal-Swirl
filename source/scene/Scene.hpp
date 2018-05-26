@@ -16,7 +16,7 @@ https://github.com/mvxxx
 #include "wrappers/Vector2.hpp"
 #include "logger/Logger.hpp"
 #include "Loader/Loader.hpp"
-#include "Config.hpp"
+#include "ConfigSrc.hpp"
  
 /*
  * Class which manage scene, entities, rendering etc
@@ -91,8 +91,4 @@ public:
    * Returns last position of mouse
    */
   const Vector2<float>& getMousePosition() const;
-
-  /*
-  
-  */
 };

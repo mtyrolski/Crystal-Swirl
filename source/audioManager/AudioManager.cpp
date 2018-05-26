@@ -28,7 +28,7 @@ AudioManager::~AudioManager()
 
 void AudioManager::loadAll(const std::shared_ptr<Loader>& loader)
 {
-  soundtrack = Mix_LoadMUS(("source/data/audio/" + loader->getPathOf("SOUNDTRACK", mv::constants::loader::CONFIG_MODE::AUDIO)).c_str());
+  soundtrack = Mix_LoadMUS(("source/data/audio/" + loader->getValueByKey("SOUNDTRACK", mv::constants::loader::CONFIG_MODE::AUDIO)).c_str());
 
   loadSingleSound(mv::constants::audio::AUDIO_ID::CLICK, loader);
   loadSingleSound(mv::constants::audio::AUDIO_ID::PLAY, loader);
@@ -61,5 +61,5 @@ bool AudioManager::play(mv::constants::audio::AUDIO_ID id)
 
 void AudioManager::loadSingleSound(mv::constants::audio::AUDIO_ID type, const std::shared_ptr<Loader>& loader)
 {
-  soundData[type] = Mix_LoadWAV(("source/data/audio/" + loader->getPathOf(mv::constants::audio::audioKey.at(type), mv::constants::loader::CONFIG_MODE::AUDIO)).c_str());
+  soundData[type] = Mix_LoadWAV(("source/data/audio/" + loader->getValueByKey(mv::constants::audio::audioKey.at(type), mv::constants::loader::CONFIG_MODE::AUDIO)).c_str());
 }

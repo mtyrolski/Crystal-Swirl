@@ -50,7 +50,7 @@ void ActionForwarder::manage(const std::shared_ptr<Scene>& scene,
 bool ActionForwarder::tryAdd(const std::shared_ptr<TextMachine>& textMachine, SDL_Renderer* renderer, const std::shared_ptr<Loader>& loader) const
 {
   auto actualRate = textMachine->getValue(mv::constants::textTypes::TYPE::RATE);
-  auto deltaRate = std::atoi(loader->getPathOf("DELTA_RATE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES, mv::constants::loader::STORAGE_MODE::STORE).c_str());
+  auto deltaRate = std::atoi(loader->getValueByKey("DELTA_RATE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES, mv::constants::loader::STORAGE_MODE::STORE).c_str());
  
   if ( actualRate + deltaRate > textMachine->getValue(mv::constants::textTypes::TYPE::CREDITS) )
   {
@@ -66,7 +66,7 @@ bool ActionForwarder::tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, con
 {
   auto actualRate = textMachine->getValue(mv::constants::textTypes::TYPE::RATE);
   auto actualMoney = textMachine->getValue(mv::constants::textTypes::TYPE::CREDITS);
-  auto deltaRate = std::atoi(loader->getPathOf("DELTA_RATE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES, mv::constants::loader::STORAGE_MODE::STORE).c_str());
+  auto deltaRate = std::atoi(loader->getValueByKey("DELTA_RATE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES, mv::constants::loader::STORAGE_MODE::STORE).c_str());
 
   if ( actualMoney - actualRate < 0 || actualRate == 0 )
   {
@@ -99,7 +99,7 @@ bool ActionForwarder::tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, con
 bool ActionForwarder::trySubtract(const std::shared_ptr<TextMachine>& textMachine, SDL_Renderer* renderer, const std::shared_ptr<Loader>& loader) const
 {
   auto actualRate = textMachine->getValue(mv::constants::textTypes::TYPE::RATE);
-  auto deltaRate = std::atoi(loader->getPathOf("DELTA_RATE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES, mv::constants::loader::STORAGE_MODE::STORE).c_str());
+  auto deltaRate = std::atoi(loader->getValueByKey("DELTA_RATE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES, mv::constants::loader::STORAGE_MODE::STORE).c_str());
   if ( actualRate - deltaRate < 0 )
   {
     mv::Logger::Log(mv::constants::error::textMachine::POSITIVE_RATE, mv::Logger::STREAM::CONSOLE, mv::Logger::TYPE::INFO);

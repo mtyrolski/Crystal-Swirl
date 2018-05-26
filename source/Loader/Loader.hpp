@@ -9,7 +9,7 @@ https://github.com/mvxxx
 #include <map>
 
 
-#include "Config.hpp"
+#include "ConfigSrc.hpp"
 
 
 /*
@@ -34,7 +34,7 @@ public:
    * Searches for the key in the file,
    * Returns the value
    */
-   std::string getPathOf(const std::string& name,
+   std::string getValueByKey(const std::string& key,
      const mv::constants::loader::CONFIG_MODE& configMode,
      const mv::constants::loader::STORAGE_MODE storageMode = mv::constants::loader::STORAGE_MODE::FREE);
 private:

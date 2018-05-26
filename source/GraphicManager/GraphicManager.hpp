@@ -12,7 +12,7 @@ https://github.com/mvxxx
 
 #include "Loader/Loader.hpp"
 #include "logger/Logger.hpp"
-#include "Config.hpp"
+#include "ConfigSrc.hpp"
 
 
 /*

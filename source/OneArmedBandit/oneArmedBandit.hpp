@@ -12,7 +12,6 @@ https://github.com/mvxxx
 #include "ecs/component/ProperBody.hpp"
 #include "GraphicManager/GraphicManager.hpp"
 #include "scene/Scene.hpp"
-#include "wrappers/Troika.hpp"
 #include "Math.hpp"
 
 /*
