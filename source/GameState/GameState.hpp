@@ -13,6 +13,7 @@ https://github.com/mvxxx
 #include "GraphicManager/GraphicManager.hpp"
 #include "audioManager/AudioManager.hpp"
 #include "textMachine/textMachine.hpp"
+#include "UI_Loader/UILoader.hpp"
 #include "Loader/Loader.hpp"
 #include "scene/Scene.hpp"
 #include "Math.hpp"
