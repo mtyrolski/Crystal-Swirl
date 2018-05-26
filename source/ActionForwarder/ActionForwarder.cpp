@@ -66,8 +66,9 @@ bool ActionForwarder::tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, con
 {
   auto actualRate = textMachine->getValue(mv::constants::textTypes::TYPE::RATE);
   auto actualMoney = textMachine->getValue(mv::constants::textTypes::TYPE::CREDITS);
+  auto deltaRate = std::atoi(loader->getPathOf("DELTA_RATE", mv::constants::loader::CONFIG_MODE::TECHNICALITIES, mv::constants::loader::STORAGE_MODE::STORE).c_str());
 
-  if ( actualMoney - actualRate < 0 || actualMoney == 0 )
+  if ( actualMoney - actualRate < 0 || actualRate == 0 )
   {
     mv::Logger::Log(mv::constants::error::textMachine::NOT_ENOUGH_MONEY, mv::Logger::STREAM::CONSOLE, mv::Logger::TYPE::INFO);
     return false;
@@ -77,16 +78,20 @@ bool ActionForwarder::tryPlay(const std::shared_ptr<OneArmedBandit>& bandit, con
 
   bandit->startSimulate();
 
-  if ( bandit->multiplier() == 0 )actualMoney -= actualRate;
+  auto multiplier = bandit->multiplier(loader);
 
-  actualMoney += bandit->multiplier()*actualRate;
+  if ( multiplier == 0 )
+    actualMoney -= actualRate;
+  actualMoney += multiplier*actualRate;
 
-  textMachine->setText(mv::constants::textTypes::TYPE::PRIZE, std::to_string(bandit->multiplier()* actualRate), renderer);
+  textMachine->setText(mv::constants::textTypes::TYPE::PRIZE, std::to_string(static_cast<int>(multiplier * actualRate)), renderer);
   textMachine->setText(mv::constants::textTypes::TYPE::CREDITS, std::to_string(actualMoney), renderer);
 
   if ( actualRate > actualMoney )
-    textMachine->setText(mv::constants::textTypes::TYPE::RATE, std::to_string(actualMoney), renderer);
-
+    if ( actualMoney > deltaRate )
+      textMachine->setText(mv::constants::textTypes::TYPE::RATE, std::to_string(actualMoney), renderer);
+    else
+      textMachine->setText(mv::constants::textTypes::TYPE::RATE, "0" , renderer);
 
   return true;
 }

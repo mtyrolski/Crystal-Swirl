@@ -70,9 +70,8 @@ public:
   /*
    * Initialise structure, assign main pointers
    */
-  void initStructure(const Vector2<float>& windowSize,
+  void initStructure(
     const Vector2<int8_t>& crystalAmmount,
-    float gamePartOfWindow, 
     std::vector<std::shared_ptr<mv::Entity>>& entities,
     const Vector2<float>& delta);
 
@@ -80,5 +79,16 @@ public:
    * Checks result of game
    * temporarily this method is the most important part of this clas
    */
-  int multiplier(); /*s*/
+  float multiplier(const std::shared_ptr<Loader>& loader);
+
+private:
+  /*
+   * Checks vertical axises
+   */
+  int multipyVertical();
+
+  /*
+   * Checks horizontal axises
+   */
+  int multipyHorizontal();
 };

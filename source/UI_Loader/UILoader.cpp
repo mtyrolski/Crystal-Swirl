@@ -9,7 +9,7 @@ void UILoader::LoadUI(std::vector<std::shared_ptr<mv::Entity>>& entities, const 
   loadBackground(entities, windowSize, graphicManager, scene);
   loadTextBoxes(entities, windowSize, graphicManager, scene);
   loadButtons(entities, windowSize, graphicManager, scene);
-  loadRolls(entities, loader, windowSize, graphicManager, scene,banditMachine);
+  loadRolls(entities, loader, windowSize, graphicManager, scene, banditMachine);
 }
 
 void UILoader::loadButtons(std::vector<std::shared_ptr<mv::Entity>>& entities, const Vector2<float>& windowSize,
@@ -70,7 +70,7 @@ void UILoader::loadTextBoxes(std::vector<std::shared_ptr<mv::Entity>>& entities,
 }
 
 void UILoader::loadRolls(std::vector<std::shared_ptr<mv::Entity>>& entities, const std::shared_ptr<Loader>& loader,
-  const Vector2<float>& windowSize, const std::shared_ptr<GraphicManager>& graphicManager, 
+  const Vector2<float>& windowSize, const std::shared_ptr<GraphicManager>& graphicManager,
   const std::shared_ptr<Scene>& scene, const std::shared_ptr<OneArmedBandit>& banditMachine)
 {
   using RollWrapper_t = std::vector<std::shared_ptr<mv::Entity>>;
@@ -86,7 +86,7 @@ void UILoader::loadRolls(std::vector<std::shared_ptr<mv::Entity>>& entities, con
   float delta_x = windowSize.x / (crystalAmmount.x + 1);
   float delta_y = (windowSize.y*gamePartOfWindow) / (crystalAmmount.y + 1);
 
-  banditMachine->initStructure(windowSize, crystalAmmount, gamePartOfWindow, entities, { delta_x, delta_y });
+  banditMachine->initStructure(crystalAmmount, entities, { delta_x, delta_y });
 }
 
 void UILoader::loadBackground(std::vector<std::shared_ptr<mv::Entity>>& entities, const Vector2<float>& windowSize,
