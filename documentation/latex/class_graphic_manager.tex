@@ -1,17 +1,49 @@
-\hypertarget{class_graphic_manager}{}\section{Graphic\+Manager Class Reference}
+\section{Graphic\+Manager Class Reference}
 \label{class_graphic_manager}\index{Graphic\+Manager@{Graphic\+Manager}}
+
+
+{\ttfamily \#include $<$Graphic\+Manager.\+hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_graphic_manager_a73f8b16f083061e06ef9d0022b701e26}\label{class_graphic_manager_a73f8b16f083061e06ef9d0022b701e26}} 
-void {\bfseries load\+Textures} (S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+void \textbf{ load\+Textures} (S\+D\+L\+\_\+\+Renderer $\ast$renderer, const std\+::shared\+\_\+ptr$<$ \textbf{ Loader} $>$ \&loader)
 \item 
-\mbox{\Hypertarget{class_graphic_manager_aa9c1139ace8b5648cdb8ecd0d38f20b1}\label{class_graphic_manager_aa9c1139ace8b5648cdb8ecd0d38f20b1}} 
-S\+D\+L\+\_\+\+Texture $\ast$ {\bfseries get} (mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+ID type)
+S\+D\+L\+\_\+\+Texture $\ast$ \textbf{ get} (\textbf{ mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+ID} type)
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file Graphic\+Manager.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_graphic_manager_aa9c1139ace8b5648cdb8ecd0d38f20b1}} 
+\index{Graphic\+Manager@{Graphic\+Manager}!get@{get}}
+\index{get@{get}!Graphic\+Manager@{Graphic\+Manager}}
+\subsubsection{get()}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture $\ast$ Graphic\+Manager\+::get (\begin{DoxyParamCaption}\item[{\textbf{ mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+ID}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file Graphic\+Manager.\+cpp.
+
+\mbox{\label{class_graphic_manager_a7c2aca98de731b86755664096f456609}} 
+\index{Graphic\+Manager@{Graphic\+Manager}!load\+Textures@{load\+Textures}}
+\index{load\+Textures@{load\+Textures}!Graphic\+Manager@{Graphic\+Manager}}
+\subsubsection{load\+Textures()}
+{\footnotesize\ttfamily void Graphic\+Manager\+::load\+Textures (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{const std\+::shared\+\_\+ptr$<$ \textbf{ Loader} $>$ \&}]{loader }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Graphic\+Manager.\+cpp.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Graphic\+Manager/Graphic\+Manager.\+hpp\item 
-Graphic\+Manager/Graphic\+Manager.\+cpp\end{DoxyCompactItemize}
+Graphic\+Manager/\textbf{ Graphic\+Manager.\+hpp}\item 
+Graphic\+Manager/\textbf{ Graphic\+Manager.\+cpp}\end{DoxyCompactItemize}

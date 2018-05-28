@@ -1,35 +1,160 @@
-\hypertarget{class_scene}{}\section{Scene Class Reference}
+\section{Scene Class Reference}
 \label{class_scene}\index{Scene@{Scene}}
+
+
+{\ttfamily \#include $<$Scene.\+hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_scene_a25f8bfdf43742caa7209f74a82356b31}\label{class_scene_a25f8bfdf43742caa7209f74a82356b31}} 
-S\+D\+L\+\_\+\+Window $\ast$ {\bfseries get\+Window} () const
+\textbf{ Scene} ()
 \item 
-\mbox{\Hypertarget{class_scene_a2c0b5af09495ff8af64fb3c52197f49e}\label{class_scene_a2c0b5af09495ff8af64fb3c52197f49e}} 
-S\+D\+L\+\_\+\+Renderer $\ast$ {\bfseries get\+Renderer} () const
+\textbf{ $\sim$\+Scene} ()
 \item 
-\mbox{\Hypertarget{class_scene_a1b5e495f69d81182bb6dcaebd1edb669}\label{class_scene_a1b5e495f69d81182bb6dcaebd1edb669}} 
-bool {\bfseries is\+Open} () const
+void \textbf{ create} (const std\+::shared\+\_\+ptr$<$ \textbf{ Loader} $>$ \&loader)
 \item 
-\mbox{\Hypertarget{class_scene_a41ccb2e0cc9a19faa18ec22a21c06372}\label{class_scene_a41ccb2e0cc9a19faa18ec22a21c06372}} 
-void {\bfseries poll\+Events} ()
+S\+D\+L\+\_\+\+Window $\ast$ \textbf{ get\+Window} () const
 \item 
-\mbox{\Hypertarget{class_scene_a08d36ca08f508e6a75fc115415c71934}\label{class_scene_a08d36ca08f508e6a75fc115415c71934}} 
-void {\bfseries clear} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classmv_1_1_entity}{mv\+::\+Entity}} $>$$>$ \&entities)
+S\+D\+L\+\_\+\+Renderer $\ast$ \textbf{ get\+Renderer} () const
 \item 
-\mbox{\Hypertarget{class_scene_a2ce3780f0b8caef89e72a2b8fbde3a33}\label{class_scene_a2ce3780f0b8caef89e72a2b8fbde3a33}} 
-bool {\bfseries mouse\+State} () const
+bool \textbf{ is\+Open} () const
 \item 
-\mbox{\Hypertarget{class_scene_a169950f4ad086061546e2ce23d799487}\label{class_scene_a169950f4ad086061546e2ce23d799487}} 
-void {\bfseries set\+Mouse\+State} (bool flag)
+void \textbf{ poll\+Events} ()
 \item 
-\mbox{\Hypertarget{class_scene_a57a096711a009b7205069b2afd57d778}\label{class_scene_a57a096711a009b7205069b2afd57d778}} 
-const \mbox{\hyperlink{class_vector2}{Vector2}}$<$ float $>$ \& {\bfseries get\+Mouse\+Position} () const
+void \textbf{ clear} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \textbf{ mv\+::\+Entity} $>$$>$ \&entities)
+\item 
+bool \textbf{ mouse\+State} () const
+\item 
+void \textbf{ set\+Mouse\+State} (bool flag)
+\item 
+const \textbf{ Vector2}$<$ float $>$ \& \textbf{ get\+Mouse\+Position} () const
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file Scene.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_scene_ad10176d75a9cc0da56626f682d083507}} 
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\subsubsection{Scene()}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 109 of file Scene.\+cpp.
+
+\mbox{\label{class_scene_a3b8cec2e32546713915f8c6303c951f1}} 
+\index{Scene@{Scene}!````~Scene@{$\sim$\+Scene}}
+\index{````~Scene@{$\sim$\+Scene}!Scene@{Scene}}
+\subsubsection{$\sim$\+Scene()}
+{\footnotesize\ttfamily Scene\+::$\sim$\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file Scene.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_scene_a08d36ca08f508e6a75fc115415c71934}} 
+\index{Scene@{Scene}!clear@{clear}}
+\index{clear@{clear}!Scene@{Scene}}
+\subsubsection{clear()}
+{\footnotesize\ttfamily void Scene\+::clear (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \textbf{ mv\+::\+Entity} $>$$>$ \&}]{entities }\end{DoxyParamCaption})}
+
+
+
+Definition at line 80 of file Scene.\+cpp.
+
+\mbox{\label{class_scene_afe7c244dc00704c6c522995ba5dd8e42}} 
+\index{Scene@{Scene}!create@{create}}
+\index{create@{create}!Scene@{Scene}}
+\subsubsection{create()}
+{\footnotesize\ttfamily void Scene\+::create (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \textbf{ Loader} $>$ \&}]{loader }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file Scene.\+cpp.
+
+\mbox{\label{class_scene_a57a096711a009b7205069b2afd57d778}} 
+\index{Scene@{Scene}!get\+Mouse\+Position@{get\+Mouse\+Position}}
+\index{get\+Mouse\+Position@{get\+Mouse\+Position}!Scene@{Scene}}
+\subsubsection{get\+Mouse\+Position()}
+{\footnotesize\ttfamily const \textbf{ Vector2}$<$ float $>$ \& Scene\+::get\+Mouse\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 104 of file Scene.\+cpp.
+
+\mbox{\label{class_scene_a2c0b5af09495ff8af64fb3c52197f49e}} 
+\index{Scene@{Scene}!get\+Renderer@{get\+Renderer}}
+\index{get\+Renderer@{get\+Renderer}!Scene@{Scene}}
+\subsubsection{get\+Renderer()}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Renderer $\ast$ Scene\+::get\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 35 of file Scene.\+cpp.
+
+\mbox{\label{class_scene_a25f8bfdf43742caa7209f74a82356b31}} 
+\index{Scene@{Scene}!get\+Window@{get\+Window}}
+\index{get\+Window@{get\+Window}!Scene@{Scene}}
+\subsubsection{get\+Window()}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Window $\ast$ Scene\+::get\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 30 of file Scene.\+cpp.
+
+\mbox{\label{class_scene_a1b5e495f69d81182bb6dcaebd1edb669}} 
+\index{Scene@{Scene}!is\+Open@{is\+Open}}
+\index{is\+Open@{is\+Open}!Scene@{Scene}}
+\subsubsection{is\+Open()}
+{\footnotesize\ttfamily bool Scene\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 40 of file Scene.\+cpp.
+
+\mbox{\label{class_scene_a2ce3780f0b8caef89e72a2b8fbde3a33}} 
+\index{Scene@{Scene}!mouse\+State@{mouse\+State}}
+\index{mouse\+State@{mouse\+State}!Scene@{Scene}}
+\subsubsection{mouse\+State()}
+{\footnotesize\ttfamily bool Scene\+::mouse\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 94 of file Scene.\+cpp.
+
+\mbox{\label{class_scene_a41ccb2e0cc9a19faa18ec22a21c06372}} 
+\index{Scene@{Scene}!poll\+Events@{poll\+Events}}
+\index{poll\+Events@{poll\+Events}!Scene@{Scene}}
+\subsubsection{poll\+Events()}
+{\footnotesize\ttfamily void Scene\+::poll\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 45 of file Scene.\+cpp.
+
+\mbox{\label{class_scene_a169950f4ad086061546e2ce23d799487}} 
+\index{Scene@{Scene}!set\+Mouse\+State@{set\+Mouse\+State}}
+\index{set\+Mouse\+State@{set\+Mouse\+State}!Scene@{Scene}}
+\subsubsection{set\+Mouse\+State()}
+{\footnotesize\ttfamily void Scene\+::set\+Mouse\+State (\begin{DoxyParamCaption}\item[{bool}]{flag }\end{DoxyParamCaption})}
+
+
+
+Definition at line 99 of file Scene.\+cpp.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-scene/Scene.\+hpp\item 
-scene/Scene.\+cpp\end{DoxyCompactItemize}
+scene/\textbf{ Scene.\+hpp}\item 
+scene/\textbf{ Scene.\+cpp}\end{DoxyCompactItemize}

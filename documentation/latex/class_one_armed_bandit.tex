@@ -1,32 +1,112 @@
-\hypertarget{class_one_armed_bandit}{}\section{One\+Armed\+Bandit Class Reference}
+\section{One\+Armed\+Bandit Class Reference}
 \label{class_one_armed_bandit}\index{One\+Armed\+Bandit@{One\+Armed\+Bandit}}
+
+
+{\ttfamily \#include $<$one\+Armed\+Bandit.\+hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_one_armed_bandit_a45bf68bd8c76506ff68a0c523c59788d}\label{class_one_armed_bandit_a45bf68bd8c76506ff68a0c523c59788d}} 
-{\bfseries One\+Armed\+Bandit} (float d\+Time, float s\+Time, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_scene}{Scene}} $>$ \&\+\_\+scene, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_graphic_manager}{Graphic\+Manager}} $>$ \&\+\_\+graphic\+Manager)
+\textbf{ One\+Armed\+Bandit} (const std\+::shared\+\_\+ptr$<$ \textbf{ Loader} $>$ \&loader, const std\+::shared\+\_\+ptr$<$ \textbf{ Scene} $>$ \&\+\_\+scene, const std\+::shared\+\_\+ptr$<$ \textbf{ Graphic\+Manager} $>$ \&\+\_\+graphic\+Manager)
 \item 
-\mbox{\Hypertarget{class_one_armed_bandit_a8cf2610e14b939c87e84625931826bc5}\label{class_one_armed_bandit_a8cf2610e14b939c87e84625931826bc5}} 
-bool {\bfseries start\+Simulate} ()
+bool \textbf{ start\+Simulate} ()
 \item 
-\mbox{\Hypertarget{class_one_armed_bandit_a85dc36a710ccabfffd5cc56d6255c350}\label{class_one_armed_bandit_a85dc36a710ccabfffd5cc56d6255c350}} 
-void {\bfseries Set\+Simulate\+Time} (float time)
+void \textbf{ Set\+Simulate\+Time} (float time)
 \item 
-\mbox{\Hypertarget{class_one_armed_bandit_a227d7a5acdf875014950ab0cdcd058c6}\label{class_one_armed_bandit_a227d7a5acdf875014950ab0cdcd058c6}} 
-void {\bfseries set\+Delay\+Time} (float time)
+void \textbf{ set\+Delay\+Time} (float time)
 \item 
-\mbox{\Hypertarget{class_one_armed_bandit_a240e0cb1ec7774c515e8c2fd980d164d}\label{class_one_armed_bandit_a240e0cb1ec7774c515e8c2fd980d164d}} 
-bool {\bfseries get\+Status\+Of\+Processing} () const
+bool \textbf{ get\+Status\+Of\+Processing} () const
 \item 
-\mbox{\Hypertarget{class_one_armed_bandit_a9f025b7dceb1ae66c0713967a8d77e47}\label{class_one_armed_bandit_a9f025b7dceb1ae66c0713967a8d77e47}} 
-void {\bfseries init\+Structure} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classmv_1_1_entity}{mv\+::\+Entity}} $>$$>$ \&data)
+void \textbf{ init\+Structure} (const \textbf{ Vector2}$<$ int8\+\_\+t $>$ \&crystal\+Ammount, std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \textbf{ mv\+::\+Entity} $>$$>$ \&entities, const \textbf{ Vector2}$<$ float $>$ \&delta, const std\+::shared\+\_\+ptr$<$ \textbf{ Loader} $>$ \&loader)
 \item 
-\mbox{\Hypertarget{class_one_armed_bandit_a92128599ecc80f2b303c977fc688e3c6}\label{class_one_armed_bandit_a92128599ecc80f2b303c977fc688e3c6}} 
-int {\bfseries multiplier} ()
+float \textbf{ multiplier} (const std\+::shared\+\_\+ptr$<$ \textbf{ Loader} $>$ \&loader)
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file one\+Armed\+Bandit.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_one_armed_bandit_aa2df8b31d69a59bbf11dd8f8ea71b9a1}} 
+\index{One\+Armed\+Bandit@{One\+Armed\+Bandit}!One\+Armed\+Bandit@{One\+Armed\+Bandit}}
+\index{One\+Armed\+Bandit@{One\+Armed\+Bandit}!One\+Armed\+Bandit@{One\+Armed\+Bandit}}
+\subsubsection{One\+Armed\+Bandit()}
+{\footnotesize\ttfamily One\+Armed\+Bandit\+::\+One\+Armed\+Bandit (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \textbf{ Loader} $>$ \&}]{loader,  }\item[{const std\+::shared\+\_\+ptr$<$ \textbf{ Scene} $>$ \&}]{\+\_\+scene,  }\item[{const std\+::shared\+\_\+ptr$<$ \textbf{ Graphic\+Manager} $>$ \&}]{\+\_\+graphic\+Manager }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file one\+Armed\+Bandit.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_one_armed_bandit_a240e0cb1ec7774c515e8c2fd980d164d}} 
+\index{One\+Armed\+Bandit@{One\+Armed\+Bandit}!get\+Status\+Of\+Processing@{get\+Status\+Of\+Processing}}
+\index{get\+Status\+Of\+Processing@{get\+Status\+Of\+Processing}!One\+Armed\+Bandit@{One\+Armed\+Bandit}}
+\subsubsection{get\+Status\+Of\+Processing()}
+{\footnotesize\ttfamily bool One\+Armed\+Bandit\+::get\+Status\+Of\+Processing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 40 of file one\+Armed\+Bandit.\+cpp.
+
+\mbox{\label{class_one_armed_bandit_aa7406f5903fb347d94dfcd368100d8ec}} 
+\index{One\+Armed\+Bandit@{One\+Armed\+Bandit}!init\+Structure@{init\+Structure}}
+\index{init\+Structure@{init\+Structure}!One\+Armed\+Bandit@{One\+Armed\+Bandit}}
+\subsubsection{init\+Structure()}
+{\footnotesize\ttfamily void One\+Armed\+Bandit\+::init\+Structure (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2}$<$ int8\+\_\+t $>$ \&}]{crystal\+Ammount,  }\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \textbf{ mv\+::\+Entity} $>$$>$ \&}]{entities,  }\item[{const \textbf{ Vector2}$<$ float $>$ \&}]{delta,  }\item[{const std\+::shared\+\_\+ptr$<$ \textbf{ Loader} $>$ \&}]{loader }\end{DoxyParamCaption})}
+
+
+
+Definition at line 45 of file one\+Armed\+Bandit.\+cpp.
+
+\mbox{\label{class_one_armed_bandit_a3bd59ee339183ab585e1ce8e2fdfdb0d}} 
+\index{One\+Armed\+Bandit@{One\+Armed\+Bandit}!multiplier@{multiplier}}
+\index{multiplier@{multiplier}!One\+Armed\+Bandit@{One\+Armed\+Bandit}}
+\subsubsection{multiplier()}
+{\footnotesize\ttfamily float One\+Armed\+Bandit\+::multiplier (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \textbf{ Loader} $>$ \&}]{loader }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file one\+Armed\+Bandit.\+cpp.
+
+\mbox{\label{class_one_armed_bandit_a227d7a5acdf875014950ab0cdcd058c6}} 
+\index{One\+Armed\+Bandit@{One\+Armed\+Bandit}!set\+Delay\+Time@{set\+Delay\+Time}}
+\index{set\+Delay\+Time@{set\+Delay\+Time}!One\+Armed\+Bandit@{One\+Armed\+Bandit}}
+\subsubsection{set\+Delay\+Time()}
+{\footnotesize\ttfamily void One\+Armed\+Bandit\+::set\+Delay\+Time (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+
+
+Definition at line 35 of file one\+Armed\+Bandit.\+cpp.
+
+\mbox{\label{class_one_armed_bandit_a85dc36a710ccabfffd5cc56d6255c350}} 
+\index{One\+Armed\+Bandit@{One\+Armed\+Bandit}!Set\+Simulate\+Time@{Set\+Simulate\+Time}}
+\index{Set\+Simulate\+Time@{Set\+Simulate\+Time}!One\+Armed\+Bandit@{One\+Armed\+Bandit}}
+\subsubsection{Set\+Simulate\+Time()}
+{\footnotesize\ttfamily void One\+Armed\+Bandit\+::\+Set\+Simulate\+Time (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file one\+Armed\+Bandit.\+cpp.
+
+\mbox{\label{class_one_armed_bandit_a8cf2610e14b939c87e84625931826bc5}} 
+\index{One\+Armed\+Bandit@{One\+Armed\+Bandit}!start\+Simulate@{start\+Simulate}}
+\index{start\+Simulate@{start\+Simulate}!One\+Armed\+Bandit@{One\+Armed\+Bandit}}
+\subsubsection{start\+Simulate()}
+{\footnotesize\ttfamily bool One\+Armed\+Bandit\+::start\+Simulate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file one\+Armed\+Bandit.\+cpp.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-One\+Armed\+Bandit/one\+Armed\+Bandit.\+hpp\item 
-One\+Armed\+Bandit/one\+Armed\+Bandit.\+cpp\end{DoxyCompactItemize}
+One\+Armed\+Bandit/\textbf{ one\+Armed\+Bandit.\+hpp}\item 
+One\+Armed\+Bandit/\textbf{ one\+Armed\+Bandit.\+cpp}\end{DoxyCompactItemize}

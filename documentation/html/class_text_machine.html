@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Cristal-Swirl: TextMachine Class Reference</title>
+<title>Crystal-Swirl: TextMachine Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Cristal-Swirl
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">Crystal-Swirl
    </div>
-   <div id="projectbrief">SDL2 Slot game</div>
   </td>
  </tr>
  </tbody>
@@ -70,28 +68,168 @@ $(function() {
 <div class="title">TextMachine Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="text_machine_8hpp_source.html">textMachine.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af3056785151e546f5b6c57157dd24a29"><td class="memItemLeft" align="right" valign="top"><a id="af3056785151e546f5b6c57157dd24a29"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TextMachine</b> (uint16_t credits, uint16_t rate, SDL_Renderer *renderer)</td></tr>
-<tr class="separator:af3056785151e546f5b6c57157dd24a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82f1e99a1e26b2cc47f9aa17c31d1d30"><td class="memItemLeft" align="right" valign="top"><a id="a82f1e99a1e26b2cc47f9aa17c31d1d30"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getText</b> (mv::constants::textTypes::TYPE type)</td></tr>
+<tr class="memitem:a0000a4df1493e06caaa18f2d96fd3286"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text_machine.html#a0000a4df1493e06caaa18f2d96fd3286">TextMachine</a> (uint16_t credits, uint16_t rate, SDL_Renderer *renderer, const std::shared_ptr&lt; <a class="el" href="class_loader.html">Loader</a> &gt; &amp;loaderPtr)</td></tr>
+<tr class="separator:a0000a4df1493e06caaa18f2d96fd3286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82f1e99a1e26b2cc47f9aa17c31d1d30"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text_machine.html#a82f1e99a1e26b2cc47f9aa17c31d1d30">getText</a> (<a class="el" href="namespacemv_1_1constants_1_1text_types.html#a5c3266ce334fcb8a46534ae03918b0bd">mv::constants::textTypes::TYPE</a> type)</td></tr>
 <tr class="separator:a82f1e99a1e26b2cc47f9aa17c31d1d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f1f656364927e648a08985a8f2f5056"><td class="memItemLeft" align="right" valign="top"><a id="a0f1f656364927e648a08985a8f2f5056"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setText</b> (mv::constants::textTypes::TYPE type, const std::string &amp;text, SDL_Renderer *renderer)</td></tr>
+<tr class="memitem:a0f1f656364927e648a08985a8f2f5056"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text_machine.html#a0f1f656364927e648a08985a8f2f5056">setText</a> (<a class="el" href="namespacemv_1_1constants_1_1text_types.html#a5c3266ce334fcb8a46534ae03918b0bd">mv::constants::textTypes::TYPE</a> type, const std::string &amp;text, SDL_Renderer *renderer)</td></tr>
 <tr class="separator:a0f1f656364927e648a08985a8f2f5056"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ca1a3539231f51a30c5878c3a3e2b01"><td class="memItemLeft" align="right" valign="top"><a id="a2ca1a3539231f51a30c5878c3a3e2b01"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getValue</b> (mv::constants::textTypes::TYPE type)</td></tr>
+<tr class="memitem:a2ca1a3539231f51a30c5878c3a3e2b01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text_machine.html#a2ca1a3539231f51a30c5878c3a3e2b01">getValue</a> (<a class="el" href="namespacemv_1_1constants_1_1text_types.html#a5c3266ce334fcb8a46534ae03918b0bd">mv::constants::textTypes::TYPE</a> type)</td></tr>
 <tr class="separator:a2ca1a3539231f51a30c5878c3a3e2b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9699b1b3d032e021626aff01748a91d6"><td class="memItemLeft" align="right" valign="top"><a id="a9699b1b3d032e021626aff01748a91d6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>display</b> (SDL_Renderer *renderer)</td></tr>
+<tr class="memitem:a9699b1b3d032e021626aff01748a91d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text_machine.html#a9699b1b3d032e021626aff01748a91d6">display</a> (SDL_Renderer *renderer)</td></tr>
 <tr class="separator:a9699b1b3d032e021626aff01748a91d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="text_machine_8hpp_source.html#l00025">25</a> of file <a class="el" href="text_machine_8hpp_source.html">textMachine.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0000a4df1493e06caaa18f2d96fd3286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0000a4df1493e06caaa18f2d96fd3286">&#9670;&nbsp;</a></span>TextMachine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextMachine::TextMachine </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>credits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_loader.html">Loader</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>loaderPtr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="text_machine_8cpp_source.html#l00003">3</a> of file <a class="el" href="text_machine_8cpp_source.html">textMachine.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9699b1b3d032e021626aff01748a91d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9699b1b3d032e021626aff01748a91d6">&#9670;&nbsp;</a></span>display()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TextMachine::display </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="text_machine_8cpp_source.html#l00033">33</a> of file <a class="el" href="text_machine_8cpp_source.html">textMachine.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a82f1e99a1e26b2cc47f9aa17c31d1d30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f1e99a1e26b2cc47f9aa17c31d1d30">&#9670;&nbsp;</a></span>getText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; TextMachine::getText </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemv_1_1constants_1_1text_types.html#a5c3266ce334fcb8a46534ae03918b0bd">mv::constants::textTypes::TYPE</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="text_machine_8cpp_source.html#l00009">9</a> of file <a class="el" href="text_machine_8cpp_source.html">textMachine.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2ca1a3539231f51a30c5878c3a3e2b01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca1a3539231f51a30c5878c3a3e2b01">&#9670;&nbsp;</a></span>getValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TextMachine::getValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemv_1_1constants_1_1text_types.html#a5c3266ce334fcb8a46534ae03918b0bd">mv::constants::textTypes::TYPE</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="text_machine_8cpp_source.html#l00028">28</a> of file <a class="el" href="text_machine_8cpp_source.html">textMachine.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0f1f656364927e648a08985a8f2f5056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f1f656364927e648a08985a8f2f5056">&#9670;&nbsp;</a></span>setText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TextMachine::setText </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemv_1_1constants_1_1text_types.html#a5c3266ce334fcb8a46534ae03918b0bd">mv::constants::textTypes::TYPE</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="text_machine_8cpp_source.html#l00014">14</a> of file <a class="el" href="text_machine_8cpp_source.html">textMachine.cpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>textMachine/<a class="el" href="text_machine_8hpp_source.html">textMachine.hpp</a></li>
-<li>textMachine/textMachine.cpp</li>
+<li>textMachine/<a class="el" href="text_machine_8cpp_source.html">textMachine.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

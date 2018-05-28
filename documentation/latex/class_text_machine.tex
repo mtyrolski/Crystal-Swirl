@@ -1,26 +1,88 @@
-\hypertarget{class_text_machine}{}\section{Text\+Machine Class Reference}
+\section{Text\+Machine Class Reference}
 \label{class_text_machine}\index{Text\+Machine@{Text\+Machine}}
+
+
+{\ttfamily \#include $<$text\+Machine.\+hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_text_machine_af3056785151e546f5b6c57157dd24a29}\label{class_text_machine_af3056785151e546f5b6c57157dd24a29}} 
-{\bfseries Text\+Machine} (uint16\+\_\+t credits, uint16\+\_\+t rate, S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+\textbf{ Text\+Machine} (uint16\+\_\+t credits, uint16\+\_\+t rate, S\+D\+L\+\_\+\+Renderer $\ast$renderer, const std\+::shared\+\_\+ptr$<$ \textbf{ Loader} $>$ \&loader\+Ptr)
 \item 
-\mbox{\Hypertarget{class_text_machine_a82f1e99a1e26b2cc47f9aa17c31d1d30}\label{class_text_machine_a82f1e99a1e26b2cc47f9aa17c31d1d30}} 
-const std\+::string \& {\bfseries get\+Text} (mv\+::constants\+::text\+Types\+::\+T\+Y\+PE type)
+const std\+::string \& \textbf{ get\+Text} (\textbf{ mv\+::constants\+::text\+Types\+::\+T\+Y\+PE} type)
 \item 
-\mbox{\Hypertarget{class_text_machine_a0f1f656364927e648a08985a8f2f5056}\label{class_text_machine_a0f1f656364927e648a08985a8f2f5056}} 
-void {\bfseries set\+Text} (mv\+::constants\+::text\+Types\+::\+T\+Y\+PE type, const std\+::string \&text, S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+void \textbf{ set\+Text} (\textbf{ mv\+::constants\+::text\+Types\+::\+T\+Y\+PE} type, const std\+::string \&text, S\+D\+L\+\_\+\+Renderer $\ast$renderer)
 \item 
-\mbox{\Hypertarget{class_text_machine_a2ca1a3539231f51a30c5878c3a3e2b01}\label{class_text_machine_a2ca1a3539231f51a30c5878c3a3e2b01}} 
-int {\bfseries get\+Value} (mv\+::constants\+::text\+Types\+::\+T\+Y\+PE type)
+int \textbf{ get\+Value} (\textbf{ mv\+::constants\+::text\+Types\+::\+T\+Y\+PE} type)
 \item 
-\mbox{\Hypertarget{class_text_machine_a9699b1b3d032e021626aff01748a91d6}\label{class_text_machine_a9699b1b3d032e021626aff01748a91d6}} 
-void {\bfseries display} (S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+void \textbf{ display} (S\+D\+L\+\_\+\+Renderer $\ast$renderer)
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 25 of file text\+Machine.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_text_machine_a0000a4df1493e06caaa18f2d96fd3286}} 
+\index{Text\+Machine@{Text\+Machine}!Text\+Machine@{Text\+Machine}}
+\index{Text\+Machine@{Text\+Machine}!Text\+Machine@{Text\+Machine}}
+\subsubsection{Text\+Machine()}
+{\footnotesize\ttfamily Text\+Machine\+::\+Text\+Machine (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{credits,  }\item[{uint16\+\_\+t}]{rate,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{const std\+::shared\+\_\+ptr$<$ \textbf{ Loader} $>$ \&}]{loader\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file text\+Machine.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_text_machine_a9699b1b3d032e021626aff01748a91d6}} 
+\index{Text\+Machine@{Text\+Machine}!display@{display}}
+\index{display@{display}!Text\+Machine@{Text\+Machine}}
+\subsubsection{display()}
+{\footnotesize\ttfamily void Text\+Machine\+::display (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 33 of file text\+Machine.\+cpp.
+
+\mbox{\label{class_text_machine_a82f1e99a1e26b2cc47f9aa17c31d1d30}} 
+\index{Text\+Machine@{Text\+Machine}!get\+Text@{get\+Text}}
+\index{get\+Text@{get\+Text}!Text\+Machine@{Text\+Machine}}
+\subsubsection{get\+Text()}
+{\footnotesize\ttfamily const std\+::string \& Text\+Machine\+::get\+Text (\begin{DoxyParamCaption}\item[{\textbf{ mv\+::constants\+::text\+Types\+::\+T\+Y\+PE}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file text\+Machine.\+cpp.
+
+\mbox{\label{class_text_machine_a2ca1a3539231f51a30c5878c3a3e2b01}} 
+\index{Text\+Machine@{Text\+Machine}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Text\+Machine@{Text\+Machine}}
+\subsubsection{get\+Value()}
+{\footnotesize\ttfamily int Text\+Machine\+::get\+Value (\begin{DoxyParamCaption}\item[{\textbf{ mv\+::constants\+::text\+Types\+::\+T\+Y\+PE}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file text\+Machine.\+cpp.
+
+\mbox{\label{class_text_machine_a0f1f656364927e648a08985a8f2f5056}} 
+\index{Text\+Machine@{Text\+Machine}!set\+Text@{set\+Text}}
+\index{set\+Text@{set\+Text}!Text\+Machine@{Text\+Machine}}
+\subsubsection{set\+Text()}
+{\footnotesize\ttfamily void Text\+Machine\+::set\+Text (\begin{DoxyParamCaption}\item[{\textbf{ mv\+::constants\+::text\+Types\+::\+T\+Y\+PE}}]{type,  }\item[{const std\+::string \&}]{text,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file text\+Machine.\+cpp.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-text\+Machine/text\+Machine.\+hpp\item 
-text\+Machine/text\+Machine.\+cpp\end{DoxyCompactItemize}
+text\+Machine/\textbf{ text\+Machine.\+hpp}\item 
+text\+Machine/\textbf{ text\+Machine.\+cpp}\end{DoxyCompactItemize}

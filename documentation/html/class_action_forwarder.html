@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Cristal-Swirl: ActionForwarder Class Reference</title>
+<title>Crystal-Swirl: ActionForwarder Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Cristal-Swirl
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">Crystal-Swirl
    </div>
-   <div id="projectbrief">SDL2 Slot game</div>
   </td>
  </tr>
  </tbody>
@@ -70,16 +68,81 @@ $(function() {
 <div class="title">ActionForwarder Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_action_forwarder_8hpp_source.html">ActionForwarder.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8443feb3831a8902ae1ad3e97d43ee6d"><td class="memItemLeft" align="right" valign="top"><a id="a8443feb3831a8902ae1ad3e97d43ee6d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>manage</b> (const std::shared_ptr&lt; <a class="el" href="class_scene.html">Scene</a> &gt; &amp;scene, const std::shared_ptr&lt; <a class="el" href="class_one_armed_bandit.html">OneArmedBandit</a> &gt; &amp;bandit, const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classmv_1_1_entity.html">mv::Entity</a> &gt;&gt; &amp;entities, const std::shared_ptr&lt; <a class="el" href="class_text_machine.html">TextMachine</a> &gt; &amp;textMachine, SDL_Renderer *renderer)</td></tr>
-<tr class="separator:a8443feb3831a8902ae1ad3e97d43ee6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a0977b96d99bfb129d3d726950888cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_action_forwarder.html#a9a0977b96d99bfb129d3d726950888cd">manage</a> (const std::shared_ptr&lt; <a class="el" href="class_scene.html">Scene</a> &gt; &amp;scene, const std::shared_ptr&lt; <a class="el" href="class_one_armed_bandit.html">OneArmedBandit</a> &gt; &amp;bandit, const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classmv_1_1_entity.html">mv::Entity</a> &gt;&gt; &amp;entities, const std::shared_ptr&lt; <a class="el" href="class_text_machine.html">TextMachine</a> &gt; &amp;textMachine, const std::shared_ptr&lt; <a class="el" href="class_loader.html">Loader</a> &gt; &amp;loader, const std::shared_ptr&lt; <a class="el" href="class_audio_manager.html">AudioManager</a> &gt; &amp;audioManager, SDL_Renderer *renderer)</td></tr>
+<tr class="separator:a9a0977b96d99bfb129d3d726950888cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_action_forwarder_8hpp_source.html#l00017">17</a> of file <a class="el" href="_action_forwarder_8hpp_source.html">ActionForwarder.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9a0977b96d99bfb129d3d726950888cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a0977b96d99bfb129d3d726950888cd">&#9670;&nbsp;</a></span>manage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ActionForwarder::manage </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_scene.html">Scene</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>scene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_one_armed_bandit.html">OneArmedBandit</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bandit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classmv_1_1_entity.html">mv::Entity</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>entities</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_text_machine.html">TextMachine</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>textMachine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_loader.html">Loader</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>loader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_audio_manager.html">AudioManager</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>audioManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_action_forwarder_8cpp_source.html#l00008">8</a> of file <a class="el" href="_action_forwarder_8cpp_source.html">ActionForwarder.cpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>ActionForwarder/<a class="el" href="_action_forwarder_8hpp_source.html">ActionForwarder.hpp</a></li>
-<li>ActionForwarder/ActionForwarder.cpp</li>
+<li>ActionForwarder/<a class="el" href="_action_forwarder_8cpp_source.html">ActionForwarder.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Cristal-Swirl: mv::Logger Class Reference</title>
+<title>Crystal-Swirl: mv::Logger Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Cristal-Swirl
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">Crystal-Swirl
    </div>
-   <div id="projectbrief">SDL2 Slot game</div>
   </td>
  </tr>
  </tbody>
@@ -63,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>mv</b></li><li class="navelem"><a class="el" href="classmv_1_1_logger.html">Logger</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacemv.html">mv</a></li><li class="navelem"><a class="el" href="classmv_1_1_logger.html">Logger</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -75,30 +73,139 @@ $(function() {
 <div class="title">mv::Logger Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ad1faa46e6c5ea053f88c2f35ef0a5687"><td class="memItemLeft" align="right" valign="top"><a id="ad1faa46e6c5ea053f88c2f35ef0a5687"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>STREAM</b> { <b>CONSOLE</b> = 0, 
-<b>FILE</b> = 1, 
-<b>BOTH</b> = 2
+<tr class="memitem:ad1faa46e6c5ea053f88c2f35ef0a5687"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmv_1_1_logger.html#ad1faa46e6c5ea053f88c2f35ef0a5687">STREAM</a> { <a class="el" href="classmv_1_1_logger.html#ad1faa46e6c5ea053f88c2f35ef0a5687a4695859f52d337ca3d7020b2c8f7882a">STREAM::CONSOLE</a> = 0, 
+<a class="el" href="classmv_1_1_logger.html#ad1faa46e6c5ea053f88c2f35ef0a5687a9fc5887c030f7a3e19821ebec457e719">STREAM::FILE</a> = 1, 
+<a class="el" href="classmv_1_1_logger.html#ad1faa46e6c5ea053f88c2f35ef0a5687a6328e5e3186c227a021ef2ff77e40197">STREAM::BOTH</a> = 2
  }</td></tr>
 <tr class="separator:ad1faa46e6c5ea053f88c2f35ef0a5687"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02817aad7d75e78221f0c57927956697"><td class="memItemLeft" align="right" valign="top"><a id="a02817aad7d75e78221f0c57927956697"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>TYPE</b> { <b>INFO</b> = 0, 
-<b>SUGGESTION</b> = 1, 
-<b>WARNING</b> = 2, 
-<b>ERROR</b> = 3
+<tr class="memitem:a02817aad7d75e78221f0c57927956697"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmv_1_1_logger.html#a02817aad7d75e78221f0c57927956697">TYPE</a> { <a class="el" href="classmv_1_1_logger.html#a02817aad7d75e78221f0c57927956697a551b723eafd6a31d444fcb2f5920fbd3">TYPE::INFO</a> = 0, 
+<a class="el" href="classmv_1_1_logger.html#a02817aad7d75e78221f0c57927956697a18b4bddebb8b8d6fd96ee4ecea1a50e7">TYPE::SUGGESTION</a> = 1, 
+<a class="el" href="classmv_1_1_logger.html#a02817aad7d75e78221f0c57927956697a059e9861e0400dfbe05c98a841f3f96b">TYPE::WARNING</a> = 2, 
+<a class="el" href="classmv_1_1_logger.html#a02817aad7d75e78221f0c57927956697abb1ca97ec761fc37101737ba0aa2e7c5">TYPE::ERROR</a> = 3
  }</td></tr>
 <tr class="separator:a02817aad7d75e78221f0c57927956697"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8310db2d7031d84e1081f27157fac7a4"><td class="memItemLeft" align="right" valign="top"><a id="a8310db2d7031d84e1081f27157fac7a4"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>Log</b> (const std::string &amp;, const Logger::STREAM &amp;=Logger::STREAM::CONSOLE, const Logger::TYPE &amp;=Logger::TYPE::ERROR)</td></tr>
+<tr class="memitem:a8310db2d7031d84e1081f27157fac7a4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmv_1_1_logger.html#a8310db2d7031d84e1081f27157fac7a4">Log</a> (const std::string &amp;, const <a class="el" href="classmv_1_1_logger.html#ad1faa46e6c5ea053f88c2f35ef0a5687">Logger::STREAM</a> &amp;=<a class="el" href="classmv_1_1_logger.html#ad1faa46e6c5ea053f88c2f35ef0a5687a4695859f52d337ca3d7020b2c8f7882a">Logger::STREAM::CONSOLE</a>, const <a class="el" href="classmv_1_1_logger.html#a02817aad7d75e78221f0c57927956697">Logger::TYPE</a> &amp;=<a class="el" href="classmv_1_1_logger.html#a02817aad7d75e78221f0c57927956697abb1ca97ec761fc37101737ba0aa2e7c5">Logger::TYPE::ERROR</a>)</td></tr>
 <tr class="separator:a8310db2d7031d84e1081f27157fac7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00020">20</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="ad1faa46e6c5ea053f88c2f35ef0a5687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1faa46e6c5ea053f88c2f35ef0a5687">&#9670;&nbsp;</a></span>STREAM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classmv_1_1_logger.html#ad1faa46e6c5ea053f88c2f35ef0a5687">mv::Logger::STREAM</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad1faa46e6c5ea053f88c2f35ef0a5687a4695859f52d337ca3d7020b2c8f7882a"></a>CONSOLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad1faa46e6c5ea053f88c2f35ef0a5687a9fc5887c030f7a3e19821ebec457e719"></a>FILE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad1faa46e6c5ea053f88c2f35ef0a5687a6328e5e3186c227a021ef2ff77e40197"></a>BOTH&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00024">24</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a02817aad7d75e78221f0c57927956697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02817aad7d75e78221f0c57927956697">&#9670;&nbsp;</a></span>TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classmv_1_1_logger.html#a02817aad7d75e78221f0c57927956697">mv::Logger::TYPE</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a02817aad7d75e78221f0c57927956697a551b723eafd6a31d444fcb2f5920fbd3"></a>INFO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a02817aad7d75e78221f0c57927956697a18b4bddebb8b8d6fd96ee4ecea1a50e7"></a>SUGGESTION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a02817aad7d75e78221f0c57927956697a059e9861e0400dfbe05c98a841f3f96b"></a>WARNING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a02817aad7d75e78221f0c57927956697abb1ca97ec761fc37101737ba0aa2e7c5"></a>ERROR&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00031">31</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8310db2d7031d84e1081f27157fac7a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8310db2d7031d84e1081f27157fac7a4">&#9670;&nbsp;</a></span>Log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mv::Logger::Log </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmv_1_1_logger.html#ad1faa46e6c5ea053f88c2f35ef0a5687">Logger::STREAM</a> &amp;&#160;</td>
+          <td class="paramname"><em>stream</em> = <code><a class="el" href="classmv_1_1_logger.html#ad1faa46e6c5ea053f88c2f35ef0a5687a4695859f52d337ca3d7020b2c8f7882a">Logger::STREAM::CONSOLE</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmv_1_1_logger.html#a02817aad7d75e78221f0c57927956697">Logger::TYPE</a> &amp;&#160;</td>
+          <td class="paramname"><em>type</em> = <code><a class="el" href="classmv_1_1_logger.html#a02817aad7d75e78221f0c57927956697abb1ca97ec761fc37101737ba0aa2e7c5">Logger::TYPE::ERROR</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_logger_8cpp_source.html#l00012">12</a> of file <a class="el" href="_logger_8cpp_source.html">Logger.cpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>logger/<a class="el" href="_logger_8hpp_source.html">Logger.hpp</a></li>
-<li>logger/Logger.cpp</li>
+<li>logger/<a class="el" href="_logger_8cpp_source.html">Logger.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

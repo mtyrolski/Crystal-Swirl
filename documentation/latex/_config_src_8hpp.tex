@@ -1,0 +1,108 @@
+\section{Config\+Src.\+hpp File Reference}
+\label{_config_src_8hpp}\index{Config\+Src.\+hpp@{Config\+Src.\+hpp}}
+{\ttfamily \#include $<$S\+D\+L.\+h$>$}\newline
+{\ttfamily \#include $<$S\+D\+L\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$wrappers/\+Vector2.\+hpp$>$}\newline
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ mv}
+\item 
+ \textbf{ mv\+::constants}
+\item 
+ \textbf{ mv\+::constants\+::audio}
+\item 
+ \textbf{ mv\+::constants\+::error}
+\item 
+ \textbf{ mv\+::constants\+::error\+::scene}
+\item 
+ \textbf{ mv\+::constants\+::error\+::bandit\+Machine}
+\item 
+ \textbf{ mv\+::constants\+::error\+::text\+Machine}
+\item 
+ \textbf{ mv\+::constants\+::error\+::audio}
+\item 
+ \textbf{ mv\+::constants\+::error\+::\+UI}
+\item 
+ \textbf{ mv\+::constants\+::texture}
+\item 
+ \textbf{ mv\+::constants\+::text\+Types}
+\item 
+ \textbf{ mv\+::constants\+::loader}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ mv\+::constants\+::audio\+::\+A\+U\+D\+I\+O\+\_\+\+ID} \{ \textbf{ mv\+::constants\+::audio\+::\+A\+U\+D\+I\+O\+\_\+\+I\+D\+::\+S\+O\+U\+N\+D\+T\+R\+A\+CK}, 
+\textbf{ mv\+::constants\+::audio\+::\+A\+U\+D\+I\+O\+\_\+\+I\+D\+::\+C\+L\+I\+CK}, 
+\textbf{ mv\+::constants\+::audio\+::\+A\+U\+D\+I\+O\+\_\+\+I\+D\+::\+P\+L\+AY}
+ \}
+\item 
+enum \textbf{ mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+ID} \{ \newline
+\textbf{ mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+I\+D\+::\+B\+U\+T\+T\+O\+N\+\_\+\+P\+L\+US}, 
+\textbf{ mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+I\+D\+::\+B\+U\+T\+T\+O\+N\+\_\+\+M\+I\+N\+US}, 
+\textbf{ mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+I\+D\+::\+R\+A\+TE}, 
+\textbf{ mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+I\+D\+::\+S\+Y\+M\+B\+O\+L\+\_\+1}, 
+\newline
+\textbf{ mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+I\+D\+::\+S\+Y\+M\+B\+O\+L\+\_\+2}, 
+\textbf{ mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+I\+D\+::\+S\+Y\+M\+B\+O\+L\+\_\+3}, 
+\textbf{ mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+I\+D\+::\+P\+R\+I\+ZE}, 
+\textbf{ mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+I\+D\+::\+C\+R\+E\+D\+I\+TS}, 
+\newline
+\textbf{ mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+I\+D\+::\+P\+L\+AY}, 
+\textbf{ mv\+::constants\+::texture\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+I\+D\+::\+B\+A\+C\+K\+G\+R\+O\+U\+ND}
+ \}
+\item 
+enum \textbf{ mv\+::constants\+::text\+Types\+::\+T\+Y\+PE} \{ \textbf{ mv\+::constants\+::text\+Types\+::\+T\+Y\+P\+E\+::\+R\+A\+TE}, 
+\textbf{ mv\+::constants\+::text\+Types\+::\+T\+Y\+P\+E\+::\+P\+R\+I\+ZE}, 
+\textbf{ mv\+::constants\+::text\+Types\+::\+T\+Y\+P\+E\+::\+C\+R\+E\+D\+I\+TS}
+ \}
+\item 
+enum \textbf{ mv\+::constants\+::loader\+::\+C\+O\+N\+F\+I\+G\+\_\+\+M\+O\+DE} \{ \textbf{ mv\+::constants\+::loader\+::\+C\+O\+N\+F\+I\+G\+\_\+\+M\+O\+D\+E\+::\+G\+R\+A\+P\+H\+IC}, 
+\textbf{ mv\+::constants\+::loader\+::\+C\+O\+N\+F\+I\+G\+\_\+\+M\+O\+D\+E\+::\+A\+U\+D\+IO}, 
+\textbf{ mv\+::constants\+::loader\+::\+C\+O\+N\+F\+I\+G\+\_\+\+M\+O\+D\+E\+::\+T\+E\+C\+H\+N\+I\+C\+A\+L\+I\+T\+I\+ES}
+ \}
+\item 
+enum \textbf{ mv\+::constants\+::loader\+::\+S\+T\+O\+R\+A\+G\+E\+\_\+\+M\+O\+DE} \{ \textbf{ mv\+::constants\+::loader\+::\+S\+T\+O\+R\+A\+G\+E\+\_\+\+M\+O\+D\+E\+::\+S\+T\+O\+RE}, 
+\textbf{ mv\+::constants\+::loader\+::\+S\+T\+O\+R\+A\+G\+E\+\_\+\+M\+O\+D\+E\+::\+F\+R\+EE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::map$<$ A\+U\+D\+I\+O\+\_\+\+ID, std\+::string $>$ \textbf{ mv\+::constants\+::audio\+::audio\+Key}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::error\+::scene\+::\+F\+A\+I\+L\+E\+D\+\_\+\+I\+MG} = \char`\"{}Failed to init S\+D\+L\+\_\+\+Image\char`\"{}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::error\+::scene\+::\+F\+A\+I\+L\+E\+D\+\_\+\+T\+TF} = \char`\"{}Failed to init S\+D\+L\+\_\+\+T\+TF\char`\"{}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::error\+::bandit\+Machine\+::\+P\+R\+O\+C\+E\+S\+S\+I\+NG} = \char`\"{}You can\textquotesingle{}t start new simulate because bandit machine is processing now.\char`\"{}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::error\+::bandit\+Machine\+::\+L\+A\+C\+K\+\_\+\+O\+F\+\_\+\+S\+Y\+M\+B\+O\+LS} = \char`\"{}There is not enough symbols in the scene. Add some befoure you start a game.\char`\"{}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::error\+::text\+Machine\+::\+N\+O\+T\+\_\+\+E\+N\+O\+U\+G\+H\+\_\+\+M\+O\+N\+EY} = \char`\"{}You have\textquotesingle{}t got enough money to do that.\char`\"{}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::error\+::text\+Machine\+::\+P\+O\+S\+I\+T\+I\+V\+E\+\_\+\+R\+A\+TE} = \char`\"{}Rate must be positive value\char`\"{}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::error\+::audio\+::\+S\+D\+L\+\_\+\+M\+I\+X\+ER} = \char`\"{}Failed to initialize S\+D\+L\+\_\+mixer.\char`\"{}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::error\+::audio\+::\+P\+L\+A\+Y\+\_\+\+M\+U\+S\+IC} = \char`\"{}Failed to play music.\char`\"{}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::error\+::\+U\+I\+::\+T\+O\+O\+\_\+\+C\+L\+O\+S\+E\+\_\+\+V\+E\+R\+T\+I\+C\+A\+L\+LY} = \char`\"{}The elements are too close together vertically! This can make it difficult to play.\char`\"{}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::error\+::\+U\+I\+::\+T\+O\+O\+\_\+\+C\+L\+O\+S\+E\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+A\+L\+LY} = \char`\"{}The elements are too close together horizontally! This can make it difficult to play.\char`\"{}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::error\+::\+U\+I\+::\+S\+O\+L\+U\+T\+I\+ON} = \char`\"{}Replace textures or modify \textquotesingle{}technicalities\textquotesingle{} file.\char`\"{}
+\item 
+const std\+::map$<$ T\+E\+X\+T\+U\+R\+E\+\_\+\+ID, std\+::string $>$ \textbf{ mv\+::constants\+::texture\+::texture\+Key}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::texture\+::\+B\+A\+S\+I\+C\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+P\+A\+TH} = \char`\"{}source/data/graphics/\char`\"{}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::loader\+::\+G\+R\+A\+P\+H\+I\+C\+\_\+\+C\+O\+N\+F\+IG} = \char`\"{}source/data/config/graphic.\+txt\char`\"{}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::loader\+::\+A\+U\+D\+I\+O\+\_\+\+C\+O\+N\+F\+IG} = \char`\"{}source/data/config/audio.\+txt\char`\"{}
+\item 
+constexpr auto \textbf{ mv\+::constants\+::loader\+::\+T\+E\+C\+H\+N\+I\+C\+A\+L\+I\+T\+I\+E\+S\+\_\+\+C\+O\+N\+F\+IG} = \char`\"{}source/data/config/technicalities.\+txt\char`\"{}
+\end{DoxyCompactItemize}

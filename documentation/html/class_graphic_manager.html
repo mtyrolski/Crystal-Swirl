@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Cristal-Swirl: GraphicManager Class Reference</title>
+<title>Crystal-Swirl: GraphicManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Cristal-Swirl
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">Crystal-Swirl
    </div>
-   <div id="projectbrief">SDL2 Slot game</div>
   </td>
  </tr>
  </tbody>
@@ -70,19 +68,73 @@ $(function() {
 <div class="title">GraphicManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_graphic_manager_8hpp_source.html">GraphicManager.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a73f8b16f083061e06ef9d0022b701e26"><td class="memItemLeft" align="right" valign="top"><a id="a73f8b16f083061e06ef9d0022b701e26"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loadTextures</b> (SDL_Renderer *renderer)</td></tr>
-<tr class="separator:a73f8b16f083061e06ef9d0022b701e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9c1139ace8b5648cdb8ecd0d38f20b1"><td class="memItemLeft" align="right" valign="top"><a id="aa9c1139ace8b5648cdb8ecd0d38f20b1"></a>
-SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (mv::constants::texture::TEXTURE_ID type)</td></tr>
+<tr class="memitem:a7c2aca98de731b86755664096f456609"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphic_manager.html#a7c2aca98de731b86755664096f456609">loadTextures</a> (SDL_Renderer *renderer, const std::shared_ptr&lt; <a class="el" href="class_loader.html">Loader</a> &gt; &amp;loader)</td></tr>
+<tr class="separator:a7c2aca98de731b86755664096f456609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9c1139ace8b5648cdb8ecd0d38f20b1"><td class="memItemLeft" align="right" valign="top">SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphic_manager.html#aa9c1139ace8b5648cdb8ecd0d38f20b1">get</a> (<a class="el" href="namespacemv_1_1constants_1_1texture.html#a31854dc8c0c36ef4deba53aa1fc80bce">mv::constants::texture::TEXTURE_ID</a> type)</td></tr>
 <tr class="separator:aa9c1139ace8b5648cdb8ecd0d38f20b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_graphic_manager_8hpp_source.html#l00021">21</a> of file <a class="el" href="_graphic_manager_8hpp_source.html">GraphicManager.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa9c1139ace8b5648cdb8ecd0d38f20b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9c1139ace8b5648cdb8ecd0d38f20b1">&#9670;&nbsp;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Texture * GraphicManager::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemv_1_1constants_1_1texture.html#a31854dc8c0c36ef4deba53aa1fc80bce">mv::constants::texture::TEXTURE_ID</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_graphic_manager_8cpp_source.html#l00017">17</a> of file <a class="el" href="_graphic_manager_8cpp_source.html">GraphicManager.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7c2aca98de731b86755664096f456609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c2aca98de731b86755664096f456609">&#9670;&nbsp;</a></span>loadTextures()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphicManager::loadTextures </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_loader.html">Loader</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>loader</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_graphic_manager_8cpp_source.html#l00003">3</a> of file <a class="el" href="_graphic_manager_8cpp_source.html">GraphicManager.cpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>GraphicManager/<a class="el" href="_graphic_manager_8hpp_source.html">GraphicManager.hpp</a></li>
-<li>GraphicManager/GraphicManager.cpp</li>
+<li>GraphicManager/<a class="el" href="_graphic_manager_8cpp_source.html">GraphicManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

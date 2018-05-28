@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Cristal-Swirl: ProperBody Class Reference</title>
+<title>Crystal-Swirl: ProperBody Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Cristal-Swirl
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">Crystal-Swirl
    </div>
-   <div id="projectbrief">SDL2 Slot game</div>
   </td>
  </tr>
  </tbody>
@@ -70,34 +68,268 @@ $(function() {
 <div class="title">ProperBody Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_proper_body_8hpp_source.html">ProperBody.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1360cdc97bbf40853bb6faeda572c19d"><td class="memItemLeft" align="right" valign="top"><a id="a1360cdc97bbf40853bb6faeda572c19d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setType</b> (const std::shared_ptr&lt; <a class="el" href="class_graphic_manager.html">GraphicManager</a> &gt; &amp;graphicManager, type_id id, SDL_Renderer *renderer)</td></tr>
+<tr class="memitem:a1360cdc97bbf40853bb6faeda572c19d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_proper_body.html#a1360cdc97bbf40853bb6faeda572c19d">setType</a> (const std::shared_ptr&lt; <a class="el" href="class_graphic_manager.html">GraphicManager</a> &gt; &amp;graphicManager, <a class="el" href="namespacemv_1_1constants_1_1texture.html#a31854dc8c0c36ef4deba53aa1fc80bce">type_id</a> id, SDL_Renderer *renderer)</td></tr>
 <tr class="separator:a1360cdc97bbf40853bb6faeda572c19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad37f72f145f1436d634ed26f9f590d75"><td class="memItemLeft" align="right" valign="top"><a id="ad37f72f145f1436d634ed26f9f590d75"></a>
-SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><b>getTexture</b> () const</td></tr>
+<tr class="memitem:ad37f72f145f1436d634ed26f9f590d75"><td class="memItemLeft" align="right" valign="top">SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_proper_body.html#ad37f72f145f1436d634ed26f9f590d75">getTexture</a> () const</td></tr>
 <tr class="separator:ad37f72f145f1436d634ed26f9f590d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f081a6b893934047307b29514576428"><td class="memItemLeft" align="right" valign="top"><a id="a2f081a6b893934047307b29514576428"></a>
-type_id&#160;</td><td class="memItemRight" valign="bottom"><b>getType</b> () const</td></tr>
+<tr class="memitem:a2f081a6b893934047307b29514576428"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemv_1_1constants_1_1texture.html#a31854dc8c0c36ef4deba53aa1fc80bce">type_id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_proper_body.html#a2f081a6b893934047307b29514576428">getType</a> () const</td></tr>
 <tr class="separator:a2f081a6b893934047307b29514576428"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef60ac67f44eb2966d6accb12584f511"><td class="memItemLeft" align="right" valign="top"><a id="aef60ac67f44eb2966d6accb12584f511"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setPosition</b> (const <a class="el" href="class_vector2.html">Vector2</a>&lt; float &gt; &amp;position)</td></tr>
+<tr class="memitem:aef60ac67f44eb2966d6accb12584f511"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_proper_body.html#aef60ac67f44eb2966d6accb12584f511">setPosition</a> (const <a class="el" href="class_vector2.html">Vector2</a>&lt; float &gt; &amp;position)</td></tr>
 <tr class="separator:aef60ac67f44eb2966d6accb12584f511"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabca090eeafb4400b7b8b2a5721fb010"><td class="memItemLeft" align="right" valign="top"><a id="aabca090eeafb4400b7b8b2a5721fb010"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSize</b> (const <a class="el" href="class_vector2.html">Vector2</a>&lt; float &gt; &amp;size)</td></tr>
+<tr class="memitem:aabca090eeafb4400b7b8b2a5721fb010"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_proper_body.html#aabca090eeafb4400b7b8b2a5721fb010">setSize</a> (const <a class="el" href="class_vector2.html">Vector2</a>&lt; float &gt; &amp;size)</td></tr>
 <tr class="separator:aabca090eeafb4400b7b8b2a5721fb010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ffa871e415da0b558a5776f8aaca08e"><td class="memItemLeft" align="right" valign="top"><a id="a8ffa871e415da0b558a5776f8aaca08e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (const <a class="el" href="class_vector2.html">Vector2</a>&lt; float &gt; &amp;vector)</td></tr>
+<tr class="memitem:a8ffa871e415da0b558a5776f8aaca08e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_proper_body.html#a8ffa871e415da0b558a5776f8aaca08e">move</a> (const <a class="el" href="class_vector2.html">Vector2</a>&lt; float &gt; &amp;vector)</td></tr>
 <tr class="separator:a8ffa871e415da0b558a5776f8aaca08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c844b11dbb78d0a68a3e7e789694271"><td class="memItemLeft" align="right" valign="top"><a id="a4c844b11dbb78d0a68a3e7e789694271"></a>
-const <a class="el" href="class_vector2.html">Vector2</a>&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getPosition</b> () const</td></tr>
+<tr class="memitem:a4c844b11dbb78d0a68a3e7e789694271"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_vector2.html">Vector2</a>&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_proper_body.html#a4c844b11dbb78d0a68a3e7e789694271">getPosition</a> () const</td></tr>
 <tr class="separator:a4c844b11dbb78d0a68a3e7e789694271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7534aa8cdf0035cc8d0b125dbaf4ae2"><td class="memItemLeft" align="right" valign="top"><a id="ae7534aa8cdf0035cc8d0b125dbaf4ae2"></a>
-const SDL_Rect &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getRect</b> () const</td></tr>
+<tr class="memitem:ae7534aa8cdf0035cc8d0b125dbaf4ae2"><td class="memItemLeft" align="right" valign="top">const SDL_Rect &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_proper_body.html#ae7534aa8cdf0035cc8d0b125dbaf4ae2">getRect</a> () const</td></tr>
 <tr class="separator:ae7534aa8cdf0035cc8d0b125dbaf4ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_proper_body_8hpp_source.html#l00019">19</a> of file <a class="el" href="_proper_body_8hpp_source.html">ProperBody.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4c844b11dbb78d0a68a3e7e789694271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c844b11dbb78d0a68a3e7e789694271">&#9670;&nbsp;</a></span>getPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_vector2.html">Vector2</a>&lt; float &gt; &amp; ProperBody::getPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_proper_body_8hpp_source.html#l00124">124</a> of file <a class="el" href="_proper_body_8hpp_source.html">ProperBody.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae7534aa8cdf0035cc8d0b125dbaf4ae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7534aa8cdf0035cc8d0b125dbaf4ae2">&#9670;&nbsp;</a></span>getRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const SDL_Rect &amp; ProperBody::getRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_proper_body_8hpp_source.html#l00129">129</a> of file <a class="el" href="_proper_body_8hpp_source.html">ProperBody.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad37f72f145f1436d634ed26f9f590d75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad37f72f145f1436d634ed26f9f590d75">&#9670;&nbsp;</a></span>getTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Texture * ProperBody::getTexture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_proper_body_8hpp_source.html#l00091">91</a> of file <a class="el" href="_proper_body_8hpp_source.html">ProperBody.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2f081a6b893934047307b29514576428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f081a6b893934047307b29514576428">&#9670;&nbsp;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemv_1_1constants_1_1texture.html#a31854dc8c0c36ef4deba53aa1fc80bce">mv::constants::texture::TEXTURE_ID</a> ProperBody::getType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_proper_body_8hpp_source.html#l00096">96</a> of file <a class="el" href="_proper_body_8hpp_source.html">ProperBody.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8ffa871e415da0b558a5776f8aaca08e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffa871e415da0b558a5776f8aaca08e">&#9670;&nbsp;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProperBody::move </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector2.html">Vector2</a>&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_proper_body_8hpp_source.html#l00118">118</a> of file <a class="el" href="_proper_body_8hpp_source.html">ProperBody.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aef60ac67f44eb2966d6accb12584f511"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef60ac67f44eb2966d6accb12584f511">&#9670;&nbsp;</a></span>setPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProperBody::setPosition </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector2.html">Vector2</a>&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_proper_body_8hpp_source.html#l00106">106</a> of file <a class="el" href="_proper_body_8hpp_source.html">ProperBody.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aabca090eeafb4400b7b8b2a5721fb010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabca090eeafb4400b7b8b2a5721fb010">&#9670;&nbsp;</a></span>setSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProperBody::setSize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector2.html">Vector2</a>&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_proper_body_8hpp_source.html#l00112">112</a> of file <a class="el" href="_proper_body_8hpp_source.html">ProperBody.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1360cdc97bbf40853bb6faeda572c19d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1360cdc97bbf40853bb6faeda572c19d">&#9670;&nbsp;</a></span>setType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProperBody::setType </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_graphic_manager.html">GraphicManager</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>graphicManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemv_1_1constants_1_1texture.html#a31854dc8c0c36ef4deba53aa1fc80bce">type_id</a>&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_proper_body_8hpp_source.html#l00085">85</a> of file <a class="el" href="_proper_body_8hpp_source.html">ProperBody.hpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>ecs/component/<a class="el" href="_proper_body_8hpp_source.html">ProperBody.hpp</a></li>
 </ul>

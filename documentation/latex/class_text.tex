@@ -1,26 +1,85 @@
-\hypertarget{class_text}{}\section{Text Class Reference}
+\section{Text Class Reference}
 \label{class_text}\index{Text@{Text}}
+
+
+{\ttfamily \#include $<$Text.\+hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_text_ad97e6a6037eecb0777fd3fce47126610}\label{class_text_ad97e6a6037eecb0777fd3fce47126610}} 
-void {\bfseries init} (const std\+::string \&font\+Path, int font\+Size, const std\+::string \&message, const S\+D\+L\+\_\+\+Color \&color, S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+void \textbf{ init} (const std\+::string \&font\+Path, int font\+Size, const std\+::string \&message, const S\+D\+L\+\_\+\+Color \&color, S\+D\+L\+\_\+\+Renderer $\ast$renderer)
 \item 
-\mbox{\Hypertarget{class_text_a067064ef9f655bbad7028af4a5d9f068}\label{class_text_a067064ef9f655bbad7028af4a5d9f068}} 
-void {\bfseries display} (S\+D\+L\+\_\+\+Renderer $\ast$renderer) const
+void \textbf{ display} (S\+D\+L\+\_\+\+Renderer $\ast$renderer) const
 \item 
-\mbox{\Hypertarget{class_text_a120c775b894251bb2c688a86effe533a}\label{class_text_a120c775b894251bb2c688a86effe533a}} 
-void {\bfseries set\+Position} (const \mbox{\hyperlink{class_vector2}{Vector2}}$<$ float $>$ \&position)
+void \textbf{ set\+Position} (const \textbf{ Vector2}$<$ float $>$ \&position)
 \item 
-\mbox{\Hypertarget{class_text_a2bd6e34581aa2e7a64da31c23d63a797}\label{class_text_a2bd6e34581aa2e7a64da31c23d63a797}} 
-void {\bfseries set\+Text} (const std\+::string \&font\+Path, int font\+Size, const std\+::string \&message, const S\+D\+L\+\_\+\+Color \&color, S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+void \textbf{ set\+Text} (const std\+::string \&font\+Path, int font\+Size, const std\+::string \&message, const S\+D\+L\+\_\+\+Color \&color, S\+D\+L\+\_\+\+Renderer $\ast$renderer)
 \item 
-\mbox{\Hypertarget{class_text_a8885062175c71c77542e3c05eabc4c30}\label{class_text_a8885062175c71c77542e3c05eabc4c30}} 
-void {\bfseries set\+Size} (const \mbox{\hyperlink{class_vector2}{Vector2}}$<$ float $>$ \&size)
+void \textbf{ set\+Size} (const \textbf{ Vector2}$<$ float $>$ \&size)
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file Text.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_text_a067064ef9f655bbad7028af4a5d9f068}} 
+\index{Text@{Text}!display@{display}}
+\index{display@{display}!Text@{Text}}
+\subsubsection{display()}
+{\footnotesize\ttfamily void Text\+::display (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 14 of file Text.\+cpp.
+
+\mbox{\label{class_text_ad97e6a6037eecb0777fd3fce47126610}} 
+\index{Text@{Text}!init@{init}}
+\index{init@{init}!Text@{Text}}
+\subsubsection{init()}
+{\footnotesize\ttfamily void Text\+::init (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{font\+Path,  }\item[{int}]{font\+Size,  }\item[{const std\+::string \&}]{message,  }\item[{const S\+D\+L\+\_\+\+Color \&}]{color,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file Text.\+cpp.
+
+\mbox{\label{class_text_a120c775b894251bb2c688a86effe533a}} 
+\index{Text@{Text}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Text@{Text}}
+\subsubsection{set\+Position()}
+{\footnotesize\ttfamily void Text\+::set\+Position (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2}$<$ float $>$ \&}]{position }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file Text.\+cpp.
+
+\mbox{\label{class_text_a8885062175c71c77542e3c05eabc4c30}} 
+\index{Text@{Text}!set\+Size@{set\+Size}}
+\index{set\+Size@{set\+Size}!Text@{Text}}
+\subsubsection{set\+Size()}
+{\footnotesize\ttfamily void Text\+::set\+Size (\begin{DoxyParamCaption}\item[{const \textbf{ Vector2}$<$ float $>$ \&}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 40 of file Text.\+cpp.
+
+\mbox{\label{class_text_a2bd6e34581aa2e7a64da31c23d63a797}} 
+\index{Text@{Text}!set\+Text@{set\+Text}}
+\index{set\+Text@{set\+Text}!Text@{Text}}
+\subsubsection{set\+Text()}
+{\footnotesize\ttfamily void Text\+::set\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{font\+Path,  }\item[{int}]{font\+Size,  }\item[{const std\+::string \&}]{message,  }\item[{const S\+D\+L\+\_\+\+Color \&}]{color,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 35 of file Text.\+cpp.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-ecs/component/text/Text.\+hpp\item 
-ecs/component/text/Text.\+cpp\end{DoxyCompactItemize}
+ecs/component/text/\textbf{ Text.\+hpp}\item 
+ecs/component/text/\textbf{ Text.\+cpp}\end{DoxyCompactItemize}
